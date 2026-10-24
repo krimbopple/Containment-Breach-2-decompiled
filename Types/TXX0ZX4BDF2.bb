@@ -1,0 +1,14 @@
+Type TXX0ZX4BDF2
+    Field Field0%[8]
+    Field Field1%
+    Field Field2%
+    Field Field3.TB86B8F2BX[64]
+    Field Field4%
+    Field Field5%
+    Field Field6$[4]
+    Field Field7%
+    Field Field8%
+    Field Field9$[8]
+    Field Field10%[4]
+    Field Field11$[8]
+End Type

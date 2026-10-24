@@ -1,0 +1,30 @@
+Type EZZ00XD2
+    Field Field0%
+    Field Field1#
+    Field Field2%
+    Field Field3.X62B24X2FD[10]
+    Field Field4%
+    Field Field5.X44ZF6442X
+    Field Field6#
+    Field Field7%
+    Field Field8#
+    Field Field9%
+    Field Field10%
+    Field Field11#
+    Field Field12%
+    Field Field13%
+    Field Field14%
+    Field Field15#
+    Field Field16%
+    Field Field17.T20BFZFZ62X
+    Field Field18#
+    Field Field19#
+    Field Field20%
+    Field Field21%
+    Field Field22#
+    Field Field23%
+    Field Field24#
+    Field Field25????
+    Field Field26#
+    Field Field27%
+End Type

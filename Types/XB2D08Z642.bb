@@ -1,0 +1,9 @@
+Type XB2D08Z642
+    Field Field0%
+    Field Field1%
+    Field Field2%
+    Field Field3.T484FFBZX
+    Field Field4%
+    Field Field5%
+    Field Field6%
+End Type

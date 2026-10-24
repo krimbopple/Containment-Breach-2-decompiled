@@ -1,0 +1,11 @@
+Type queuedsubtitlesmsg
+    Field Field0$
+    Field Field1.sound
+    Field Field2#
+    Field Field3#
+    Field Field4%
+    Field Field5$
+    Field Field6%
+    Field Field7%
+    Field Field8.subtitlesmsg
+End Type

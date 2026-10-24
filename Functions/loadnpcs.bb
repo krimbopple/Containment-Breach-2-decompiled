@@ -1,0 +1,77 @@
+Function loadnpcs%()
+    Local local0%
+    n_i = (New npcinstance)
+    n_i\Field4[$00] = "Gonzales"
+    n_i\Field4[$01] = "D_9341(2)"
+    n_i\Field4[$02] = "security"
+    n_i\Field4[$03] = "security(2)"
+    n_i\Field4[$04] = "scientist"
+    n_i\Field4[$05] = "Franklin"
+    n_i\Field4[$06] = "Maynard"
+    n_i\Field4[$07] = "class_d(2)"
+    n_i\Field4[$08] = "D_9341"
+    n_i\Field4[$09] = "janitor"
+    n_i\Field4[$0A] = "maintenance"
+    n_i\Field4[$0B] = "logistics"
+    n_i\Field4[$0C] = "Harn"
+    n_i\Field4[$0D] = "Rufino"
+    n_i\Field4[$0E] = "MTF(2)"
+    n_i\Field4[$0F] = "scp_096_bloody"
+    n_i\Field4[$10] = "scp_008_1(2)"
+    n_i\Field4[$11] = "scp_008_1(3)"
+    n_i\Field4[$12] = "body"
+    n_i\Field4[$13] = "body(2)"
+    n_i\Field4[$14] = "scp_009_victim"
+    n_i\Field4[$15] = "scp_035_victim"
+    n_i\Field4[$16] = "scp_035_victim_corpse"
+    n_i\Field4[$17] = "scp_106_victim"
+    n_i\Field4[$18] = "scp_106_victim_femur_breaker"
+    n_i\Field4[$19] = "scp_409_victim"
+    n_i\Field4[$1A] = "Burton"
+    n_i\Field4[$1B] = "scp_895_victim"
+    n_i\Field4[$1C] = "scp_939_victim"
+    n_i\Field4[$1D] = "scp_939_victim(2)"
+    n_i\Field4[$1E] = "femur_breaker_victim"
+    n_i\Field4[$1F] = "clerk(2)"
+    n_i\Field4[$20] = "scp_1048_a_victim"
+    n_i\Field4[$21] = "scp_457_victim(0)"
+    n_i\Field4[$22] = "scp_457_victim(1)"
+    n_i\Field9[$00] = loadanimmesh_strict("GFX\NPCs\scp_008_1.b3d", $00, $01)
+    n_i\Field9[$01] = loadanimmesh_strict("GFX\NPCs\scp_008_1_surgeon.b3d", $00, $01)
+    n_i\Field9[$02] = loadanimmesh_strict("GFX\NPCs\scp_035_tentacle.b3d", $00, $01)
+    n_i\Field9[$03] = loadanimmesh_strict("GFX\NPCs\scp_049.b3d", $00, $01)
+    n_i\Field9[$04] = loadanimmesh_strict("GFX\NPCs\scp_049_2.b3d", $00, $01)
+    n_i\Field9[$05] = loadanimmesh_strict("GFX\NPCs\scp_066.b3d", $00, $01)
+    n_i\Field9[$06] = loadanimmesh_strict("GFX\NPCs\scp_096.b3d", $00, $01)
+    n_i\Field9[$07] = loadanimmesh_strict("GFX\NPCs\scp_106.b3d", $00, $01)
+    n_i\Field9[$08] = loadmesh_strict("GFX\NPCs\scp_173_body.b3d", $00, $01)
+    n_i\Field9[$09] = loadmesh_strict("GFX\NPCs\scp_173_head.b3d", $00, $01)
+    n_i\Field9[$0A] = loadmesh_strict("GFX\NPCs\scp_173_box.b3d", $00, $01)
+    n_i\Field9[$0B] = loadanimmesh_strict("GFX\NPCs\scp_205_demon.b3d", $00, $01)
+    n_i\Field9[$0C] = loadanimmesh_strict("GFX\NPCs\scp_205_demon(2).b3d", $00, $01)
+    n_i\Field9[$0D] = loadanimmesh_strict("GFX\NPCs\scp_205_demon(3).b3d", $00, $01)
+    n_i\Field9[$0E] = loadanimmesh_strict("GFX\NPCs\scp_205_woman.b3d", $00, $01)
+    n_i\Field9[$0F] = loadanimmesh_strict("GFX\NPCs\scp_372.b3d", $00, $01)
+    n_i\Field9[$10] = loadanimmesh_strict("GFX\NPCs\scp_513_1.b3d", $00, $01)
+    n_i\Field9[$11] = loadanimmesh_strict("GFX\NPCs\scp_860_2.b3d", $00, $01)
+    n_i\Field9[$12] = loadanimmesh_strict("GFX\NPCs\scp_939.b3d", $00, $01)
+    n_i\Field9[$13] = loadanimmesh_strict("GFX\NPCs\scp_966.b3d", $00, $01)
+    n_i\Field9[$14] = loadanimmesh_strict("GFX\NPCs\scp_999.b3d", $00, $01)
+    n_i\Field9[$15] = loadanimmesh_strict("GFX\NPCs\scp_1048.b3d", $00, $01)
+    n_i\Field9[$16] = loadanimmesh_strict("GFX\NPCs\scp_1048_a.b3d", $00, $01)
+    n_i\Field9[$17] = loadanimmesh_strict("GFX\NPCs\scp_1499_1.b3d", $00, $01)
+    n_i\Field9[$18] = loadanimmesh_strict("GFX\NPCs\apache.b3d", $00, $01)
+    n_i\Field9[$19] = loadanimmesh_strict("GFX\NPCs\apache_rotor.b3d", $00, $01)
+    n_i\Field9[$1A] = loadanimmesh_strict("GFX\NPCs\apache_rotor(2).b3d", $00, $01)
+    n_i\Field9[$1B] = loadanimmesh_strict("GFX\NPCs\clerk.b3d", $00, $01)
+    n_i\Field9[$1C] = loadanimmesh_strict("GFX\NPCs\class_d.b3d", $00, $01)
+    n_i\Field9[$1D] = loadanimmesh_strict("GFX\NPCs\duck.b3d", $00, $01)
+    n_i\Field9[$1E] = loadanimmesh_strict("GFX\NPCs\guard.b3d", $00, $01)
+    n_i\Field9[$1F] = loadanimmesh_strict("GFX\NPCs\MTF.b3d", $00, $01)
+    n_i\Field9[$20] = loadanimmesh_strict("GFX\NPCs\vehicle.b3d", $00, $01)
+    n_i\Field9[$21] = loadanimmesh_strict("GFX\NPCs\cockroach.b3d", $00, $01)
+    For local0 = $00 To $21 Step $01
+        hideentity(n_i\Field9[local0])
+    Next
+    Return $00
+End Function

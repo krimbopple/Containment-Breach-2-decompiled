@@ -1,0 +1,4 @@
+Function XF8Z8F2XX4%()
+    TZD6F4D06D(TXXF6F02DB2[TXXDZB2ZBXX()])
+    Return $00
+End Function

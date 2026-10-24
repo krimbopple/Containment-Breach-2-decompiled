@@ -1,0 +1,17 @@
+Type Y0B848D2FX
+    Field Field0.T484FFBZX
+    Field Field1.T484FFBZX
+    Field Field2%
+    Field Field3%
+    Field Field4%
+    Field Field5%
+    Field Field6%
+    Field Field7.T484FFBZX
+    Field Field8%
+    Field Field9%
+    Field Field10%
+    Field Field11$
+    Field Field12.XX0XF2X0X2
+    Field Field13%
+    Field Field14%
+End Type

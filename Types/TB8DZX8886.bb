@@ -1,0 +1,9 @@
+Type TB8DZX8886
+    Field Field0%
+    Field Field1.rooms
+    Field Field2.lights
+    Field Field3%
+    Field Field4#
+    Field Field5%
+    Field Field6#
+End Type

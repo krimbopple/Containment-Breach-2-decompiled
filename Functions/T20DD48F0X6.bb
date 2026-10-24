@@ -1,0 +1,31 @@
+Function T20DD48F0X6%()
+    Local local0%
+    Local local1%
+    Local local2%
+    Local local3%
+    Local local4%
+    local0 = createbank($14)
+    Repeat
+        resizebank(local0, $00)
+        resizebank(local0, $14)
+        X2DX0XF62B(local2, local0)
+        local3 = peekint(local0, $08)
+        local4 = (local3 And $FF000000)
+        If (peekint(local0, $00) = $00) Then
+            Exit
+        EndIf
+        If (((local3 And $01) And (((local4 = $5000000) Lor ((local3 And $80) = $80)) Lor ((local3 And $3000000) = $3000000))) <> 0) Then
+            TX4X2B8Z8BB[local1] = local2
+            X2XZB6F000[local1] = converttoutf8(F82622420(peekint(local0, $00)))
+            local1 = (local1 + $01)
+            If (local1 >= $20) Then
+                Exit
+            EndIf
+        EndIf
+        local2 = (local2 + $01)
+    Forever
+    freebank(local0)
+    local0 = $00
+    Return local1
+    Return $00
+End Function

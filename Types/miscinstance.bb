@@ -1,0 +1,9 @@
+Type miscinstance
+    Field Field0%[3]
+    Field Field1%
+    Field Field2%
+    Field Field3%
+    Field Field4%
+    Field Field5%
+    Field Field6%[7]
+End Type

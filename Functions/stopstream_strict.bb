@@ -1,0 +1,16 @@
+Function stopstream_strict%(arg0%)
+    Local local0.stream
+    local0 = (Object.stream arg0)
+    If (local0 = Null) Then
+        openconsoleonerror(getlocalstring("runerr", "sound.stream.failed.stop"))
+        Return $00
+    EndIf
+    If (((local0\Field0 = $00) Lor (local0\Field0 = $FFFFFFFF)) <> 0) Then
+        openconsoleonerror(format(getlocalstring("runerr", "sound.stream.failed.stop.v"), (Str local0\Field0), "%s"))
+        Return $00
+    EndIf
+    StopChannel(local0\Field0)
+    local0\Field0 = $00
+    Delete local0
+    Return $00
+End Function

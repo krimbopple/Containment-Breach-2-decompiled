@@ -1,0 +1,22 @@
+Type XBXB0F2624
+    Field Field0#
+    Field Field1%
+    Field Field2%
+    Field Field3%
+    Field Field4%
+    Field Field5%
+    Field Field6#
+    Field Field7%
+    Field Field8#
+    Field Field9%
+    Field Field10.XF808F44XB
+    Field Field11#
+    Field Field12%
+    Field Field13.X82B82400
+    Field Field14#
+    Field Field15%
+    Field Field16%[6]
+    Field Field17#
+    Field Field18%
+    Field Field19#
+End Type

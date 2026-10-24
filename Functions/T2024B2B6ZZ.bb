@@ -1,0 +1,33 @@
+Function T2024B2B6ZZ%()
+    FD020X0BZ\Field2 = 0.0
+    FD020X0BZ\Field4 = YX26B040F4
+    TXDFXDZXXDD\Field3 = $00
+    TXDFXDZXXDD\Field9 = $00
+    TXDFXDZXXDD\Field18 = $00
+    TXDFXDZXXDD\Field8 = 0.0
+    TXDFXDZXXDD\Field11 = 0.0
+    TXDFXDZXXDD\Field12 = $00
+    TXDFXDZXXDD\Field4 = $00
+    TXDFXDZXXDD\Field17 = 0.0
+    TXDFXDZXXDD\Field6 = 0.0
+    TXDFXDZXXDD\Field0 = 0.0
+    TXDFXDZXXDD\Field1 = $00
+    T8X2046020\Field25 = $00
+    X40BZ0ZDD8\Field2 = $00
+    X40BZ0ZDD8\Field1 = $00
+    X40BZ0ZDD8\Field0 = 0.0
+    T8X2046020\Field23 = $00
+    T8X2046020\Field14 = $00
+    T8X2046020\Field5 = $00
+    T8X2046020\Field12 = $00
+    T8X2046020\Field6 = "SCP CB 2 COOP Session"
+    T8X2046020\Field24 = $00
+    T8X2046020\Field3 = $01
+    T8X2046020\Field22 = $00
+    T8X2046020\Field13 = $00
+    T8X2046020\Field1 = $01
+    T8X2046020\Field8 = $00
+    T8X2046020\Field21 = $00
+    TXDFXDZXXDD\Field7 = $00
+    Return $00
+End Function

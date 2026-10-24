@@ -1,0 +1,10 @@
+Type X62B24X2FD
+    Field Field0%
+    Field Field1#
+    Field Field2%
+    Field Field3.TXX0ZX4BDF2
+    Field Field4%
+    Field Field5.TXX0ZX4BDF2
+    Field Field6.items
+    Field Field7%
+End Type

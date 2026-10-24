@@ -1,0 +1,10 @@
+Type X42402X2BD
+    Field Field0%[2]
+    Field Field1%[4]
+    Field Field2%[3]
+    Field Field3%[4]
+    Field Field4%[3]
+    Field Field5%[2]
+    Field Field6%[2]
+    Field Field7%[2]
+End Type

@@ -1,0 +1,28 @@
+Type TXB4DFX4X2X
+    Field Field0%
+    Field Field1%
+    Field Field2.T402X2Z846
+    Field Field3%
+    Field Field4%
+    Field Field5%
+    Field Field6$
+    Field Field7#[8]
+    Field Field8%
+    Field Field9%
+    Field Field10#
+    Field Field11#
+    Field Field12%
+    Field Field13%
+    Field Field14%
+    Field Field15.ABBX6X608
+    Field Field16%
+    Field Field17%
+    Field Field18%
+    Field Field19%[8]
+    Field Field20%[2]
+    Field Field21%
+    Field Field22%
+    Field Field23%
+    Field Field24%
+    Field Field25%
+End Type

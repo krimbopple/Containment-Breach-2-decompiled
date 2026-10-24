@@ -1,0 +1,20 @@
+Function streamsound_strict%(arg0$, arg1#, arg2%)
+    Local local0.stream
+    If (filetype((lang\Field0 + arg0)) = $01) Then
+        arg0 = (lang\Field0 + arg0)
+    EndIf
+    If (filetype(arg0) <> $01) Then
+        openconsoleonerror(format(getlocalstring("runerr", "sound.notfound"), arg0, "%s"))
+        Return $00
+    EndIf
+    local0 = (New stream)
+    local0\Field0 = PlayMusic(arg0, (arg2 + $2000), 1.0)
+    If (local0\Field0 = $FFFFFFFF) Then
+        openconsoleonerror(format(format(getlocalstring("runerr", "sound.stream.failed.n1"), arg0, "{0}"), (Str local0\Field0), "{1}"))
+        Return $FFFFFFFF
+    EndIf
+    ChannelVolume(local0\Field0, arg1)
+    createsubtitlestoken(arg0, Null)
+    Return (Handle local0)
+    Return $00
+End Function
