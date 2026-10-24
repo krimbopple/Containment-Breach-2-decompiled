@@ -1,3 +1,5 @@
+<img width="388" height="473" alt="image" src="https://github.com/user-attachments/assets/71dacb8e-9ec1-46ed-bd95-692358d95876" />
+
 The decompiler as of now lacks function pointer support, the generated `.bb` source is not yet compilable.
 Blitz identifiers were recovered where possible, the remaining hashed ones may be mapped in a later commit.
 
