@@ -1,8 +1,8 @@
 Function setlanguage%(arg0$, arg1%)
     If (lang\Field0 <> "") Then
-        TXBXX6FF8BB((lang\Field0 + "Data\local.ini"))
-        TXBXX6FF8BB((lang\Field0 + "Data\fonts.ini"))
-        TXBXX6FF8BB((lang\Field0 + "Data\achievements.jsonc"))
+        _IniClearBuffer((lang\Field0 + "Data\local.ini"))
+        _IniClearBuffer((lang\Field0 + "Data\fonts.ini"))
+        _IniClearBuffer((lang\Field0 + "Data\achievements.jsonc"))
     EndIf
     lang\Field1 = arg0
     If (lang\Field1 = "en") Then
@@ -10,7 +10,7 @@ Function setlanguage%(arg0$, arg1%)
     Else
         lang\Field0 = (("Localization\" + lang\Field1) + "\")
         iniwritebuffer((lang\Field0 + "Data\local.ini"), $01)
-        TXDXDF2D428((lang\Field0 + "Data\local.ini"), (lang\Field0 + "Data\MP_local.ini"))
+        _IniAddBuffer((lang\Field0 + "Data\local.ini"), (lang\Field0 + "Data\MP_local.ini"))
         iniwritebuffer((lang\Field0 + "Data\fonts.ini"), $01)
         iniwritebuffer((lang\Field0 + "Data\achievements.jsonc"), $01)
     EndIf

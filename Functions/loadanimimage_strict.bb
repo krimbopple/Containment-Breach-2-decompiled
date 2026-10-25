@@ -10,7 +10,7 @@ Function loadanimimage_strict%(arg0$, arg1%, arg2%, arg3%, arg4%)
     If (local0 = $00) Then
         runtimeerrorex(format(getlocalstring("runerr", "animimage.failed.load"), arg0, "%s"))
     EndIf
-    XB04X8D680()
+    GUESSEDloadstrict_2()
     Return local0
     Return $00
 End Function

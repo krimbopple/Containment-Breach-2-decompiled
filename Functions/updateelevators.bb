@@ -360,8 +360,8 @@ Function updateelevators#(arg0#, arg1.doors, arg2.doors, arg3%, arg4%, arg5.even
                     EndIf
                 EndIf
             EndIf
-            T42Z6D220X(arg1, $01)
-            T42Z6D220X(arg2, $01)
+            GUESSEDcountentity(arg1, $01)
+            GUESSEDcountentity(arg2, $01)
         EndIf
     Else
         local28 = arg0

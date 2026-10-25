@@ -60,7 +60,7 @@ Function placemapcreatorforest%(arg0.forest, arg1#, arg2#, arg3#, arg4.rooms)
     arg0\Field0[$02] = loadmesh_strict("GFX\Map\Props\tree2.b3d", $00, $01)
     arg0\Field0[$03] = loadrmesh("GFX\Map\cont2_860_1_wall.rmesh", Null, $01)
     For local11 = $00 To $02 Step $01
-        TXZDB8BD842(arg0\Field0[local11])
+        GUESSEDcreateentity_8(arg0\Field0[local11])
     Next
     hideentity(arg0\Field0[$03])
     local9 = meshwidth(arg0\Field3[$00])
@@ -75,7 +75,7 @@ Function placemapcreatorforest%(arg0.forest, arg1#, arg2#, arg3#, arg4.rooms)
                     local3 = $02
                 EndIf
                 local20 = ((Float (arg0\Field5[((local1 * $0A) + local0)] Mod $04)) * 90.0)
-                local5 = A464F2006(arg0\Field3[(local3 - $01)], $00)
+                local5 = GUESSEDcopyentity_2(arg0\Field3[(local3 - $01)], $00)
                 If (local3 > $00) Then
                     setbuffer(texturebuffer(local16[(local3 - $01)], $00), $00, $00)
                     local12 = texturewidth(local16[(local3 - $01)])
@@ -90,10 +90,10 @@ Function placemapcreatorforest%(arg0.forest, arg1#, arg2#, arg3#, arg4.rooms)
                                 local4 = $00
                                 Select rand($00, $07)
                                     Case $00,$01,$02,$03,$04,$05,$06
-                                        local4 = A464F2006(arg0\Field0[$00], $00)
+                                        local4 = GUESSEDcopyentity_2(arg0\Field0[$00], $00)
                                         local8 = rnd(0.25, 0.4)
                                         For local11 = $00 To $03 Step $01
-                                            local15 = A464F2006(arg0\Field0[$02], $00)
+                                            local15 = GUESSEDcopyentity_2(arg0\Field0[$02], $00)
                                             rotateentity(local15, 0.0, ((90.0 * (Float local11)) + rnd(-20.0, 20.0)), 0.0, $00)
                                             entityparent(local15, local4, $01)
                                             entityfx(local15, $01)
@@ -102,7 +102,7 @@ Function placemapcreatorforest%(arg0.forest, arg1#, arg2#, arg3#, arg4.rooms)
                                         positionentity(local4, local22, (((Float local21) * 0.03) - rnd(3.0, 3.2)), local23, $01)
                                         rotateentity(local4, rnd(-5.0, 5.0), rnd(360.0, 0.0), 0.0, $01)
                                     Case $07
-                                        local4 = A464F2006(arg0\Field0[$01], $00)
+                                        local4 = GUESSEDcopyentity_2(arg0\Field0[$01], $00)
                                         scaleentity(local4, 0.1, 0.1, 0.1, $01)
                                         positionentity(local4, local22, (((Float local21) * 0.03) - 1.5), local23, $01)
                                         rotateentity(local4, 0.0, rnd(360.0, 0.0), 0.0, $01)

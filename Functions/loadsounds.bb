@@ -123,6 +123,6 @@ Function loadsounds%()
     i_1123\Field0 = loadsound_strict("SFX\SCP\1123\Ambient.ogg")
     snd_i\Field23 = loadsound_strict("SFX\Room\Fire.ogg")
     snd_i\Field17 = loadsound_strict("SFX\Room\Buzzing.ogg")
-    T4BF4FFBD()
+    GUESSEDhitcharacter()
     Return $00
 End Function

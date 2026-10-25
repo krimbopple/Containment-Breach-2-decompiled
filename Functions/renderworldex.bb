@@ -5,7 +5,7 @@ Function renderworldex%(arg0#)
     cameraprojmode(camera, $01)
     cameraviewport(camera, $00, $00, opt\Field21, opt\Field46)
     If (T8660BZ460\Field5 = $00) Then
-        TX0F0BX6X46(camera, arg0, opt\Field77, opt\Field77, $00, $00)
+        GUESSEDrendertex(camera, arg0, opt\Field77, opt\Field77, $00, $00)
     EndIf
     cameraviewport(camera, $00, $00, opt\Field21, opt\Field46)
     cameraprojmode(camera, $00)

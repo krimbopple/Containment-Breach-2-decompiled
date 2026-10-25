@@ -1,5 +1,5 @@
 Function updatecameracheck%()
-    If (((X4BX024DX0() <> $00) And (TXB2BFFFFFX() = $00)) <> 0) Then
+    If (((GUESSEDupdatexdb() <> $00) And (GUESSEDupdateanimatenpc() = $00)) <> 0) Then
         Return $00
     EndIf
     If (((0.0 < mtfcamerachecktimer) And (6300.0 > mtfcamerachecktimer)) <> 0) Then

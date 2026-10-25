@@ -5,7 +5,7 @@ Function updateelevatorpanel%(arg0.doors)
     For local1 = $00 To $01 Step $01
         If (arg0\Field24[local1] <> $00) Then
             entitytexture(arg0\Field24[local1], d_i\Field2[local0], $00, $00)
-            X8F80Z2886(arg0\Field24[local1], $FFFFFFFF, $00)
+            GUESSEDfreeentity_7(arg0\Field24[local1], $FFFFFFFF, $00)
         EndIf
     Next
     arg0\Field4 = $01

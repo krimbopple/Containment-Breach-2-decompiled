@@ -128,6 +128,6 @@ Function killsounds%(arg0%)
         Next
     Next
     clearsubtitles()
-    D6X206XX()
+    GUESSEDplaykillsounds()
     Return $00
 End Function

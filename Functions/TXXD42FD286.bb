@@ -1,8 +1,0 @@
-Function TXXD42FD286%()
-    If (TFDZBBF4FD <> $00) Then
-        T4FB82B64X(TFDZBBF4FD)
-    EndIf
-    TFDZBBF4FD = XX4XBDX8X(TX82X84B8D6, banksize(TX82X84B8D6), TXX84F20882, "")
-    Return TFDZBBF4FD
-    Return $00
-End Function

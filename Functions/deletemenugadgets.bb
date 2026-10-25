@@ -25,7 +25,7 @@ Function deletemenugadgets%()
         deletemenuslider(local5)
     Next
     For local6 = Each TX6BX06BD28
-        C8BB6DZ0(local6)
+        GUESSEDdeletedeletemenugadgets(local6)
     Next
     Return $00
 End Function

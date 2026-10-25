@@ -47,7 +47,7 @@ Function resetnegativestats%(arg0%)
     i_966\Field1 = 0.0
     i_966\Field0 = 0.0
     If (arg0 <> 0) Then
-        If (X4BX024DX0() = $00) Then
+        If (GUESSEDupdatexdb() = $00) Then
             clearcheats()
             If (n_i\Field3 <> Null) Then
                 If (1.0 = n_i\Field3\Field31) Then

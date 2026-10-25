@@ -1,5 +1,5 @@
 Function updateautosave%()
-    If ((((((((opt\Field35 = $00) Lor (selecteddifficulty\Field1 <> $00)) Lor (Int XZ0260X8X2\Field48)) Lor (cansave < $03)) Lor (XZ0260X8X2\Field38 < $02)) Lor XZ0260X8X2\Field23) Lor (X4BX024DX0() <> $00)) <> 0) Then
+    If ((((((((opt\Field35 = $00) Lor (selecteddifficulty\Field1 <> $00)) Lor (Int XZ0260X8X2\Field48)) Lor (cansave < $03)) Lor (XZ0260X8X2\Field38 < $02)) Lor XZ0260X8X2\Field23) Lor (GUESSEDupdatexdb() <> $00)) <> 0) Then
         If (350.0 >= autosave\Field0) Then
             cancelautosave()
         EndIf

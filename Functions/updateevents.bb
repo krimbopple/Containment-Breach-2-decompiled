@@ -98,8 +98,8 @@ Function updateevents%()
     Local local124#
     Local local128%
     Local local129%
-    If (X4BX024DX0() <> $00) Then
-        Return T20ZDZX8BZB()
+    If (GUESSEDupdatexdb() <> $00) Then
+        Return MP_UpdateEvents()
     EndIf
     catcherrors("UpdateEvents()")
     For local3 = Each events
@@ -1784,7 +1784,7 @@ Function updateevents%()
                                     entitytexture(local3\Field19\Field27[$05], d_i\Field1[$00], $00, $00)
                                     local3\Field23 = 0.0
                                 EndIf
-                                X8F80Z2886(local3\Field19\Field27[$05], $FFFFFFFF, $00)
+                                GUESSEDfreeentity_7(local3\Field19\Field27[$05], $FFFFFFFF, $00)
                             ElseIf ((((d_i\Field15 = local3\Field19\Field27[$05]) And XZ0260X8X2\Field3) And (Int local37)) <> 0) Then
                                 playsoundex(buttonsfx[$00], camera, local3\Field19\Field27[$05], 10.0, 1.0, $00, $00)
                                 XZ0260X8X2\Field3 = $00
@@ -2923,7 +2923,7 @@ Function updateevents%()
                         Next
                         local78 = $00
                         If (2.0 > local3\Field7) Then
-                            local79 = T24D66F2D()
+                            local79 = GUESSEDupdateevents_2()
                             If (selecteditem <> Null) Then
                                 If (((selecteditem\Field6\Field9 = $6A) Lor (selecteditem\Field6\Field9 = $6B)) <> 0) Then
                                     removeitem(selecteditem, $01)
@@ -2946,7 +2946,7 @@ Function updateevents%()
                                     EndIf
                                 EndIf
                             EndIf
-                            F0X200Z62(local79)
+                            GUESSEDupdateevents(local79)
                         EndIf
                         If (2.0 = local3\Field7) Then
                             giveachievement("294", $01)
@@ -2967,7 +2967,7 @@ Function updateevents%()
                         EndIf
                     EndIf
                     If (interactobject(local3\Field19\Field27[$01], 0.8, $00) <> 0) Then
-                        If (TXZ0ZBZBFF0() < maxitemamount) Then
+                        If (GUESSEDrenderrenderdebughud_3() < maxitemamount) Then
                             giveachievement("458", $01)
                             createmsg(getlocalstring("msg", "458"), 6.0)
                             local11 = createitem("Pizza Slice", $6C, 0.0, 0.0, 0.0, $00, $00, $00, 1.0, $00)
@@ -3180,8 +3180,8 @@ Function updateevents%()
                         openclosedoor(local3\Field19\Field25[$00], $01, $00)
                         local3\Field19\Field25[$00]\Field19 = $00
                         entitytexture(local3\Field19\Field25[$00]\Field24[$01], d_i\Field2[$01], $00, $00)
-                        X8F80Z2886(local3\Field19\Field25[$00]\Field24[$01], $FFFFFFFF, $00)
-                        T42Z6D220X(local3\Field19\Field25[$00], $01)
+                        GUESSEDfreeentity_7(local3\Field19\Field25[$00]\Field24[$01], $FFFFFFFF, $00)
+                        GUESSEDcountentity(local3\Field19\Field25[$00], $01)
                         local3\Field2 = playsound_strict(loadtempsound("SFX\Room\ElevatorDeath.ogg"), $00, $00)
                         local3\Field4 = 3.0
                     EndIf
@@ -3205,7 +3205,7 @@ Function updateevents%()
                     EndIf
                     If (((910.0 <= local3\Field4) And (ChannelPlaying(local3\Field2) = $00)) <> 0) Then
                         entitytexture(local3\Field19\Field25[$00]\Field24[$01], d_i\Field2[$02], $00, $00)
-                        X8F80Z2886(local3\Field19\Field25[$00]\Field24[$01], $FFFFFFFF, $00)
+                        GUESSEDfreeentity_7(local3\Field19\Field25[$00]\Field24[$01], $FFFFFFFF, $00)
                         freeentity(local3\Field19\Field25[$00]\Field40[$01])
                         local3\Field19\Field25[$00]\Field40[$01] = $00
                         freeentity(local3\Field19\Field25[$00]\Field24[$00])
@@ -3677,7 +3677,7 @@ Function updateevents%()
                         End Select
                         For local19 = Each itemtemplates
                             If (local19\Field9 = local23) Then
-                                local3\Field19\Field27[$1D] = A464F2006(local19\Field21, $00)
+                                local3\Field19\Field27[$1D] = GUESSEDcopyentity_2(local19\Field21, $00)
                                 If (local3\Field19\Field35 <> $00) Then
                                     positionentity(local3\Field19\Field27[$1D], entityx(local3\Field19\Field35, $00, 1.0), (local3\Field19\Field3 + 0.1), entityz(local3\Field19\Field35, $00, 1.0), $00)
                                 Else
@@ -3962,7 +3962,7 @@ Function updateevents%()
                                 local19\Field2 = ("GFX\Items\HUD Textures\" + local101)
                                 local19\Field13 = local19\Field2
                                 entitytexture(local19\Field21, local28, $00, $00)
-                                X8F80Z2886(local19\Field21, $10000, $00)
+                                GUESSEDfreeentity_7(local19\Field21, $10000, $00)
                                 Exit
                             EndIf
                         Next
@@ -3975,7 +3975,7 @@ Function updateevents%()
                                 If (local43 <> $00) Then
                                     If (lower(strippath(texturename(local43))) <> "scp_1048.png") Then
                                         brushtexture(local42, local28, $00, $00)
-                                        TZXZZ288XZ(local42, $FFFFFFFF, $00)
+                                        GUESSEDgetbrush_3(local42, $FFFFFFFF, $00)
                                         paintsurface(local44, local42)
                                         freetexture(local43)
                                         local43 = $00
@@ -3995,7 +3995,7 @@ Function updateevents%()
                         local3\Field4 = 1.0
                     ElseIf (474.0 < local3\Field19\Field32[$00]\Field103) Then
                         If (interactobject(local3\Field19\Field32[$00]\Field98, 1.5, $00) <> 0) Then
-                            If (TXZ0ZBZBFF0() < maxitemamount) Then
+                            If (GUESSEDrenderrenderdebughud_3() < maxitemamount) Then
                                 selecteditem = createitem("Drawing", $00, 0.0, 0.0, 0.0, $00, $00, $00, 1.0, $00)
                                 entitytype(selecteditem\Field9, $03, $00)
                                 pickitem(selecteditem, $01)
@@ -5902,12 +5902,12 @@ Function updateevents%()
                     If (0.0 = local3\Field1) Then
                         turncheckpointmonitorsoff($01)
                         entitytexture(local3\Field19\Field27[$12], local3\Field19\Field26[$00], $00, $00)
-                        X8F80Z2886(local3\Field19\Field27[$12], $420, $00)
+                        GUESSEDfreeentity_7(local3\Field19\Field27[$12], $420, $00)
                     Else
                         updatecheckpointmonitors($01)
                         local118 = ((50.0 > mon_i\Field0[$00]) + $01)
                         entitytexture(local3\Field19\Field27[$12], local3\Field19\Field26[$00], local118, $00)
-                        X8F80Z2886(local3\Field19\Field27[$12], $420, local118)
+                        GUESSEDfreeentity_7(local3\Field19\Field27[$12], $420, local118)
                     EndIf
                     If (isequal(entityy(local3\Field19\Field25[$00]\Field51, $00, 1.0), entityy(XZ0260X8X2\Field74, $01, 1.0), 1.0) = $00) Then
                         For local20 = $00 To $0D Step $01
@@ -5934,7 +5934,7 @@ Function updateevents%()
                             local3\Field23 = ((local3\Field23 + 1.0) Mod 6.0)
                             For local20 = $14 To $16 Step $01
                                 entitytexture(local3\Field19\Field27[local20], local3\Field19\Field26[$02], (Int local3\Field23), $00)
-                                X8F80Z2886(local3\Field19\Field27[local20], $420, (Int local3\Field23))
+                                GUESSEDfreeentity_7(local3\Field19\Field27[local20], $420, (Int local3\Field23))
                             Next
                         EndIf
                         For local4 = Each events
@@ -5942,12 +5942,12 @@ Function updateevents%()
                                 If (2.0 = local4\Field4) Then
                                     mon_i\Field1[$01] = $00
                                     entitytexture(local3\Field19\Field27[$13], local3\Field19\Field26[$02], (Int local3\Field23), $00)
-                                    X8F80Z2886(local3\Field19\Field27[$13], $420, (Int local3\Field23))
+                                    GUESSEDfreeentity_7(local3\Field19\Field27[$13], $420, (Int local3\Field23))
                                 Else
                                     mon_i\Field1[$01] = $01
                                     local118 = ((50.0 > mon_i\Field0[$01]) + $06)
                                     entitytexture(local3\Field19\Field27[$13], local3\Field19\Field26[$01], local118, $00)
-                                    X8F80Z2886(local3\Field19\Field27[$13], $420, local118)
+                                    GUESSEDfreeentity_7(local3\Field19\Field27[$13], $420, local118)
                                 EndIf
                                 Exit
                             EndIf
@@ -6286,7 +6286,7 @@ Function updateevents%()
                         If (local3\Field19\Field27[$03] = $00) Then
                             For local19 = Each itemtemplates
                                 If (local19\Field9 = $5D) Then
-                                    local3\Field19\Field27[$03] = A464F2006(local19\Field21, $00)
+                                    local3\Field19\Field27[$03] = GUESSEDcopyentity_2(local19\Field21, $00)
                                     tformpoint(384.0, -510.0, -391.0, local3\Field19\Field15, $00)
                                     positionentity(local3\Field19\Field27[$03], tformedx(), tformedy(), tformedz(), $00)
                                     rotateentity(local3\Field19\Field27[$03], 0.0, 45.0, 0.0, $00)

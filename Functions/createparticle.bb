@@ -22,7 +22,7 @@ Function createparticle.particles(arg0%, arg1#, arg2#, arg3#, arg4#, arg5#, arg6
     local0\Field13 = 1.0
     local0\Field3 = arg4
     scalesprite(local0\Field4, local0\Field3, local0\Field3)
-    TB0B40X6X0(local0\Field4, $01)
+    GUESSEDcreateparticle(local0\Field4, $01)
     If (p_i\Field0[arg0] = $00) Then
         runtimeerrorex(format(getlocalstring("runerr", "particle"), (Str arg0), "%s"))
     EndIf

@@ -16,7 +16,7 @@ Function hideroomscoll%(arg0.rooms)
         Next
         For local4 = Each doors
             If (local4\Field32 = arg0) Then
-                EXDFFFFD2(local4, 0.0)
+                GUESSEDgetentity_2(local4, 0.0)
             EndIf
         Next
         For local5 = Each securitycams
@@ -65,7 +65,7 @@ Function hideroomscoll%(arg0.rooms)
         Next
         For local8 = Each X4X6Z4D6F2
             If (local8\Field3 = arg0) Then
-                A0ZX420ZF(local8)
+                GUESSEDdeleteentity(local8)
             EndIf
         Next
         entityalpha(getchild(arg0\Field15, $02), 0.0)

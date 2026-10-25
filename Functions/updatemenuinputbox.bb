@@ -46,7 +46,7 @@ Function updatemenuinputbox$(arg0%, arg1%, arg2%, arg3%, arg4$, arg5%, arg6%, ar
             If (TDD0Z6BXB6\Field7 <> 0) Then
                 selectedinputbox = arg6
                 flushkeys()
-                cursorpos = XXF4D24BF(local4, local5)
+                cursorpos = GUESSEDinputmouse_2(local4, local5)
                 TZFXXZB824 = cursorpos
             EndIf
         EndIf
@@ -57,7 +57,7 @@ Function updatemenuinputbox$(arg0%, arg1%, arg2%, arg3%, arg4$, arg5%, arg6%, ar
         EndIf
         If (selectedinputbox = arg6) Then
             If (TDD0Z6BXB6\Field1 <> 0) Then
-                cursorpos = XXF4D24BF(local4, local5)
+                cursorpos = GUESSEDinputmouse_2(local4, local5)
             EndIf
             If (local0\Field8 = $00) Then
                 arg4 = updateinput(arg4, arg7)

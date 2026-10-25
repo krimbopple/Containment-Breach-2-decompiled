@@ -1,7 +1,7 @@
 Function animatenpc%(arg0.npcs, arg1#, arg2#, arg3#, arg4%)
     Local local0#
     Local local1#
-    If (TXB2BFFFFFX() <> 0) Then
+    If (GUESSEDupdateanimatenpc() <> 0) Then
         arg0\Field54 = arg1
         arg0\Field16 = arg2
         arg0\Field52 = arg3

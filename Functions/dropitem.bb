@@ -20,21 +20,21 @@ Function dropitem%(arg0.items, arg1%)
     EndIf
     arg0\Field30 = $01
     showentity(arg0\Field9)
-    If (X4BX024DX0() = $00) Then
+    If (GUESSEDupdatexdb() = $00) Then
         positionentity(arg0\Field9, entityx(camera, $00, 1.0), entityy(camera, $00, 1.0), entityz(camera, $00, 1.0), $00)
         rotateentity(arg0\Field9, entitypitch(camera, $00, 1.0), (rnd(-20.0, 20.0) + local3), 0.0, $00)
         moveentity(arg0\Field9, 0.07, -0.17, 0.13, $00)
         entitytorque(arg0\Field9, (rnd((- local0), local0) * local1), (rnd((- local0), local0) * local1), (rnd((- local0), local0) * local1))
     Else
         local4 = rndseed()
-        seedrnd(((TXXDZB2ZBXX() + generateseednumber(opt\Field75)) + arg0\Field6\Field23))
+        seedrnd(((GUESSEDupdatedropitem() + generateseednumber(opt\Field75)) + arg0\Field6\Field23))
         positionentity(arg0\Field9, entityx(camera, $00, 1.0), entityy(camera, $00, 1.0), entityz(camera, $00, 1.0), $00)
         rotateentity(arg0\Field9, entitypitch(camera, $00, 1.0), (rnd(-20.0, 20.0) + local3), 0.0, $00)
         moveentity(arg0\Field9, 0.07, -0.17, 0.13, $00)
         entitytorque(arg0\Field9, (rnd((- local0), local0) * local1), (rnd((- local0), local0) * local1), (rnd((- local0), local0) * local1))
         seedrnd(local4)
     EndIf
-    T62Z0D0XZ(entitypitch(camera, $00, 1.0), local3, ((XZ0260X8X2\Field84 * 7.0) * local1), local5, local6, local7)
+    GUESSEDcalculatedirection(entitypitch(camera, $00, 1.0), local3, ((XZ0260X8X2\Field84 * 7.0) * local1), local5, local6, local7)
     entityimpulse(arg0\Field9, local5, local6, local7)
     entityfreeze(arg0\Field9, $00)
     arg0\Field11 = 0.0
@@ -79,7 +79,7 @@ Function dropitem%(arg0.items, arg1%)
     If (arg1 <> 0) Then
         XZ0260X8X2\Field68 = max(2.0, XZ0260X8X2\Field68)
     EndIf
-    XXDD8B8Z6X(arg0)
+    GUESSEDsetdropitem(arg0)
     catcherrors("Uncaught: DropItem()")
     Return $00
 End Function

@@ -1,0 +1,10 @@
+Function MP_CreateSession%()
+    T8X2046020 = (New TXB4DFX4X2X)
+    X40BZ0ZDD8 = (New TXDXX4ZX4XF)
+    T8X2046020\Field6 = "SCP CB 2 COOP Session"
+    T8X2046020\Field3 = $01
+    T8X2046020\Field1 = $01
+    T8X2046020\Field8 = $00
+    GUESSEDcreatesessionstate($20105)
+    Return $00
+End Function

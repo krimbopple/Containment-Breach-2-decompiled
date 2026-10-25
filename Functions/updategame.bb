@@ -20,12 +20,12 @@ Function updategame%()
         If (0.0 >= fps\Field7) Then
             captureworld()
         EndIf
-        If (((menuopen Lor consoleopen) And (X4BX024DX0() = $00)) <> 0) Then
+        If (((menuopen Lor consoleopen) And (GUESSEDupdatexdb() = $00)) <> 0) Then
             fps\Field3[$00] = 0.0
         EndIf
         updatemouseinput()
-        TXD6FFF8D()
-        C04ZB8XD()
+        GUESSEDinputkey()
+        GUESSEDupdategame()
         handentity = $00
         If (((XZ0260X8X2\Field29 = $00) And (XZ0260X8X2\Field3 = $00)) <> 0) Then
             grabbedentity = $00
@@ -35,7 +35,7 @@ Function updategame%()
         EndIf
         shoulddeletegadgets = $00
         ZFF8X2F22 = $00
-        If (((((menuopen Lor consoleopen) Lor (0.0 > XZ0260X8X2\Field2)) = $00) Lor ((X4BX024DX0() <> $00) And (0.0 <= XZ0260X8X2\Field2))) <> 0) Then
+        If (((((menuopen Lor consoleopen) Lor (0.0 > XZ0260X8X2\Field2)) = $00) Lor ((GUESSEDupdatexdb() <> $00) And (0.0 <= XZ0260X8X2\Field2))) <> 0) Then
             updatemusic()
             If (opt\Field73 <> 0) Then
                 autoreleasesounds()
@@ -111,24 +111,24 @@ Function updategame%()
             If (isplayeroutsidefacility() = $00) Then
                 hidedistance = 17.0
             EndIf
-            If (X4BX024DX0() <> $00) Then
-                AZX8Z8FF()
-                TFDZ0Z0X68()
-                TX404FXZ82($00)
+            If (GUESSEDupdatexdb() <> $00) Then
+                GUESSEDisentity()
+                GUESSEDsetupdategame()
+                GUESSEDsetentity_7($00)
             EndIf
             updatedeaf()
             updatedecals()
             updatesavestate()
             updatemouselook()
             updatemoving()
-            If (X4BX024DX0() <> $00) Then
-                TD2XZB8488()
+            If (GUESSEDupdatexdb() <> $00) Then
+                GUESSEDisentity_2()
             EndIf
-            TX2XZFZ2XDD(1.0)
+            GUESSEDupdatecurvevalue(1.0)
             updatevomit()
             updateescapetimer()
-            T2X8DBD046()
-            T808422X82()
+            GUESSEDinputentity()
+            GUESSEDgetentity_3()
             decalstep = $00
             updatedevilparticlestimer = min(1.0, (fps\Field3[$00] + updatedevilparticlestimer))
             If (1.0 = updatedevilparticlestimer) Then
@@ -153,13 +153,13 @@ Function updategame%()
             Else
                 updatelightvolume()
                 updatelights()
-                D2F82FZF6()
+                GUESSEDhideentity()
                 updatesecuritycams()
                 updatescreens()
                 updatesoundemitters()
             EndIf
             updatedoors()
-            If (X4BX024DX0() = $00) Then
+            If (GUESSEDupdatexdb() = $00) Then
                 If (playerroom\Field22\Field21 = $04) Then
                     updateintro()
                 ElseIf (isplayeroutsidefacility() <> 0) Then
@@ -178,9 +178,9 @@ Function updategame%()
                 If (((playerroom\Field22\Field21 <> $70) And (playerroom\Field22\Field21 <> $6F)) <> 0) Then
                     updaterooms()
                 Else
-                    T2026X80F28()
+                    GUESSEDupdategame_2()
                 EndIf
-                T20ZDZX8BZB()
+                MP_UpdateEvents()
             EndIf
             timecheckpointmonitors()
             updatemonitorsaving()
@@ -273,7 +273,7 @@ Function updategame%()
                     XZ0260X8X2\Field2 = ((- XZ0260X8X2\Field48) * 0.1)
                 Else
                     XZ0260X8X2\Field86 = (XZ0260X8X2\Field86 + fps\Field3[$00])
-                    If (((400.0 <= XZ0260X8X2\Field86) And ((FD020X0BZ\Field5 = $00) Lor (X4BX024DX0() = $00))) <> 0) Then
+                    If (((400.0 <= XZ0260X8X2\Field86) And ((FD020X0BZ\Field5 = $00) Lor (GUESSEDupdatexdb() = $00))) <> 0) Then
                         menuopen = $01
                     EndIf
                 EndIf
@@ -353,9 +353,9 @@ Function updategame%()
             updateworld(1.0, (1.0 / 105.0))
             manipulatenpcbones()
         EndIf
-        If ((((((0.0 <= XZ0260X8X2\Field2) And (XZ0260X8X2\Field40 = $FFFFFFFF)) And ((400.0 >= XZ0260X8X2\Field86) Lor ((FD020X0BZ\Field5 Lor (X4BX024DX0() = $00)) And (0.0 >= FD020X0BZ\Field2)))) And (TX6X48DXXDX = $00)) And keyhit($01)) <> 0) Then
+        If ((((((0.0 <= XZ0260X8X2\Field2) And (XZ0260X8X2\Field40 = $FFFFFFFF)) And ((400.0 >= XZ0260X8X2\Field86) Lor ((FD020X0BZ\Field5 Lor (GUESSEDupdatexdb() = $00)) And (0.0 >= FD020X0BZ\Field2)))) And (TX6X48DXXDX = $00)) And keyhit($01)) <> 0) Then
             If (menuopen <> 0) Then
-                If (X4BX024DX0() = $00) Then
+                If (GUESSEDupdatexdb() = $00) Then
                     resumesounds()
                 EndIf
                 If (igm\Field0 <> $00) Then
@@ -364,7 +364,7 @@ Function updategame%()
                 stopmousemovement()
                 shoulddeletegadgets = $01
                 flushkeys()
-            ElseIf (X4BX024DX0() = $00) Then
+            ElseIf (GUESSEDupdatexdb() = $00) Then
                 pausesounds()
             EndIf
             menuopen = (menuopen = $00)
@@ -401,13 +401,13 @@ Function updategame%()
                 If (selecteddifficulty\Field1 < $02) Then
                     Select cansave
                         Case $00
-                            If (X4BX024DX0() <> $00) Then
+                            If (GUESSEDupdatexdb() <> $00) Then
                                 createhintmsg(getlocalstring("save", "failed.now.mp"), 6.0, $00)
                             Else
                                 createhintmsg(getlocalstring("save", "failed.now"), 6.0, $00)
                             EndIf
                         Case $01
-                            If (X4BX024DX0() <> $00) Then
+                            If (GUESSEDupdatexdb() <> $00) Then
                                 createhintmsg(getlocalstring("save", "failed.location.mp"), 6.0, $00)
                             Else
                                 createhintmsg(getlocalstring("save", "failed.location"), 6.0, $00)
@@ -420,12 +420,12 @@ Function updategame%()
                         Case $03
                             If (selecteddifficulty\Field1 = $01) Then
                                 If (((selectedscreen = Null) And (sc_i\Field1 = Null)) <> 0) Then
-                                    If (X4BX024DX0() <> $00) Then
+                                    If (GUESSEDupdatexdb() <> $00) Then
                                         createhintmsg(getlocalstring("save", "failed.screen.mp"), 6.0, $00)
                                     Else
                                         createhintmsg(getlocalstring("save", "failed.screen"), 6.0, $00)
                                     EndIf
-                                ElseIf (X4BX024DX0() <> $00) Then
+                                ElseIf (GUESSEDupdatexdb() <> $00) Then
                                     If (0.0 = XZ0260X8X2\Field48) Then
                                         playsound_strict(loadtempsound("SFX\General\Save1.ogg"), $00, $00)
                                         createhintmsg(getlocalstring("save", "saved.mp"), 6.0, $00)
@@ -437,9 +437,9 @@ Function updategame%()
                                 Else
                                     savegame(currsave\Field2)
                                 EndIf
-                            ElseIf (((350.0 >= autosave\Field0) And (X4BX024DX0() = $00)) <> 0) Then
+                            ElseIf (((350.0 >= autosave\Field0) And (GUESSEDupdatexdb() = $00)) <> 0) Then
                                 cancelautosave()
-                            ElseIf (X4BX024DX0() <> $00) Then
+                            ElseIf (GUESSEDupdatexdb() <> $00) Then
                                 If (0.0 = XZ0260X8X2\Field48) Then
                                     playsound_strict(loadtempsound("SFX\General\Save0.ogg"), $00, $00)
                                     createhintmsg(getlocalstring("save", "saved.mp"), 6.0, $00)
@@ -452,7 +452,7 @@ Function updategame%()
                                 savegame(currsave\Field2)
                             EndIf
                     End Select
-                ElseIf (X4BX024DX0() <> $00) Then
+                ElseIf (GUESSEDupdatexdb() <> $00) Then
                     createhintmsg(getlocalstring("save", "disable.mp"), 6.0, $00)
                 Else
                     createhintmsg(getlocalstring("save", "disable"), 6.0, $00)
@@ -467,12 +467,12 @@ Function updategame%()
             EndIf
         EndIf
         updateautosave()
-        If ((((keyhit(key\Field11) And opt\Field28) And ((T8X2046020\Field4 Lor TXB2BFFFFFX()) Lor $00)) And (TX6X48DXXDX = $00)) <> 0) Then
+        If ((((keyhit(key\Field11) And opt\Field28) And ((T8X2046020\Field4 Lor GUESSEDupdateanimatenpc()) Lor $00)) And (TX6X48DXXDX = $00)) <> 0) Then
             If (consoleopen <> 0) Then
                 resumesounds()
                 stopmousemovement()
                 shoulddeletegadgets = $01
-            ElseIf (X4BX024DX0() = $00) Then
+            ElseIf (GUESSEDupdatexdb() = $00) Then
                 pausesounds()
             EndIf
             consoleopen = (consoleopen = $00)
@@ -483,16 +483,16 @@ Function updategame%()
         updateconsole()
         updatequickloading()
         updateachievementmsg()
-        X0B08FD2BX()
-        If (X4BX024DX0() <> $00) Then
-            Y086DZB0X0()
-            TXZ24F2ZFZ6()
-            X060Z64X28()
-            TXB6DB0X2F0()
-            X0200DFZ4($0A)
-            TXFDB00F6Z()
-            TXX66DXBZ64()
-            T446DBF2FZ()
+        UpdateHotkeys()
+        If (GUESSEDupdatexdb() <> $00) Then
+            GUESSEDisentity_12()
+            GUESSEDplayentity_3()
+            GUESSEDpositionentity_8()
+            GUESSEDupdategame_3()
+            GUESSEDupdategame_5($0A)
+            GUESSEDisentity_6()
+            GUESSEDupdategame_4()
+            GUESSEDcreateentity_2()
         EndIf
         If (0.0 > XZ0260X8X2\Field2) Then
             updatesubtitles()

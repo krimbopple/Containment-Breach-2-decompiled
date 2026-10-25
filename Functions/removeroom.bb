@@ -23,7 +23,7 @@ Function removeroom%(arg0.rooms)
     EndIf
     freeentity(arg0\Field15)
     arg0\Field15 = $00
-    TXFD2DZZD2(arg0)
+    GUESSEDdeleteremoveroom(arg0)
     Delete arg0
     Return $00
 End Function

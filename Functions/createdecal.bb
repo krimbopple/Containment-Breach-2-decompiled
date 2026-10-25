@@ -13,7 +13,7 @@ Function createdecal.decals(arg0%, arg1#, arg2#, arg3#, arg4#, arg5#, arg6#, arg
     local0\Field13 = arg12
     local0\Field11 = arg13
     local0\Field3 = 1.0
-    local0\Field0 = A464F2006(XFD8XF28B2(arg0, arg9, arg10), $00)
+    local0\Field0 = GUESSEDcopyentity_2(GUESSEDcreateentity_10(arg0, arg9, arg10), $00)
     positionentity(local0\Field0, arg1, arg2, arg3, $01)
     scaleentity(local0\Field0, arg7, arg7, 1.0, $01)
     rotateentity(local0\Field0, arg4, arg5, arg6, $01)
@@ -23,7 +23,7 @@ Function createdecal.decals(arg0%, arg1#, arg2#, arg3#, arg4#, arg5#, arg6#, arg
     EndIf
     showentity(local0\Field0)
     maskentity(local0\Field0, $20)
-    local0\Field4 = X0D8ZZBB4F(local0\Field0, $00)
+    local0\Field4 = GUESSEDloadxb(local0\Field0, $00)
     entitydestructor(local0\Field0, FuncPtr(DBFX60D84))
     Return local0
     Return Null

@@ -1,9 +1,0 @@
-Function TXX4D0XX04X%()
-    TX80Z86ZZ0D()
-    XX006XX6XB()
-    TXZ844B826B()
-    TXD2F68BZZB()
-    XBZD2BFDD8()
-    YZ88ZXXB0()
-    Return $00
-End Function

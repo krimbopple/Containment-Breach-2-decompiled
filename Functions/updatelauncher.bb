@@ -21,9 +21,9 @@ Function updatelauncher%(arg0.launcher)
     Local local20#
     menuscale = 1.0
     graphics3d($280, $1E0, $20, $02)
-    YZZB280D2()
-    T20FZ22BX0F(opt\Field37, $FFFFFFFF, $00, $00, $00, $00, $243)
-    T20FZ22BX0F(opt\Field37, $FFFFFFFE, $00, $00, $00, $00, $243)
+    GUESSEDgetbuild()
+    SetWindowPos(opt\Field37, $FFFFFFFF, $00, $00, $00, $00, $243)
+    SetWindowPos(opt\Field37, $FFFFFFFE, $00, $00, $00, $00, $243)
     setbuffer(backbuffer(), $00, $00)
     XD00026ZX2\Field0[$00] = loadfont_strict(("GFX\Fonts\" + getfilelocalstring("Data\fonts.ini", "Default", "File", "", $01)), (Int getfilelocalstring("Data\fonts.ini", "Default", "Size", "", $01)), $01)
     setfontex(XD00026ZX2\Field0[$00])
@@ -209,7 +209,7 @@ Function updatelauncher%(arg0.launcher)
                     If (TDD0Z6BXB6\Field7 <> 0) Then
                         playsound_strict(buttonsfx[$00], $00, $00)
                         If (filetype("Localization") = $02) Then
-                            setlanguage(F8D2BB024("Localization", opt\Field22, "en"), $00)
+                            setlanguage(_FindNextDirectory("Localization", opt\Field22, "en"), $00)
                             freeimage(launcherbg)
                             launcherbg = $00
                             iniwritestring(optionfile, "Global", "Language", opt\Field22, $01)

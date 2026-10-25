@@ -3,7 +3,7 @@ Function initfastresize%()
     loadmissingtexture()
     Y0B82FDB6F = createpivot($00)
     clscolor($00, $00, $00, $FF)
-    CBFBZBDD()
-    F48FF0BDZ()
+    GUESSEDwritefx()
+    GUESSEDinitfx()
     Return $00
 End Function

@@ -3,7 +3,7 @@ Function setchunkdatavalues%()
     Local local1%
     Local local2%
     Local local3%
-    local3 = TD0DFDZ4XX(scp1499chunks)
+    local3 = _JsonGetArraySize(scp1499chunks)
     local0 = ""
     seedrnd(generateseednumber(randomseed))
     For local1 = $00 To $3F Step $01

@@ -36,7 +36,7 @@ Function updatemoving%()
     Local local34%
     Local local35#
     catcherrors("UpdateMoving()")
-    local0 = TXXF6F02DB2[TXXDZB2ZBXX()]
+    local0 = TXXF6F02DB2[GUESSEDupdatedropitem()]
     local2 = 1.0
     local3 = 0.018
     If (entityhidden(X2Z260BF0Z\Field1[$00]) = $00) Then
@@ -121,7 +121,7 @@ Function updatemoving%()
     local16 = $00
     local17 = $00
     local18 = $00
-    local19 = (X4BX024DX0() = $00)
+    local19 = (GUESSEDupdatexdb() = $00)
     local21 = 1.0
     If (local0 <> Null) Then
         If (0.0 >= local0\Field28) Then
@@ -181,7 +181,7 @@ Function updatemoving%()
     entitykinematic(XZ0260X8X2\Field74, chs\Field7)
     local24 = angledist(entityyaw(XZ0260X8X2\Field74, $01, 1.0), XZ0260X8X2\Field24)
     XZ0260X8X2\Field24 = entityyaw(XZ0260X8X2\Field74, $01, 1.0)
-    If ((((local11 = $00) And ((((d_i\Field3 <> Null) Lor (selectedscreen <> Null)) Lor i_294\Field4) = $00)) And (((((menuopen Lor consoleopen) Lor (0.0 > XZ0260X8X2\Field2)) Lor TX6X48DXXDX) And (X4BX024DX0() <> $00)) = $00)) <> 0) Then
+    If ((((local11 = $00) And ((((d_i\Field3 <> Null) Lor (selectedscreen <> Null)) Lor i_294\Field4) = $00)) And (((((menuopen Lor consoleopen) Lor (0.0 > XZ0260X8X2\Field2)) Lor TX6X48DXXDX) And (GUESSEDupdatexdb() <> $00)) = $00)) <> 0) Then
         If (chs\Field7 = $00) Then
             If (((((XZ0260X8X2\Field38 = $02) And (0.0 <= XZ0260X8X2\Field52)) And (0.0 = XZ0260X8X2\Field48)) And (-0.07 < XZ0260X8X2\Field16)) <> 0) Then
                 If ((((keydown(key\Field16) Xor keydown(key\Field5)) Lor (keydown(key\Field6) Xor keydown(key\Field7))) Lor (0.0 < XZ0260X8X2\Field21)) <> 0) Then
@@ -223,7 +223,7 @@ Function updatemoving%()
                         XZ0260X8X2\Field15 = ((((fps\Field3[$00] * min(local2, 1.5)) * 7.0) + XZ0260X8X2\Field15) Mod 720.0)
                         If ((((180.0 > local8) And (180.0 <= (XZ0260X8X2\Field15 Mod 360.0))) And (local14 = $00)) <> 0) Then
                             If (local10 <> "") Then
-                                T68D24B6DX(T26ZD804D6(local20\Field41, " ", rand($00, (Int max((Float (TXZ26D40ZFF(local20\Field41, " ") - $01)), 0.0)))), 0.8)
+                                GUESSEDupdatemoving(_SplitString(local20\Field41, " ", rand($00, (Int max((Float (_CountSplitString(local20\Field41, " ") - $01)), 0.0)))), 0.8)
                             Else
                                 playstepsound((2.5 = local2))
                             EndIf
@@ -262,7 +262,7 @@ Function updatemoving%()
             rotateentity(XZ0260X8X2\Field74, 0.0, entityyaw(XZ0260X8X2\Field74, $00, 1.0), 0.0, $00)
         Else
             If (local17 = $00) Then
-                local25 = (local25 / max((((((XZ0260X8X2\Field11 / 4.0) - (Float ((X4BX024DX0() = $00) * $03))) + 3.0) - ((Float (0.0 < i_1025\Field1[$03])) * 2.25)) / 3.0), 1.0))
+                local25 = (local25 / max((((((XZ0260X8X2\Field11 / 4.0) - (Float ((GUESSEDupdatexdb() = $00) * $03))) + 3.0) - ((Float (0.0 < i_1025\Field1[$03])) * 2.25)) / 3.0), 1.0))
                 If (0.5 < XZ0260X8X2\Field11) Then
                     local25 = (min((sin((XZ0260X8X2\Field15 / 2.0)) + 1.2), 1.0) * local25)
                 EndIf
@@ -385,7 +385,7 @@ Function updatemoving%()
             If (((0.05 <= (Abs XZ0260X8X2\Field16)) Lor (-15.0 > XZ0260X8X2\Field22)) <> 0) Then
                 If (local14 = $00) Then
                     If (local10 <> "") Then
-                        T68D24B6DX(local10, 0.8)
+                        GUESSEDupdatemoving(local10, 0.8)
                     Else
                         playstepsound((2.5 = local2))
                     EndIf
@@ -400,7 +400,7 @@ Function updatemoving%()
                     playsound_strict(loadtempsound((("SFX\Character\Hurt" + (Str rand($00, $01))) + ".ogg")), $00, $00)
                     XZ0260X8X2\Field11 = (XZ0260X8X2\Field11 + local30)
                     XZ0260X8X2\Field1 = max(XZ0260X8X2\Field1, local30)
-                    TXDFXDZXXDD\Field15 = (T2FFB8B2F0() + $3E8)
+                    TXDFXDZXXDD\Field15 = (GUESSEDupdateitems_2() + $3E8)
                     If (8.0 <= XZ0260X8X2\Field11) Then
                         kill($00, $01, $00, $01)
                     EndIf
@@ -475,7 +475,7 @@ Function updatemoving%()
             EndIf
             If (((1.0 <= XZ0260X8X2\Field39) And (0.0 <= XZ0260X8X2\Field82)) <> 0) Then
                 If (((T8660BZ460\Field10 = $00) And (min(XZ0260X8X2\Field11, 4.0) > rnd(200.0, 0.0))) <> 0) Then
-                    If (X4BX024DX0() = $00) Then
+                    If (GUESSEDupdatexdb() = $00) Then
                         local4 = createpivot($00)
                         positionentity(local4, (entityx(XZ0260X8X2\Field74, $00, 1.0) + rnd(-0.05, 0.05)), (entityy(XZ0260X8X2\Field74, $00, 1.0) - 0.05), (entityz(XZ0260X8X2\Field74, $00, 1.0) + rnd(-0.05, 0.05)), $00)
                         turnentity(local4, 90.0, 0.0, 0.0, $00)
@@ -485,7 +485,7 @@ Function updatemoving%()
                         local1\Field3 = (local1\Field9 + rnd(0.008, 0.009))
                         local1\Field5 = -0.0002
                         entityparent(local1\Field0, playerroom\Field15, $01)
-                        XZ48406XD0(local1, playerroom\Field1)
+                        GUESSEDupdateentity_6(local1, playerroom\Field1)
                         freeentity(local4)
                         local4 = $00
                     EndIf

@@ -80,14 +80,14 @@ Function updatemenu%()
                         local8 = (Int ((35.0 * menuscale) + (Float local8)))
                         opt\Field69 = updatemenuslider3(local7, local8, (Int (100.0 * menuscale)), opt\Field69, $02, getlocalstring("options", "min"), getlocalstring("options", "red"), getlocalstring("options", "full"))
                         local8 = (Int ((35.0 * menuscale) + (Float local8)))
-                        opt\Field76 = TXZXZ4460F2(local7, local8, (Int (100.0 * menuscale)), ((((((((getlocalstring("options", "slider.verylow") + "\n") + getlocalstring("options", "slider.low")) + "\n") + getlocalstring("options", "slider.medium")) + "\n") + getlocalstring("options", "slider.high")) + "\n") + getlocalstring("options", "slider.ultra")), opt\Field76)
-                        T4XZDFZD(opt\Field76)
+                        opt\Field76 = GUESSEDupdatesplit(local7, local8, (Int (100.0 * menuscale)), ((((((((getlocalstring("options", "slider.verylow") + "\n") + getlocalstring("options", "slider.low")) + "\n") + getlocalstring("options", "slider.medium")) + "\n") + getlocalstring("options", "slider.high")) + "\n") + getlocalstring("options", "slider.ultra")), opt\Field76)
+                        GUESSEDrenderresetrender(opt\Field76)
                         local8 = (Int ((35.0 * menuscale) + (Float local8)))
-                        opt\Field44 = TXZXZ4460F2(local7, local8, (Int (100.0 * menuscale)), ((((getlocalstring("options", "slider.low") + "\n") + getlocalstring("options", "slider.medium")) + "\n") + getlocalstring("options", "slider.high")), opt\Field44)
+                        opt\Field44 = GUESSEDupdatesplit(local7, local8, (Int (100.0 * menuscale)), ((((getlocalstring("options", "slider.low") + "\n") + getlocalstring("options", "slider.medium")) + "\n") + getlocalstring("options", "slider.high")), opt\Field44)
                         local8 = (Int ((35.0 * menuscale) + (Float local8)))
-                        opt\Field71 = TXZXZ4460F2(local7, local8, (Int (100.0 * menuscale)), ((((((getlocalstring("options", "disabled") + "\n") + getlocalstring("options", "slider.low")) + "\n") + getlocalstring("options", "slider.medium")) + "\n") + getlocalstring("options", "slider.high")), opt\Field71)
+                        opt\Field71 = GUESSEDupdatesplit(local7, local8, (Int (100.0 * menuscale)), ((((((getlocalstring("options", "disabled") + "\n") + getlocalstring("options", "slider.low")) + "\n") + getlocalstring("options", "slider.medium")) + "\n") + getlocalstring("options", "slider.high")), opt\Field71)
                         local8 = (Int ((35.0 * menuscale) + (Float local8)))
-                        opt\Field79 = TXZXZ4460F2(local7, local8, (Int (100.0 * menuscale)), (getlocalstring("options", "tri") + "\n2X\n4X\n8X\n16X"), opt\Field79)
+                        opt\Field79 = GUESSEDupdatesplit(local7, local8, (Int (100.0 * menuscale)), (getlocalstring("options", "tri") + "\n2X\n4X\n8X\n16X"), opt\Field79)
                         Select opt\Field79
                             Case $00
                                 opt\Field60 = $00
@@ -106,14 +106,14 @@ Function updatemenu%()
                         opt\Field16 = updatemenutick(local7, local8, opt\Field16, $00)
                         opt\Field47 = updatemenutick((Int ((197.0 * menuscale) + (Float local7))), local8, opt\Field47, $00)
                         If (opt\Field47 = $00) Then
-                            XB4Z02X0ZD((TXZZ2Z22Z6() Or $100))
+                            GUESSEDloadreload((GUESSEDupdatemenu() Or $100))
                         Else
-                            XB4Z02X0ZD((TXZZ2Z22Z6() And (TXZZ2Z22Z6() Xor $100)))
+                            GUESSEDloadreload((GUESSEDupdatemenu() And (GUESSEDupdatemenu() Xor $100)))
                         EndIf
                         local8 = (Int ((25.0 * menuscale) + (Float local8)))
                         opt\Field63 = updatemenutick(local7, local8, opt\Field63, $00)
                         opt\Field17 = updatemenutick((Int ((197.0 * menuscale) + (Float local7))), local8, opt\Field17, $00)
-                        TXB06B40802(-1.0, -1.0, opt\Field17)
+                        GUESSEDcreateentity_5(-1.0, -1.0, opt\Field17)
                         local8 = (Int ((25.0 * menuscale) + (Float local8)))
                         opt\Field10 = updatemenutick((Int ((197.0 * menuscale) + (Float local7))), local8, opt\Field10, $00)
                         opt\Field7 = updatemenutick(local7, local8, opt\Field7, $00)
@@ -296,8 +296,8 @@ Function updatemenu%()
                         updatemenubutton((Int ((Float local7) - (270.0 * menuscale))), local8, (Int (195.0 * menuscale)), (Int (30.0 * menuscale)), getlocalstring("options", "reset"), $00, $00, $01, $FF, $FF, $FF, $01, 1.0, $00, $00)
                     Case $06
                         local15 = selectedinputbox
-                        If (((opt\Field24 = "") And (T20DD48F0X6() > $00)) <> 0) Then
-                            opt\Field24 = T2ZB824444($00)
+                        If (((opt\Field24 = "") And (GUESSEDcreatebank_3() > $00)) <> 0) Then
+                            opt\Field24 = GUESSEDupdatemainmenu($00)
                         EndIf
                         If (opt\Field24 = "") Then
                             updatemenubutton((Int ((Float local7) - (130.0 * menuscale))), local8, (Int (300.0 * menuscale)), (Int (30.0 * menuscale)), getlocalstring("mpoptions", "nullvoice"), $00, $00, $00, $FF, $FF, $FF, $01, 1.0, $00, $00)
@@ -308,11 +308,11 @@ Function updatemenu%()
                                 local20 = (local20 + "...")
                             EndIf
                             If (updatemenubutton((Int ((Float local7) - (130.0 * menuscale))), local8, (Int (300.0 * menuscale)), (Int (30.0 * menuscale)), local20, $00, $00, $00, $FF, $FF, $FF, $01, 1.0, $00, $00) <> 0) Then
-                                local21 = T20DD48F0X6()
+                                local21 = GUESSEDcreatebank_3()
                                 If (local21 > $00) Then
                                     local22 = $00
                                     For local4 = $00 To (local21 - $01) Step $01
-                                        If (T2ZB824444(local4) = opt\Field24) Then
+                                        If (GUESSEDupdatemainmenu(local4) = opt\Field24) Then
                                             local22 = local4
                                             Exit
                                         EndIf
@@ -321,8 +321,8 @@ Function updatemenu%()
                                     If (local22 >= local21) Then
                                         local22 = $00
                                     EndIf
-                                    opt\Field24 = T2ZB824444(local22)
-                                    X2F4D8B8BD()
+                                    opt\Field24 = GUESSEDupdatemainmenu(local22)
+                                    GUESSEDsetrecord()
                                 EndIf
                             EndIf
                         EndIf
@@ -375,7 +375,7 @@ Function updatemenu%()
             local24 = $55
             Select igm\Field1
                 Case $01
-                    If ((((selecteddifficulty\Field1 = $02) Lor (selecteddifficulty\Field1 = $00)) And (X4BX024DX0() = $00)) <> 0) Then
+                    If ((((selecteddifficulty\Field1 = $02) Lor (selecteddifficulty\Field1 = $00)) And (GUESSEDupdatexdb() = $00)) <> 0) Then
                         local24 = $A0
                         If (updatemenubutton(local7, (Int ((85.0 * menuscale) + (Float local8))), (Int (430.0 * menuscale)), (Int (60.0 * menuscale)), getlocalstring("menu", "savequit"), $01, $00, (cansave < $03), $FF, $FF, $FF, $01, 1.0, $00, $00) <> 0) Then
                             XZ0260X8X2\Field16 = 0.0
@@ -387,7 +387,7 @@ Function updatemenu%()
                         EndIf
                     EndIf
                     If (updatemenubutton(local7, (Int (((Float local24) * menuscale) + (Float local8))), (Int (430.0 * menuscale)), (Int (60.0 * menuscale)), getlocalstring("menu", "quit"), $01, $00, $00, $FF, $FF, $FF, $01, 1.0, $00, $00) <> 0) Then
-                        BXZ2846Z2()
+                        GUESSEDupdatetxxf()
                         nullgame($00)
                         currsave = Null
                         resetinput(10.0)
@@ -418,7 +418,7 @@ Function updatemenu%()
                 shoulddeletegadgets = $01
             EndIf
             If (igm\Field2 > $00) Then
-                If (floor(((Float (Y0DBXD6BBZ(achievementsindex) - $01)) / 12.0)) >= (Float igm\Field2)) Then
+                If (floor(((Float (_S2IMapSize(achievementsindex) - $01)) / 12.0)) >= (Float igm\Field2)) Then
                     If (updatemenubutton((Int ((341.0 * menuscale) + (Float local7))), (Int ((345.0 * menuscale) + (Float local8))), (Int (60.0 * menuscale)), (Int (60.0 * menuscale)), ">", $01, $00, $00, $FF, $FF, $FF, $01, 1.0, $00, $00) <> 0) Then
                         igm\Field2 = (igm\Field2 + $01)
                         shoulddeletegadgets = $01
@@ -437,7 +437,7 @@ Function updatemenu%()
             EndIf
         Else
             local8 = (Int ((10.0 * menuscale) + (Float local8)))
-            If ((((((Int XZ0260X8X2\Field48) Lor XZ0260X8X2\Field23) = $00) Lor (XZ0260X8X2\Field40 <> $FFFFFFFF)) Lor ((X4BX024DX0() <> $00) And ((Int XZ0260X8X2\Field48) And FD020X0BZ\Field5))) <> 0) Then
+            If ((((((Int XZ0260X8X2\Field48) Lor XZ0260X8X2\Field23) = $00) Lor (XZ0260X8X2\Field40 <> $FFFFFFFF)) Lor ((GUESSEDupdatexdb() <> $00) And ((Int XZ0260X8X2\Field48) And FD020X0BZ\Field5))) <> 0) Then
                 local8 = (Int ((75.0 * menuscale) + (Float local8)))
                 If (updatemenubutton(local7, local8, (Int (430.0 * menuscale)), (Int (60.0 * menuscale)), getlocalstring("menu", "resume"), $01, $01, $00, $FF, $FF, $FF, $01, 1.0, $00, $00) <> 0) Then
                     resumesounds()
@@ -487,7 +487,7 @@ Function updatemenu%()
                     igm\Field0 = $01
                     shoulddeletegadgets = $01
                 EndIf
-                If (X4BX024DX0() <> $00) Then
+                If (GUESSEDupdatexdb() <> $00) Then
                     local8 = (Int ((75.0 * menuscale) + (Float local8)))
                     If (updatemenubutton(local7, local8, (Int (430.0 * menuscale)), (Int (60.0 * menuscale)), getlocalstring("mpmenu", "stuck.stuck"), $01, $01, $00, $FF, $FF, $FF, $01, 1.0, $00, $00) <> 0) Then
                         igm\Field1 = $02
@@ -533,7 +533,7 @@ Function updatemenu%()
                     local8 = (Int ((75.0 * menuscale) + (Float local8)))
                 EndIf
                 If (updatemenubutton(local7, local8, (Int (430.0 * menuscale)), (Int (60.0 * menuscale)), getlocalstring("menu", "quitmenu"), $01, $00, $00, $FF, $FF, $FF, $01, 1.0, $00, $00) <> 0) Then
-                    BXZ2846Z2()
+                    GUESSEDupdatetxxf()
                     nullgame($00)
                     currsave = Null
                     resetinput(10.0)

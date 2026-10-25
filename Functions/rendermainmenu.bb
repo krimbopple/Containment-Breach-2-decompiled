@@ -22,11 +22,11 @@ Function rendermainmenu%()
     Local local30#
     Local local36%
     catcherrors("RenderMainMenu()")
-    XF6BBD02B6()
+    GUESSEDdrawcolor_3()
     rendergamma()
     imageheight(mma\Field3)
     drawimage(mma\Field3, (Int (40.0 * menuscale)), $00, $00)
-    XF6284DFZD()
+    GUESSEDdrawcolor_2()
     setfontex(XD00026ZX2\Field0[$0A])
     If (onpalette = $00) Then
         showpointer()
@@ -126,7 +126,7 @@ Function rendermainmenu%()
                     For local17 = Each T402X2Z846
                         If (local17\Field10 = TXFD22D0402\Field3) Then
                             If (local17\Field13 <> Null) Then
-                                T8BX6B882(local17\Field13)
+                                GUESSEDrendercolor_2(local17\Field13)
                             EndIf
                         EndIf
                     Next
@@ -252,7 +252,7 @@ Function rendermainmenu%()
                     local1 = (Int ((20.0 * menuscale) + (Float local1)))
                     color($FF, $FF, $FF, $FF)
                     rect((Int ((20.0 * menuscale) + (Float local0))), local1, (Int (230.0 * menuscale)), (Int (320.0 * menuscale)), $00)
-                    T8D04F6BD2((Int (((20.0 * menuscale) + (Float local0)) + 1.0)), (local1 + $01), (Int ((230.0 * menuscale) - 2.0)), (Int ((320.0 * menuscale) - 2.0)))
+                    GUESSEDrenderbuffer((Int (((20.0 * menuscale) + (Float local0)) + 1.0)), (local1 + $01), (Int ((230.0 * menuscale) - 2.0)), (Int ((320.0 * menuscale) - 2.0)))
                     local30 = (Float mousexspeed())
                     If ((mouseon((Int ((20.0 * menuscale) + (Float local0))), local1, (Int (230.0 * menuscale)), (Int (320.0 * menuscale))) And TDD0Z6BXB6\Field1) <> 0) Then
                         turnentity(T42DZ064FB\Field6\Field3, 0.0, (local30 * 0.5), 0.0, $00)
@@ -815,16 +815,16 @@ Function rendermainmenu%()
             End Select
         EndIf
     Else
-        BDBF6B0XD()
+        GUESSEDdrawcolor()
     EndIf
-    FDDB806Z8()
+    GUESSEDsetcolor()
     rendermenubuttons()
     rendermenupalettes()
     rendermenuticks()
     rendermenuinputboxes()
     rendermenuslidebars()
     rendermenusliders()
-    TXDZ0F2ZFXZ($0A, $00)
+    GUESSEDrenderrendercursor($0A, $00)
     If (opt\Field68 <> 0) Then
         color($FF, $FF, $FF, $FF)
         setfontex(XD00026ZX2\Field0[$0C])

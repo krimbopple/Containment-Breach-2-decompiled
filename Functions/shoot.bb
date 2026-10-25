@@ -65,7 +65,7 @@ Function shoot%(arg0.npcs, arg1#, arg2#, arg3#, arg4%, arg5#, arg6%, arg7%)
         If ((arg0\Field5 And (350.0 > msg\Field2)) <> 0) Then
             createmsg(local4, 6.0)
         EndIf
-        If (5.0 <= TXZ42DFFX64(arg0)) Then
+        If (5.0 <= GUESSEDgetshoot(arg0)) Then
             kill($01, $01, $00, $01)
         EndIf
         If (((local6 > $0A) And (local6 < $10)) <> 0) Then

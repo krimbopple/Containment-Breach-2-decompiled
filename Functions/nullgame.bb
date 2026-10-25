@@ -35,14 +35,14 @@ Function nullgame%(arg0%)
     Local local33.Y0D6F4BXB0
     Local local34%
     catcherrors("NullGame()")
-    XFZ4XXX8D("steam_display", "#mainmenu")
-    TBXX4B0X6("", "In main menu", "")
+    Steam_SetRichPresence("steam_display", "#mainmenu")
+    _Discord_SetPresence("", "In main menu", "")
     local0 = $00
-    If (X4BX024DX0() <> $00) Then
-        FZXXZB468()
+    If (GUESSEDupdatexdb() <> $00) Then
+        MP_Reset()
         local0 = $01
     EndIf
-    TXX4D0XX04X()
+    GUESSEDupdategameobjects()
     If (mainmenuopen <> 0) Then
         Return $00
     EndIf
@@ -137,10 +137,10 @@ Function nullgame%(arg0%)
         EndIf
     Next
     If (subfile <> $00) Then
-        Y00DFZDDF6(subfile)
+        _JsonFreeDocument(subfile)
     EndIf
     If (localsubfile <> $00) Then
-        Y00DFZDDF6(localsubfile)
+        _JsonFreeDocument(localsubfile)
     EndIf
     subfile = $00
     localsubfile = $00
@@ -171,7 +171,7 @@ Function nullgame%(arg0%)
     i_035 = Null
     Delete i_268
     i_268 = Null
-    X2B80X0XBB(i_294\Field3)
+    _DestroyS2IMap(i_294\Field3)
     i_294\Field3 = $00
     Delete i_294
     i_294 = Null
@@ -221,7 +221,7 @@ Function nullgame%(arg0%)
         radiostate3[local30] = $00
     Next
     For local31 = Each T6068XB4Z2
-        Z0ZB28XFX(local31)
+        GUESSEDfreeentity_13(local31)
     Next
     maxitemamount = $00
     lastitemid = $00
@@ -281,7 +281,7 @@ Function nullgame%(arg0%)
         removelight(local16)
     Next
     For local29 = Each TB8DZX8886
-        B64B6022F(local29)
+        GUESSEDdeleteentity_2(local29)
     Next
     For local26 = Each soundemitters
         removesoundemitter(local26)
@@ -316,10 +316,10 @@ Function nullgame%(arg0%)
         removeroomtemplate(local17)
     Next
     For local32 = Each X4X6Z4D6F2
-        A0ZX420ZF(local32)
+        GUESSEDdeleteentity(local32)
     Next
     For local33 = Each Y0D6F4BXB0
-        Y2BB0D66(local33)
+        GUESSEDdeletetex(local33)
     Next
     XZ0260X8X2\Field74 = $00
     XZ0260X8X2\Field28 = $00
@@ -375,15 +375,15 @@ Function nullgame%(arg0%)
         Delete local20
     Next
     removesoundinstances()
-    D6X206XX()
-    T8X020B22Z()
+    GUESSEDplaykillsounds()
+    GUESSEDupdatenullgame()
     For local24 = Each save
         Delete local24
     Next
     For local25 = Each custommaps
         Delete local25
     Next
-    TX0B44ZFXDZ()
+    GUESSEDupdatenullgame_2()
     freeblur()
     local34 = $00
     rendertween = 0.0

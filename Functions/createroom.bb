@@ -11,7 +11,7 @@ Function createroom.rooms(arg0%, arg1%, arg2#, arg3#, arg4#, arg5%, arg6#)
     local0\Field40 = arg2
     local0\Field3 = arg3
     local0\Field37 = arg4
-    BFZ0DZB28(local0)
+    GUESSEDcreateroom(local0)
     If (arg5 <> $FFFFFFFF) Then
         For local1 = Each roomtemplates
             If (local1\Field21 = arg5) Then

@@ -10,7 +10,7 @@ Function createchunk.chunk(arg0.rooms, arg1%, arg2#, arg3#, arg4#, arg5%)
     local0\Field7 = arg4
     local0\Field1 = arg5
     If (arg1 > $FFFFFFFF) Then
-        local0\Field5 = TD0DFDZ4XX(TD4644B68Z(TX0Z2Z4F86D(D8XX4X0D0(scp1499chunks, arg1), "objects")))
+        local0\Field5 = _JsonGetArraySize(_JsonGetArray(_JsonGetValue(_JsonGetArrayValue(scp1499chunks, arg1), "objects")))
         For local1 = Each chunkpart
             If (local1\Field3 = arg1) Then
                 For local2 = $00 To (local0\Field5 - $01) Step $01

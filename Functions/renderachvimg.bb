@@ -14,10 +14,10 @@ Function renderachvimg%(arg0%, arg1%, arg2%, arg3$)
     local4 = (Int (((Float local1) * local2) + (Float arg0)))
     color($00, $00, $00, $FF)
     rect(local4, arg1, local3, local3, $01)
-    If (TX6ZD06226X(unlockedachievements, arg3) <> 0) Then
-        local0 = XF2FX4F0X2(achievementsimages, arg3)
+    If (_S2IMapContains(unlockedachievements, arg3) <> 0) Then
+        local0 = _S2IMapGet(achievementsimages, arg3)
     Else
-        local0 = XF2FX4F0X2(achievementsimages, "locked")
+        local0 = _S2IMapGet(achievementsimages, "locked")
     EndIf
     If (local0 <> $00) Then
         drawblock(local0, local4, arg1, $00)

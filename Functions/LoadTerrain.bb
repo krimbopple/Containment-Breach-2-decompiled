@@ -89,8 +89,8 @@ Function LoadTerrain%(arg0%, arg1#, arg2%, arg3%, arg4%)
     entitytexture(local9, arg3, $00, $00)
     entityfx(local5, $01)
     entityfx(local9, $23)
-    YX2D2860X(local5, $00, $20)
-    YX2D2860X(local9, $00, $60)
+    GUESSEDcreatesurface(local5, $00, $20)
+    GUESSEDcreatesurface(local9, $00, $60)
     Return local5
     Return $00
 End Function

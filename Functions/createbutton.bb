@@ -2,7 +2,7 @@ Function createbutton%(arg0%, arg1#, arg2#, arg3#, arg4#, arg5#, arg6#, arg7%, a
     Local local0%
     local0 = $00
     If (arg9 <> 0) Then
-        local0 = A464F2006(d_i\Field8[arg0], $00)
+        local0 = GUESSEDcopyentity_2(d_i\Field8[arg0], $00)
     Else
         local0 = copyentity(d_i\Field8[arg0], $00)
     EndIf
@@ -21,7 +21,7 @@ Function createbutton%(arg0%, arg1#, arg2#, arg3#, arg4#, arg5#, arg6#, arg7%, a
         entityparent(local0, arg7, $01)
     EndIf
     If (arg9 = $00) Then
-        X8F80Z2886(local0, $FFFFFFFF, $00)
+        GUESSEDfreeentity_7(local0, $FFFFFFFF, $00)
         entityinstance(local0, $00)
     EndIf
     Return local0

@@ -16,7 +16,7 @@ Function updatedecals%()
             EndIf
             If (5.0 = local0\Field2) Then
                 removedecal(local0)
-            ElseIf (((local1 > entitydistancesquared(local0\Field0, XZ0260X8X2\Field74)) And TX6BB60B482(local0\Field4, playerroom)) <> 0) Then
+            ElseIf (((local1 > entitydistancesquared(local0\Field0, XZ0260X8X2\Field74)) And GUESSEDupdatedecals(local0\Field4, playerroom)) <> 0) Then
                 If (entityhidden(local0\Field0) <> 0) Then
                     showentity(local0\Field0)
                 EndIf

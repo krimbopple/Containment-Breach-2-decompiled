@@ -1,0 +1,16 @@
+Function GUESSEDwriteentityfields_2%(arg0.T484FFBZX, arg1.TX2BF6X0FF4)
+    GUESSEDsetpoke_3(arg0, arg1\Field13)
+    GUESSEDsetpoke_4(arg0, arg1\Field19)
+    GUESSEDsetpoke_4(arg0, arg1\Field49)
+    GUESSEDsetpoke_4(arg0, arg1\Field26)
+    GUESSEDsetpoke_3(arg0, arg1\Field3)
+    GUESSEDsetpoke(arg0, arg1\Field44\Field7)
+    GUESSEDsetpoke_3(arg0, arg1\Field46\Field46)
+    GUESSEDsetpoke_2(arg0, arg1\Field21\Field2)
+    GUESSEDsetpoke_2(arg0, arg1\Field21\Field0)
+    GUESSEDupdateobjects_35(arg0, arg1)
+    GUESSEDsetbank(arg0, arg1\Field27)
+    GUESSEDupdateobjects_16(arg0, arg1)
+    GUESSEDsetpoke_2(arg0, $00)
+    Return $00
+End Function

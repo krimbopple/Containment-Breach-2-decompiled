@@ -78,8 +78,8 @@ Function updatemainmenu%()
         Else
             shouldplay = $0B
         EndIf
-        TBZ048822D()
-        TX2Z2640FD()
+        GUESSEDinputexecfile()
+        GUESSEDsetcurvevalue_2()
         If (rand($12C, $01) = $01) Then
             T42DZ064FB\Field12[$00] = rnd(4000.0, 8000.0)
             T42DZ064FB\Field7[$00] = rnd(200.0, 500.0)
@@ -95,15 +95,15 @@ Function updatemainmenu%()
         T42DZ064FB\Field2 = T42DZ064FB\Field0
         local4 = (80.0 * menuscale)
         If (T42DZ064FB\Field0 = $00) Then
-            T820Z2ZD2F()
+            GUESSEDupdateexecfile()
             local5 = (286.0 * menuscale)
             local6 = (400.0 * menuscale)
             local7 = (70.0 * menuscale)
             randomseed = ""
             If ((updatemenubutton((Int local4), (Int local5), (Int local6), (Int local7), getlocalstring("mpmenu", "serverlist"), $01, $00, $00, $FF, $FF, $FF, $01, 1.0, $00, $00) And (TX6X48DXXDX = $00)) <> 0) Then
                 T42DZ064FB\Field0 = $01
-                FBXDDD60Z()
-                B24D0X6Z8(TXFD22D0402\Field3)
+                _Steam_RequestInternetServerList()
+                GUESSEDsetentry(TXFD22D0402\Field3)
             EndIf
             local5 = ((100.0 * menuscale) + local5)
             If ((updatemenubutton((Int local4), (Int local5), (Int local6), (Int local7), getlocalstring("menu", "new"), $01, $00, $00, $FF, $FF, $FF, $01, 1.0, $00, $00) And (TX6X48DXXDX = $00)) <> 0) Then
@@ -154,25 +154,25 @@ Function updatemainmenu%()
                         local17 = $00
                         local18 = local4
                         local19 = $FFFFFFFF
-                        If (updatemenubutton((Int local18), (Int local5), (Int (local6 / 4.0)), (Int (25.0 * menuscale)), format(getlocalstring("mpmenu", "list.official"), (Str TXZD4F0D244($00, $01)), "%s"), $00, $01, (TXFD22D0402\Field3 = $00), $FF, $FF, $FF, $00, 1.0, $00, $00) <> 0) Then
+                        If (updatemenubutton((Int local18), (Int local5), (Int (local6 / 4.0)), (Int (25.0 * menuscale)), format(getlocalstring("mpmenu", "list.official"), (Str GUESSEDsetupdatemainmenu_2($00, $01)), "%s"), $00, $01, (TXFD22D0402\Field3 = $00), $FF, $FF, $FF, $00, 1.0, $00, $00) <> 0) Then
                             local19 = $00
                         EndIf
                         local18 = ((local6 / 4.0) + local18)
-                        If (updatemenubutton((Int (local18 - (4.0 * menuscale))), (Int local5), (Int ((local6 / 4.0) + (4.0 * menuscale))), (Int (25.0 * menuscale)), format(getlocalstring("mpmenu", "list.internet"), (Str TXZD4F0D244($01, $00)), "%s"), $00, $01, (TXFD22D0402\Field3 = $01), $FF, $FF, $FF, $00, 1.0, $00, $00) <> 0) Then
+                        If (updatemenubutton((Int (local18 - (4.0 * menuscale))), (Int local5), (Int ((local6 / 4.0) + (4.0 * menuscale))), (Int (25.0 * menuscale)), format(getlocalstring("mpmenu", "list.internet"), (Str GUESSEDsetupdatemainmenu_2($01, $00)), "%s"), $00, $01, (TXFD22D0402\Field3 = $01), $FF, $FF, $FF, $00, 1.0, $00, $00) <> 0) Then
                             local19 = $01
                         EndIf
                         local18 = ((local6 / 4.0) + local18)
-                        If (updatemenubutton((Int (local18 - (4.0 * menuscale))), (Int local5), (Int ((local6 / 4.0) + (4.0 * menuscale))), (Int (25.0 * menuscale)), format(getlocalstring("mpmenu", "list.history"), (Str TXZD4F0D244($02, $00)), "%s"), $00, $01, (TXFD22D0402\Field3 = $02), $FF, $FF, $FF, $00, 1.0, $00, $00) <> 0) Then
+                        If (updatemenubutton((Int (local18 - (4.0 * menuscale))), (Int local5), (Int ((local6 / 4.0) + (4.0 * menuscale))), (Int (25.0 * menuscale)), format(getlocalstring("mpmenu", "list.history"), (Str GUESSEDsetupdatemainmenu_2($02, $00)), "%s"), $00, $01, (TXFD22D0402\Field3 = $02), $FF, $FF, $FF, $00, 1.0, $00, $00) <> 0) Then
                             local19 = $02
                         EndIf
                         local18 = ((local6 / 4.0) + local18)
-                        If (updatemenubutton((Int (local18 - (4.0 * menuscale))), (Int local5), (Int ((local6 / 4.0) + (3.6 * menuscale))), (Int (25.0 * menuscale)), format(getlocalstring("mpmenu", "list.favourites"), (Str TXZD4F0D244($03, $00)), "%s"), $00, $01, (TXFD22D0402\Field3 = $03), $FF, $FF, $FF, $00, 1.0, $00, $00) <> 0) Then
+                        If (updatemenubutton((Int (local18 - (4.0 * menuscale))), (Int local5), (Int ((local6 / 4.0) + (3.6 * menuscale))), (Int (25.0 * menuscale)), format(getlocalstring("mpmenu", "list.favourites"), (Str GUESSEDsetupdatemainmenu_2($03, $00)), "%s"), $00, $01, (TXFD22D0402\Field3 = $03), $FF, $FF, $FF, $00, 1.0, $00, $00) <> 0) Then
                             local19 = $03
                         EndIf
                         If (local19 <> $FFFFFFFF) Then
                             TXFD22D0402\Field3 = local19
-                            TBB628DX04()
-                            B24D0X6Z8(TXFD22D0402\Field3)
+                            GUESSEDupdatemainmenu_2()
+                            GUESSEDsetentry(TXFD22D0402\Field3)
                             local16 = $01
                             shoulddeletegadgets = $01
                         EndIf
@@ -182,23 +182,23 @@ Function updatemainmenu%()
                         EndIf
                         local20 = ((local6 * 0.027) + local20)
                         local16 = (local16 + mouseon((Int (local20 - (4.0 * menuscale))), (Int (((25.0 * menuscale) + local5) - (4.0 * menuscale))), (Int (local6 * 0.5402)), (Int (25.0 * menuscale))))
-                        If (updatemenubutton((Int (local20 - (4.0 * menuscale))), (Int (((25.0 * menuscale) + local5) - (4.0 * menuscale))), (Int ((local6 * 0.5402) + (4.0 * menuscale))), (Int (25.0 * menuscale)), (getlocalstring("mpmenu", "servers") + TX24F2F08DF($00)), $00, $01, $00, $FF, $FF, $FF, $00, 0.05, $00, $00) <> 0) Then
-                            T68BF20X0D(TXFD22D0402\Field3, $00)
+                        If (updatemenubutton((Int (local20 - (4.0 * menuscale))), (Int (((25.0 * menuscale) + local5) - (4.0 * menuscale))), (Int ((local6 * 0.5402) + (4.0 * menuscale))), (Int (25.0 * menuscale)), (getlocalstring("mpmenu", "servers") + GUESSEDupdatemainmenu_3($00)), $00, $01, $00, $FF, $FF, $FF, $00, 0.05, $00, $00) <> 0) Then
+                            GUESSEDclearsort(TXFD22D0402\Field3, $00)
                         EndIf
                         local20 = ((local6 * 0.5402) + local20)
                         local16 = (local16 + mouseon((Int (local20 - (4.0 * menuscale))), (Int (((25.0 * menuscale) + local5) - (4.0 * menuscale))), (Int (local6 * 0.18)), (Int (25.0 * menuscale))))
-                        If (updatemenubutton((Int (local20 - (4.0 * menuscale))), (Int (((25.0 * menuscale) + local5) - (4.0 * menuscale))), (Int ((local6 * 0.18) + (4.0 * menuscale))), (Int (25.0 * menuscale)), (getlocalstring("mpmenu", "gamemode") + TX24F2F08DF($01)), $00, $01, $00, $FF, $FF, $FF, $00, 0.15, $00, $00) <> 0) Then
-                            T68BF20X0D(TXFD22D0402\Field3, $01)
+                        If (updatemenubutton((Int (local20 - (4.0 * menuscale))), (Int (((25.0 * menuscale) + local5) - (4.0 * menuscale))), (Int ((local6 * 0.18) + (4.0 * menuscale))), (Int (25.0 * menuscale)), (getlocalstring("mpmenu", "gamemode") + GUESSEDupdatemainmenu_3($01)), $00, $01, $00, $FF, $FF, $FF, $00, 0.15, $00, $00) <> 0) Then
+                            GUESSEDclearsort(TXFD22D0402\Field3, $01)
                         EndIf
                         local20 = ((local6 * 0.18) + local20)
                         local16 = (local16 + mouseon((Int (local20 - (4.0 * menuscale))), (Int (((25.0 * menuscale) + local5) - (4.0 * menuscale))), (Int (local6 * 0.13)), (Int (25.0 * menuscale))))
-                        If (updatemenubutton((Int (local20 - (4.0 * menuscale))), (Int (((25.0 * menuscale) + local5) - (4.0 * menuscale))), (Int ((local6 * 0.13) + (4.0 * menuscale))), (Int (25.0 * menuscale)), (getlocalstring("mpmenu", "players") + TX24F2F08DF($02)), $00, $01, $00, $FF, $FF, $FF, $00, 0.15, $00, $00) <> 0) Then
-                            T68BF20X0D(TXFD22D0402\Field3, $02)
+                        If (updatemenubutton((Int (local20 - (4.0 * menuscale))), (Int (((25.0 * menuscale) + local5) - (4.0 * menuscale))), (Int ((local6 * 0.13) + (4.0 * menuscale))), (Int (25.0 * menuscale)), (getlocalstring("mpmenu", "players") + GUESSEDupdatemainmenu_3($02)), $00, $01, $00, $FF, $FF, $FF, $00, 0.15, $00, $00) <> 0) Then
+                            GUESSEDclearsort(TXFD22D0402\Field3, $02)
                         EndIf
                         local20 = ((local6 * 0.13) + local20)
                         local16 = (local16 + mouseon((Int (local20 - (4.0 * menuscale))), (Int (((25.0 * menuscale) + local5) - (4.0 * menuscale))), (Int (local6 * 0.1013)), (Int (25.0 * menuscale))))
-                        If (updatemenubutton((Int (local20 - (4.0 * menuscale))), (Int (((25.0 * menuscale) + local5) - (4.0 * menuscale))), (Int ((local6 * 0.1013) + (2.0 * menuscale))), (Int (25.0 * menuscale)), (getlocalstring("mpmenu", "ping") + TX24F2F08DF($03)), $00, $01, $00, $FF, $FF, $FF, $00, 0.15, $00, $00) <> 0) Then
-                            T68BF20X0D(TXFD22D0402\Field3, $03)
+                        If (updatemenubutton((Int (local20 - (4.0 * menuscale))), (Int (((25.0 * menuscale) + local5) - (4.0 * menuscale))), (Int ((local6 * 0.1013) + (2.0 * menuscale))), (Int (25.0 * menuscale)), (getlocalstring("mpmenu", "ping") + GUESSEDupdatemainmenu_3($03)), $00, $01, $00, $FF, $FF, $FF, $00, 0.15, $00, $00) <> 0) Then
+                            GUESSEDclearsort(TXFD22D0402\Field3, $03)
                         EndIf
                         local20 = ((local6 * 0.1013) + local20)
                         local16 = (local16 + mouseon((Int local4), (Int (((local5 + local7) - (35.0 * menuscale)) + (6.0 * menuscale))), (Int local6), (Int (50.0 * menuscale))))
@@ -206,17 +206,17 @@ Function updatemainmenu%()
                         updatemenubutton((Int (local20 - (8.0 * menuscale))), (Int (((25.0 * menuscale) + local5) - (4.0 * menuscale))), (Int ((local6 * 0.0215) + (8.0 * menuscale))), (Int (25.0 * menuscale)), "E", $09, $01, $00, $FF, $FF, $FF, $00, 1.0, $01, $01)
                         If (updatemenubutton((Int ((15.0 * menuscale) + local4)), (Int ((((local5 + local7) - (17.0 * menuscale)) - (8.5 * menuscale)) + (6.0 * menuscale))), (Int (180.0 * menuscale)), (Int (30.0 * menuscale)), getlocalstring("mpmenu", "refresh"), $00, $00, $00, $FF, $FF, $FF, $01, 1.0, $00, $00) <> 0) Then
                             If (TXFD22D0402\Field3 = $01) Then
-                                FBXDDD60Z()
+                                _Steam_RequestInternetServerList()
                             EndIf
-                            T6D0XDFXZ4(TXFD22D0402\Field3, $14)
-                            TBB628DX04()
-                            B24D0X6Z8(TXFD22D0402\Field3)
+                            GUESSEDsetentry_2(TXFD22D0402\Field3, $14)
+                            GUESSEDupdatemainmenu_2()
+                            GUESSEDsetentry(TXFD22D0402\Field3)
                             local17 = $01
                             shoulddeletegadgets = $01
                         EndIf
                         local21 = TXFD22D0402\Field3
                         If (local21 <> $03) Then
-                            If ((updatemenubutton((Int ((205.0 * menuscale) + local4)), (Int ((((local5 + local7) - (17.0 * menuscale)) - (8.5 * menuscale)) + (6.0 * menuscale))), (Int (180.0 * menuscale)), (Int (30.0 * menuscale)), getlocalstring("mpmenu", "host"), $00, $00, $00, $FF, $FF, $FF, $01, 1.0, $00, $00) And (TXXBXD22D0F() = $00)) <> 0) Then
+                            If ((updatemenubutton((Int ((205.0 * menuscale) + local4)), (Int ((((local5 + local7) - (17.0 * menuscale)) - (8.5 * menuscale)) + (6.0 * menuscale))), (Int (180.0 * menuscale)), (Int (30.0 * menuscale)), getlocalstring("mpmenu", "host"), $00, $00, $00, $FF, $FF, $FF, $01, 1.0, $00, $00) And (GUESSEDgetupdatemainmenu() = $00)) <> 0) Then
                                 If (opt\Field30 <> 0) Then
                                     randomseed = "666"
                                 Else
@@ -235,18 +235,18 @@ Function updatemainmenu%()
                                 currcustommap = (New custommaps)
                                 T42DZ064FB\Field0 = $02
                             EndIf
-                            If ((updatemenubutton((Int ((395.0 * menuscale) + local4)), (Int ((((local5 + local7) - (17.0 * menuscale)) - (8.5 * menuscale)) + (6.0 * menuscale))), (Int (180.0 * menuscale)), (Int (30.0 * menuscale)), getlocalstring("mpmenu", "rentserver"), $00, $00, $00, $FF, $FF, $FF, $01, 1.0, $00, $00) And (TXXBXD22D0F() = $00)) <> 0) Then
+                            If ((updatemenubutton((Int ((395.0 * menuscale) + local4)), (Int ((((local5 + local7) - (17.0 * menuscale)) - (8.5 * menuscale)) + (6.0 * menuscale))), (Int (180.0 * menuscale)), (Int (30.0 * menuscale)), getlocalstring("mpmenu", "rentserver"), $00, $00, $00, $FF, $FF, $FF, $01, 1.0, $00, $00) And (GUESSEDgetupdatemainmenu() = $00)) <> 0) Then
                                 execfile("https://bisecthosting.com/UERM")
                             EndIf
-                            If ((updatemenubutton((Int ((local4 + local6) - (50.0 * menuscale))), (Int ((((local5 + local7) - (17.0 * menuscale)) - (8.5 * menuscale)) + (6.0 * menuscale))), (Int (30.0 * menuscale)), (Int (30.0 * menuscale)), "S", $09, $00, $00, $FF, $FF, $FF, $01, 1.0, $00, $00) And (TXXBXD22D0F() = $00)) <> 0) Then
+                            If ((updatemenubutton((Int ((local4 + local6) - (50.0 * menuscale))), (Int ((((local5 + local7) - (17.0 * menuscale)) - (8.5 * menuscale)) + (6.0 * menuscale))), (Int (30.0 * menuscale)), (Int (30.0 * menuscale)), "S", $09, $00, $00, $FF, $FF, $FF, $01, 1.0, $00, $00) And (GUESSEDgetupdatemainmenu() = $00)) <> 0) Then
                                 T42DZ064FB\Field0 = $03
                             EndIf
                         Else
-                            If ((updatemenubutton((Int ((205.0 * menuscale) + local4)), (Int ((((local5 + local7) - (17.0 * menuscale)) - (8.5 * menuscale)) + (6.0 * menuscale))), (Int (180.0 * menuscale)), (Int (30.0 * menuscale)), getlocalstring("mpmenu", "addserver"), $00, $00, $00, $FF, $FF, $FF, $01, 1.0, $00, $00) And (TXXBXD22D0F() = $00)) <> 0) Then
-                                X88D840448(getlocalstring("mpmenu", "addserver"), (getlocalstring("mpmenu", "enter_ip") + " (0.0.0.0:0)"), getlocalstring("gui", "add"), getlocalstring("gui", "cancel"), $02, FuncPtr(TXZ88XX80XX), $01, $00)
+                            If ((updatemenubutton((Int ((205.0 * menuscale) + local4)), (Int ((((local5 + local7) - (17.0 * menuscale)) - (8.5 * menuscale)) + (6.0 * menuscale))), (Int (180.0 * menuscale)), (Int (30.0 * menuscale)), getlocalstring("mpmenu", "addserver"), $00, $00, $00, $FF, $FF, $FF, $01, 1.0, $00, $00) And (GUESSEDgetupdatemainmenu() = $00)) <> 0) Then
+                                GUESSEDresetresetinput(getlocalstring("mpmenu", "addserver"), (getlocalstring("mpmenu", "enter_ip") + " (0.0.0.0:0)"), getlocalstring("gui", "add"), getlocalstring("gui", "cancel"), $02, FuncPtr(TXZ88XX80XX), $01, $00)
                                 local17 = $01
                             EndIf
-                            If ((updatemenubutton((Int ((395.0 * menuscale) + local4)), (Int ((((local5 + local7) - (17.0 * menuscale)) - (8.5 * menuscale)) + (6.0 * menuscale))), (Int (180.0 * menuscale)), (Int (30.0 * menuscale)), getlocalstring("mpmenu", "host"), $00, $00, $00, $FF, $FF, $FF, $01, 1.0, $00, $00) And (TXXBXD22D0F() = $00)) <> 0) Then
+                            If ((updatemenubutton((Int ((395.0 * menuscale) + local4)), (Int ((((local5 + local7) - (17.0 * menuscale)) - (8.5 * menuscale)) + (6.0 * menuscale))), (Int (180.0 * menuscale)), (Int (30.0 * menuscale)), getlocalstring("mpmenu", "host"), $00, $00, $00, $FF, $FF, $FF, $01, 1.0, $00, $00) And (GUESSEDgetupdatemainmenu() = $00)) <> 0) Then
                                 If (opt\Field30 <> 0) Then
                                     randomseed = "666"
                                 Else
@@ -265,10 +265,10 @@ Function updatemainmenu%()
                                 currcustommap = (New custommaps)
                                 T42DZ064FB\Field0 = $02
                             EndIf
-                            If ((updatemenubutton((Int ((585.0 * menuscale) + local4)), (Int ((((local5 + local7) - (17.0 * menuscale)) - (8.5 * menuscale)) + (6.0 * menuscale))), (Int (180.0 * menuscale)), (Int (30.0 * menuscale)), getlocalstring("mpmenu", "rentserver"), $00, $00, $00, $FF, $FF, $FF, $01, 1.0, $00, $00) And (TXXBXD22D0F() = $00)) <> 0) Then
+                            If ((updatemenubutton((Int ((585.0 * menuscale) + local4)), (Int ((((local5 + local7) - (17.0 * menuscale)) - (8.5 * menuscale)) + (6.0 * menuscale))), (Int (180.0 * menuscale)), (Int (30.0 * menuscale)), getlocalstring("mpmenu", "rentserver"), $00, $00, $00, $FF, $FF, $FF, $01, 1.0, $00, $00) And (GUESSEDgetupdatemainmenu() = $00)) <> 0) Then
                                 execfile("https://bisecthosting.com/UERM")
                             EndIf
-                            If ((updatemenubutton((Int ((local4 + local6) - (50.0 * menuscale))), (Int ((((local5 + local7) - (17.0 * menuscale)) - (8.5 * menuscale)) + (6.0 * menuscale))), (Int (30.0 * menuscale)), (Int (30.0 * menuscale)), "S", $09, $00, $00, $FF, $FF, $FF, $01, 1.0, $00, $00) And (TXXBXD22D0F() = $00)) <> 0) Then
+                            If ((updatemenubutton((Int ((local4 + local6) - (50.0 * menuscale))), (Int ((((local5 + local7) - (17.0 * menuscale)) - (8.5 * menuscale)) + (6.0 * menuscale))), (Int (30.0 * menuscale)), (Int (30.0 * menuscale)), "S", $09, $00, $00, $FF, $FF, $FF, $01, 1.0, $00, $00) And (GUESSEDgetupdatemainmenu() = $00)) <> 0) Then
                                 T42DZ064FB\Field0 = $03
                             EndIf
                         EndIf
@@ -329,7 +329,7 @@ Function updatemainmenu%()
                             If ((((local27 - local22) <= local30\Field22) And (local28 >= local30\Field22)) <> 0) Then
                                 local31 = mouseon((Int local4), (Int (local30\Field22 - (8.0 * menuscale))), (Int (local6 * 0.977)), (Int (30.0 * menuscale)))
                                 local17 = (local17 + (local31 And (local16 = $00)))
-                                If ((((TDD0Z6BXB6\Field12 And (local16 = $00)) And (TXXBXD22D0F() = $00)) And local31) <> 0) Then
+                                If ((((TDD0Z6BXB6\Field12 And (local16 = $00)) And (GUESSEDgetupdatemainmenu() = $00)) And local31) <> 0) Then
                                     TXFD22D0402\Field5 = ((Handle local30) + $01)
                                     TXFD22D0402\Field9 = TXFD22D0402\Field5
                                     TXFD22D0402\Field8 = ((Handle local30) + $01)
@@ -337,32 +337,32 @@ Function updatemainmenu%()
                                     TXFD22D0402\Field1 = (Int mouseposy)
                                     shoulddeletegadgets = $01
                                 EndIf
-                                If ((((updatemenubutton((Int local4), (Int (local30\Field22 - (8.0 * menuscale))), (Int (local6 * 0.977)), (Int (30.0 * menuscale)), "", $00, $00, (TXFD22D0402\Field5 = ((Handle local30) + $01)), $FF, $FF, $FF, $00, 1.0, $01, $00) And (local16 = $00)) And (TXFD22D0402\Field8 = $00)) And (TXXBXD22D0F() = $00)) <> 0) Then
+                                If ((((updatemenubutton((Int local4), (Int (local30\Field22 - (8.0 * menuscale))), (Int (local6 * 0.977)), (Int (30.0 * menuscale)), "", $00, $00, (TXFD22D0402\Field5 = ((Handle local30) + $01)), $FF, $FF, $FF, $00, 1.0, $01, $00) And (local16 = $00)) And (TXFD22D0402\Field8 = $00)) And (GUESSEDgetupdatemainmenu() = $00)) <> 0) Then
                                     If (TXFD22D0402\Field5 <> $00) Then
                                         TDD0Z6BXB6\Field0 = $00
                                     EndIf
                                     TXFD22D0402\Field5 = ((Handle local30) + $01)
                                 EndIf
-                                If (((((local31 And TDD0Z6BXB6\Field0) And (local16 = $00)) And (TXFD22D0402\Field8 = $00)) And (TXXBXD22D0F() = $00)) <> 0) Then
-                                    F4ZXX4FDZ(local30, $00, $00)
+                                If (((((local31 And TDD0Z6BXB6\Field0) And (local16 = $00)) And (TXFD22D0402\Field8 = $00)) And (GUESSEDgetupdatemainmenu() = $00)) <> 0) Then
+                                    GUESSEDmenumpmenu(local30, $00, $00)
                                     TDD0Z6BXB6\Field7 = $00
                                 EndIf
-                                local30\Field13 = XZ0X0644DD((Int local4), (Int (local30\Field22 - (8.0 * menuscale))), (Int (local6 * 0.977)), (Int (30.0 * menuscale)))
+                                local30\Field13 = GUESSEDbuttonupdatemainmenu((Int local4), (Int (local30\Field22 - (8.0 * menuscale))), (Int (local6 * 0.977)), (Int (30.0 * menuscale)))
                                 local32 = local4
                                 local32 = ((local6 * 0.0215) + local32)
-                                TB4D26D8ZX((Int (local32 - (4.0 * menuscale))), (Int (local30\Field22 - (8.0 * menuscale))), (Int ((local6 * 0.5457) + (4.0 * menuscale))), (Int (30.0 * menuscale)), local30\Field11, $00, 0.05, $3D)
+                                GUESSEDcreateupdatemainmenu((Int (local32 - (4.0 * menuscale))), (Int (local30\Field22 - (8.0 * menuscale))), (Int ((local6 * 0.5457) + (4.0 * menuscale))), (Int (30.0 * menuscale)), local30\Field11, $00, 0.05, $3D)
                                 local32 = ((local6 * 0.5457) + local32)
-                                TB4D26D8ZX((Int (local32 - (4.0 * menuscale))), (Int (local30\Field22 - (8.0 * menuscale))), (Int ((local6 * 0.18) + (4.0 * menuscale))), (Int (30.0 * menuscale)), local30\Field21, $00, 0.15, $12)
+                                GUESSEDcreateupdatemainmenu((Int (local32 - (4.0 * menuscale))), (Int (local30\Field22 - (8.0 * menuscale))), (Int ((local6 * 0.18) + (4.0 * menuscale))), (Int (30.0 * menuscale)), local30\Field21, $00, 0.15, $12)
                                 local32 = ((local6 * 0.18) + local32)
-                                TB4D26D8ZX((Int (local32 - (4.0 * menuscale))), (Int (local30\Field22 - (8.0 * menuscale))), (Int ((local6 * 0.13) + (4.0 * menuscale))), (Int (30.0 * menuscale)), (((Str local30\Field20) + " / ") + (Str local30\Field9)), $00, 0.15, $00)
+                                GUESSEDcreateupdatemainmenu((Int (local32 - (4.0 * menuscale))), (Int (local30\Field22 - (8.0 * menuscale))), (Int ((local6 * 0.13) + (4.0 * menuscale))), (Int (30.0 * menuscale)), (((Str local30\Field20) + " / ") + (Str local30\Field9)), $00, 0.15, $00)
                                 local32 = ((local6 * 0.13) + local32)
-                                TB4D26D8ZX((Int (local32 - (4.0 * menuscale))), (Int (local30\Field22 - (8.0 * menuscale))), (Int ((local6 * 0.1013) + (4.0 * menuscale))), (Int (30.0 * menuscale)), (Str local30\Field25), $00, 0.15, $00)
+                                GUESSEDcreateupdatemainmenu((Int (local32 - (4.0 * menuscale))), (Int (local30\Field22 - (8.0 * menuscale))), (Int ((local6 * 0.1013) + (4.0 * menuscale))), (Int (30.0 * menuscale)), (Str local30\Field25), $00, 0.15, $00)
                                 If (local30\Field18 <> 0) Then
-                                    TB4D26D8ZX((Int local4), (Int (local30\Field22 - (9.5 * menuscale))), (Int (local6 * 0.027)), (Int (30.0 * menuscale)), "C", $09, 1.0, $00)
+                                    GUESSEDcreateupdatemainmenu((Int local4), (Int (local30\Field22 - (9.5 * menuscale))), (Int (local6 * 0.027)), (Int (30.0 * menuscale)), "C", $09, 1.0, $00)
                                 EndIf
-                                If (((TXFD22D0402\Field5 = ((Handle local30) + $01)) And (T2FFB8B2F0() > local30\Field15)) <> 0) Then
-                                    TD0F2FZBXZ(local30\Field29, local30\Field16, $00, $00)
-                                    local30\Field15 = (T2FFB8B2F0() + $5DC)
+                                If (((TXFD22D0402\Field5 = ((Handle local30) + $01)) And (GUESSEDupdateitems_2() > local30\Field15)) <> 0) Then
+                                    GUESSEDwritesend(local30\Field29, local30\Field16, $00, $00)
+                                    local30\Field15 = (GUESSEDupdateitems_2() + $5DC)
                                 EndIf
                             EndIf
                         Next
@@ -371,28 +371,28 @@ Function updatemainmenu%()
                             local34 = mouseon(TXFD22D0402\Field10, TXFD22D0402\Field1, (Int (200.0 * menuscale)), (Int (88.0 * menuscale)))
                             local35 = $00
                             If (updatemenubutton(TXFD22D0402\Field10, TXFD22D0402\Field1, (Int (200.0 * menuscale)), (Int (25.0 * menuscale)), getlocalstring("mpmenu", "connect2"), $00, $01, $00, $FF, $FF, $FF, $01, 1.0, $00, $00) <> 0) Then
-                                F4ZXX4FDZ(local33, $00, $00)
+                                GUESSEDmenumpmenu(local33, $00, $00)
                                 local35 = $01
                             EndIf
                             If (updatemenubutton(TXFD22D0402\Field10, (Int (((Float TXFD22D0402\Field1) + (25.0 * menuscale)) - (3.0 * menuscale))), (Int (200.0 * menuscale)), (Int (25.0 * menuscale)), getlocalstring("mpmenu", "openinfo"), $00, $01, $00, $FF, $FF, $FF, $01, 1.0, $00, $00) <> 0) Then
-                                X88D840448(getlocalstring("mpmenu", "information"), ((((((((((((((((((((((format(getlocalstring("mpmenu", "info.name"), local33\Field11, "%s") + "\n&w[]") + format(getlocalstring("mpmenu", "info.gamemode"), local33\Field21, "%s")) + "\n&w[]") + format(getlocalstring("mpmenu", "info.players"), (((Str local33\Field20) + " / ") + (Str local33\Field9)), "%s")) + "\n&w[]") + format(getlocalstring("mpmenu", "info.diff"), difficulties[local33\Field28]\Field7, "%s")) + "\n&w[]") + format(getlocalstring("mpmenu", "info.seed"), local33\Field6, "%s")) + "\n&w[]") + format(getlocalstring("mpmenu", "info.mapsize"), (((Str local33\Field7) + "x") + (Str local33\Field7)), "%s")) + "\n&w[]") + format(getlocalstring("mpmenu", "info.intro"), TXX4XX846F(local33\Field19), "%s")) + "\n&w[]") + format(getlocalstring("mpmenu", "info.voice"), X8X4D0ZD08(local33\Field17), "%s")) + "\n&w[]") + format(getlocalstring("mpmenu", "info.ping"), (Str local33\Field25), "%s")) + "\n&w[]") + format(getlocalstring("mpmenu", "info.modded"), TXX4XX846F((local33\Field23 <> "")), "%s")) + "\n&w[]") + format(getlocalstring("mpmenu", "info.version"), XZF4X2066X(local33\Field26), "%s")) + "\n&w[]") + format(getlocalstring("mpmenu", "info.desc"), local33\Field14, "%s")), getlocalstring("gui", "close"), "", $00, $00, $00, $00)
-                                TD0F2FZBXZ(local33\Field29, local33\Field16, $01, $00)
+                                GUESSEDresetresetinput(getlocalstring("mpmenu", "information"), ((((((((((((((((((((((format(getlocalstring("mpmenu", "info.name"), local33\Field11, "%s") + "\n&w[]") + format(getlocalstring("mpmenu", "info.gamemode"), local33\Field21, "%s")) + "\n&w[]") + format(getlocalstring("mpmenu", "info.players"), (((Str local33\Field20) + " / ") + (Str local33\Field9)), "%s")) + "\n&w[]") + format(getlocalstring("mpmenu", "info.diff"), difficulties[local33\Field28]\Field7, "%s")) + "\n&w[]") + format(getlocalstring("mpmenu", "info.seed"), local33\Field6, "%s")) + "\n&w[]") + format(getlocalstring("mpmenu", "info.mapsize"), (((Str local33\Field7) + "x") + (Str local33\Field7)), "%s")) + "\n&w[]") + format(getlocalstring("mpmenu", "info.intro"), GUESSEDguigetlocalstring(local33\Field19), "%s")) + "\n&w[]") + format(getlocalstring("mpmenu", "info.voice"), GUESSEDgetgetlocalstring_2(local33\Field17), "%s")) + "\n&w[]") + format(getlocalstring("mpmenu", "info.ping"), (Str local33\Field25), "%s")) + "\n&w[]") + format(getlocalstring("mpmenu", "info.modded"), GUESSEDguigetlocalstring((local33\Field23 <> "")), "%s")) + "\n&w[]") + format(getlocalstring("mpmenu", "info.version"), GUESSEDupdateentry(local33\Field26), "%s")) + "\n&w[]") + format(getlocalstring("mpmenu", "info.desc"), local33\Field14, "%s")), getlocalstring("gui", "close"), "", $00, $00, $00, $00)
+                                GUESSEDwritesend(local33\Field29, local33\Field16, $01, $00)
                                 local35 = $01
                             EndIf
                             If (updatemenubutton(TXFD22D0402\Field10, (Int (((Float TXFD22D0402\Field1) + (50.0 * menuscale)) - (6.0 * menuscale))), (Int (200.0 * menuscale)), (Int (25.0 * menuscale)), getlocalstring("gui", "update"), $00, $01, $00, $FF, $FF, $FF, $01, 1.0, $00, $00) <> 0) Then
-                                TD0F2FZBXZ(local33\Field29, local33\Field16, $00, $00)
+                                GUESSEDwritesend(local33\Field29, local33\Field16, $00, $00)
                                 local35 = $01
                             EndIf
                             Select TXFD22D0402\Field3
                                 Case $00,$01
-                                    If (updatemenubutton(TXFD22D0402\Field10, (Int (((Float TXFD22D0402\Field1) + (75.0 * menuscale)) - (9.0 * menuscale))), (Int (200.0 * menuscale)), (Int (25.0 * menuscale)), getlocalstring("mpmenu", "add_to_favourites"), $00, $01, (XB88ZBFDZ2(local33\Field29, local33\Field16, $03) <> Null), $FF, $FF, $FF, $00, 1.0, $00, $00) <> 0) Then
-                                        YX0B0D2DF6(local33\Field29, local33\Field16, $03)
+                                    If (updatemenubutton(TXFD22D0402\Field10, (Int (((Float TXFD22D0402\Field1) + (75.0 * menuscale)) - (9.0 * menuscale))), (Int (200.0 * menuscale)), (Int (25.0 * menuscale)), getlocalstring("mpmenu", "add_to_favourites"), $00, $01, (GUESSEDsetupdatemainmenu_3(local33\Field29, local33\Field16, $03) <> Null), $FF, $FF, $FF, $00, 1.0, $00, $00) <> 0) Then
+                                        GUESSEDcreatedotted(local33\Field29, local33\Field16, $03)
                                         local35 = $01
                                     EndIf
                                 Case $03,$02
                                     If (updatemenubutton(TXFD22D0402\Field10, (Int (((Float TXFD22D0402\Field1) + (75.0 * menuscale)) - (9.0 * menuscale))), (Int (200.0 * menuscale)), (Int (25.0 * menuscale)), getlocalstring("gui", "delete"), $00, $01, $00, $FF, $FF, $FF, $00, 1.0, $00, $00) <> 0) Then
-                                        X0ZZ6X6ZD6(local33)
-                                        B24D0X6Z8(TXFD22D0402\Field3)
+                                        GUESSEDdeleteupdatemainmenu(local33)
+                                        GUESSEDsetentry(TXFD22D0402\Field3)
                                         local35 = $01
                                         local17 = $01
                                     EndIf
@@ -405,7 +405,7 @@ Function updatemainmenu%()
                                 local17 = $01
                             EndIf
                         EndIf
-                        If (((TDD0Z6BXB6\Field7 And (local17 = $00)) And (TXXBXD22D0F() = $00)) <> 0) Then
+                        If (((TDD0Z6BXB6\Field7 And (local17 = $00)) And (GUESSEDgetupdatemainmenu() = $00)) <> 0) Then
                             TXFD22D0402\Field5 = $00
                             TDD0Z6BXB6\Field5 = (millisecs() - $15E)
                         EndIf
@@ -421,7 +421,7 @@ Function updatemainmenu%()
                             local37 = ((local37 + local40\Field2) + "\n")
                         Next
                         local5 = ((30.0 * menuscale) + local5)
-                        local39 = TXZXZ4460F2((Int ((380.0 * menuscale) + local4)), (Int local5), (Int (150.0 * menuscale)), local37, local39)
+                        local39 = GUESSEDupdatesplit((Int ((380.0 * menuscale) + local4)), (Int local5), (Int (150.0 * menuscale)), local37, local39)
                         local38 = $00
                         For local40 = Each XZ8B4B628
                             If (local38 = local39) Then
@@ -482,7 +482,7 @@ Function updatemainmenu%()
                             EndIf
                         EndIf
                         If (updatemenubutton((Int ((420.0 * menuscale) + local4)), (Int ((local5 + local7) + (20.0 * menuscale))), (Int (160.0 * menuscale)), (Int (75.0 * menuscale)), getlocalstring("mpmenu", "host"), $00, $00, $00, $FF, $FF, $FF, $01, 1.0, $00, $00) <> 0) Then
-                            If (TXBD6F626BX($FFFFFFFF) <> 0) Then
+                            If (GUESSEDsetupdatemainmenu($FFFFFFFF) <> 0) Then
                                 opt\Field3 = $00
                                 currsave\Field2 = ""
                                 If (randomseed = "") Then
@@ -491,7 +491,7 @@ Function updatemainmenu%()
                                 seedrnd(generateseednumber(randomseed))
                                 local13 = $00
                                 local14 = $02
-                                Y0D662BXZZ()
+                                Steam_CreateLobby()
                                 initnewgame()
                                 iniwritestring(optionfile, "Global", "Enable Intro", (Str opt\Field3), $01)
                                 shoulddeletegadgets = $01
@@ -768,13 +768,13 @@ Function updatemainmenu%()
                         local5 = ((40.0 * menuscale) + local5)
                         opt\Field69 = updatemenuslider3((Int local4), (Int local5), (Int (150.0 * menuscale)), opt\Field69, $02, getlocalstring("options", "min"), getlocalstring("options", "red"), getlocalstring("options", "full"))
                         local5 = ((60.0 * menuscale) + local5)
-                        opt\Field76 = TXZXZ4460F2((Int local4), (Int local5), (Int (150.0 * menuscale)), ((((((((getlocalstring("options", "slider.verylow") + "\n") + getlocalstring("options", "slider.low")) + "\n") + getlocalstring("options", "slider.medium")) + "\n") + getlocalstring("options", "slider.high")) + "\n") + getlocalstring("options", "slider.ultra")), opt\Field76)
+                        opt\Field76 = GUESSEDupdatesplit((Int local4), (Int local5), (Int (150.0 * menuscale)), ((((((((getlocalstring("options", "slider.verylow") + "\n") + getlocalstring("options", "slider.low")) + "\n") + getlocalstring("options", "slider.medium")) + "\n") + getlocalstring("options", "slider.high")) + "\n") + getlocalstring("options", "slider.ultra")), opt\Field76)
                         local5 = ((35.0 * menuscale) + local5)
-                        opt\Field6 = TXZXZ4460F2((Int local4), (Int local5), (Int (150.0 * menuscale)), ((((((getlocalstring("options", "disabled") + "\n") + getlocalstring("options", "slider.low")) + "\n") + getlocalstring("options", "slider.medium")) + "\n") + getlocalstring("options", "slider.high")), opt\Field6)
+                        opt\Field6 = GUESSEDupdatesplit((Int local4), (Int local5), (Int (150.0 * menuscale)), ((((((getlocalstring("options", "disabled") + "\n") + getlocalstring("options", "slider.low")) + "\n") + getlocalstring("options", "slider.medium")) + "\n") + getlocalstring("options", "slider.high")), opt\Field6)
                         local5 = ((35.0 * menuscale) + local5)
-                        opt\Field44 = TXZXZ4460F2((Int local4), (Int local5), (Int (150.0 * menuscale)), ((((getlocalstring("options", "slider.low") + "\n") + getlocalstring("options", "slider.medium")) + "\n") + getlocalstring("options", "slider.high")), opt\Field44)
+                        opt\Field44 = GUESSEDupdatesplit((Int local4), (Int local5), (Int (150.0 * menuscale)), ((((getlocalstring("options", "slider.low") + "\n") + getlocalstring("options", "slider.medium")) + "\n") + getlocalstring("options", "slider.high")), opt\Field44)
                         local5 = ((35.0 * menuscale) + local5)
-                        opt\Field79 = TXZXZ4460F2((Int local4), (Int local5), (Int (150.0 * menuscale)), (getlocalstring("options", "tri") + "\n2X\n4X\n8X\n16X"), opt\Field79)
+                        opt\Field79 = GUESSEDupdatesplit((Int local4), (Int local5), (Int (150.0 * menuscale)), (getlocalstring("options", "tri") + "\n2X\n4X\n8X\n16X"), opt\Field79)
                         Select opt\Field79
                             Case $00
                                 opt\Field60 = $00
@@ -790,12 +790,12 @@ Function updatemainmenu%()
                         textureanisotropic(opt\Field60)
                         local43 = opt\Field34
                         local5 = ((35.0 * menuscale) + local5)
-                        opt\Field34 = TXZXZ4460F2((Int local4), (Int local5), (Int (150.0 * menuscale)), ((((((getlocalstring("options", "slider.verylow") + "\n") + getlocalstring("options", "slider.low")) + "\n") + getlocalstring("options", "slider.medium")) + "\n") + getlocalstring("options", "slider.high")), opt\Field34)
+                        opt\Field34 = GUESSEDupdatesplit((Int local4), (Int local5), (Int (150.0 * menuscale)), ((((((getlocalstring("options", "slider.verylow") + "\n") + getlocalstring("options", "slider.low")) + "\n") + getlocalstring("options", "slider.medium")) + "\n") + getlocalstring("options", "slider.high")), opt\Field34)
                         If (opt\Field34 <> local43) Then
                             clearunusedtextures()
                         EndIf
                         local5 = ((35.0 * menuscale) + local5)
-                        opt\Field71 = TXZXZ4460F2((Int local4), (Int local5), (Int (150.0 * menuscale)), ((((((getlocalstring("options", "disabled") + "\n") + getlocalstring("options", "slider.low")) + "\n") + getlocalstring("options", "slider.medium")) + "\n") + getlocalstring("options", "slider.high")), opt\Field71)
+                        opt\Field71 = GUESSEDupdatesplit((Int local4), (Int local5), (Int (150.0 * menuscale)), ((((((getlocalstring("options", "disabled") + "\n") + getlocalstring("options", "slider.low")) + "\n") + getlocalstring("options", "slider.medium")) + "\n") + getlocalstring("options", "slider.high")), opt\Field71)
                         local5 = ((60.0 * menuscale) + local5)
                         opt\Field16 = updatemenutick((Int local4), (Int local5), opt\Field16, $00)
                         opt\Field7 = updatemenutick((Int ((200.0 * menuscale) + local4)), (Int local5), opt\Field7, $00)
@@ -1030,8 +1030,8 @@ Function updatemainmenu%()
                         local4 = (local4 - (170.0 * menuscale))
                         opt\Field75 = left(updatemenuinputbox((Int ((20.0 * menuscale) + local4)), (Int (local5 - (5.0 * menuscale))), (Int (400.0 * menuscale)), (Int (30.0 * menuscale)), opt\Field75, $00, $424, $00, 1.0, $00, $00, $00), $1F)
                         local5 = ((35.0 * menuscale) + local5)
-                        If (((opt\Field24 = "") And (T20DD48F0X6() > $00)) <> 0) Then
-                            opt\Field24 = T2ZB824444($00)
+                        If (((opt\Field24 = "") And (GUESSEDcreatebank_3() > $00)) <> 0) Then
+                            opt\Field24 = GUESSEDupdatemainmenu($00)
                         EndIf
                         If (opt\Field24 = "") Then
                             updatemenubutton((Int ((20.0 * menuscale) + local4)), (Int local5), (Int (400.0 * menuscale)), (Int (30.0 * menuscale)), getlocalstring("mpoptions", "nullvoice"), $00, $00, $00, $FF, $FF, $FF, $01, 1.0, $00, $00)
@@ -1042,11 +1042,11 @@ Function updatemainmenu%()
                                 local54 = (local54 + "...")
                             EndIf
                             If (updatemenubutton((Int ((20.0 * menuscale) + local4)), (Int local5), (Int (400.0 * menuscale)), (Int (30.0 * menuscale)), local54, $00, $00, $00, $FF, $FF, $FF, $01, 1.0, $00, $00) <> 0) Then
-                                local55 = T20DD48F0X6()
+                                local55 = GUESSEDcreatebank_3()
                                 If (local55 > $00) Then
                                     local56 = $00
                                     For local9 = $00 To (local55 - $01) Step $01
-                                        If (T2ZB824444(local9) = opt\Field24) Then
+                                        If (GUESSEDupdatemainmenu(local9) = opt\Field24) Then
                                             local56 = local9
                                             Exit
                                         EndIf
@@ -1055,7 +1055,7 @@ Function updatemainmenu%()
                                     If (local56 >= local55) Then
                                         local56 = $00
                                     EndIf
-                                    opt\Field24 = T2ZB824444(local56)
+                                    opt\Field24 = GUESSEDupdatemainmenu(local56)
                                 EndIf
                             EndIf
                         EndIf
@@ -1150,7 +1150,7 @@ Function updatemainmenu%()
                             saveoptionsini($00)
                             usertrackcheck = $00
                             usertrackcheck2 = $00
-                            X0Z8F04D04()
+                            GUESSEDistex()
                             T42DZ064FB\Field0 = $00
                         Case $0C
                             T42DZ064FB\Field0 = $07
@@ -1165,7 +1165,7 @@ Function updatemainmenu%()
                 updatemenubutton((Int ((local4 + local6) + (20.0 * menuscale))), (Int local5), (Int (160.0 * menuscale)), (Int local7), getlocalstring("menu", "back"), $00, $00, $01, $FF, $FF, $FF, $01, 1.0, $00, $00)
             EndIf
         EndIf
-        X0200DFZ4($0A)
+        GUESSEDupdategame_5($0A)
         updateworld(1.0, 0.0)
     Wend
     If (mainmenuopen = $00) Then

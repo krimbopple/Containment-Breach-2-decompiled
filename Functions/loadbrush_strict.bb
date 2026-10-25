@@ -7,7 +7,7 @@ Function loadbrush_strict%(arg0$, arg1%, arg2#, arg3#)
         runtimeerrorex(format(getlocalstring("runerr", "brush.notfound"), arg0, "%s"))
     EndIf
     local0 = loadbrush(arg0, arg1, arg2, arg3)
-    XB04X8D680()
+    GUESSEDloadstrict_2()
     Return local0
     Return $00
 End Function

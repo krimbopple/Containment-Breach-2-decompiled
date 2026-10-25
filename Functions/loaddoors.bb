@@ -31,8 +31,8 @@ Function loaddoors%()
     d_i\Field9[$08] = loadanimmesh_strict("GFX\Map\Props\FenceDoor.b3d", $00, $01)
     d_i\Field9[$09] = loadmesh_strict("GFX\Map\Props\Door02.b3d", $00, $01)
     For local0 = $00 To $09 Step $01
-        TXZDB8BD842(d_i\Field9[local0])
-        YX2D2860X(d_i\Field9[local0], $01, $FFFFFFFF)
+        GUESSEDcreateentity_8(d_i\Field9[local0])
+        GUESSEDcreatesurface(d_i\Field9[local0], $01, $FFFFFFFF)
         showentity(d_i\Field9[local0])
     Next
     d_i\Field16[$00] = loadmesh_strict("GFX\Map\Props\DoorFrame.b3d", $00, $01)
@@ -44,8 +44,8 @@ Function loaddoors%()
     d_i\Field5 = loadmesh_strict("GFX\Map\Props\BigDoorColl.b3d", $00, $01)
     hideentity(d_i\Field5)
     For local0 = $00 To $03 Step $01
-        TXZDB8BD842(d_i\Field16[local0])
-        YX2D2860X(d_i\Field16[local0], $01, $FFFFFFFF)
+        GUESSEDcreateentity_8(d_i\Field16[local0])
+        GUESSEDcreatesurface(d_i\Field16[local0], $01, $FFFFFFFF)
         showentity(d_i\Field16[local0])
     Next
     d_i\Field2[$01] = loadtexture_strict("GFX\Map\Textures\elevator_panel_down.png", $01, $01, 1.0)
@@ -61,20 +61,20 @@ Function loaddoors%()
     d_i\Field8[$05] = loadmesh_strict("GFX\Map\Props\Button_base.b3d", $00, $01)
     local2 = loadmesh_strict("GFX\Map\Props\Button_button.b3d", d_i\Field8[$05], $01)
     nameentity(local2, "Button0")
-    TXZDB8BD842(local2)
+    GUESSEDcreateentity_8(local2)
     d_i\Field8[$06] = loadmesh_strict("GFX\Map\Props\ButtonElevator_Base.b3d", $00, $01)
     local2 = loadmesh_strict("GFX\Map\Props\ButtonElevator_Up.b3d", d_i\Field8[$06], $01)
     nameentity(local2, "Button0")
-    TXZDB8BD842(local2)
+    GUESSEDcreateentity_8(local2)
     local2 = loadmesh_strict("GFX\Map\Props\ButtonElevator_Down.b3d", d_i\Field8[$06], $01)
     nameentity(local2, "Button1")
-    TXZDB8BD842(local2)
+    GUESSEDcreateentity_8(local2)
     d_i\Field8[$01] = loadmesh_strict("GFX\Map\Props\ButtonKeycard.b3d", $00, $01)
     d_i\Field8[$02] = loadmesh_strict("GFX\Map\Props\ButtonCode.b3d", $00, $01)
     d_i\Field8[$03] = loadmesh_strict("GFX\Map\Props\ButtonScanner.b3d", $00, $01)
     d_i\Field8[$04] = loadanimmesh_strict("GFX\Map\Props\ButtonElevator.b3d", $00, $01)
     For local0 = $00 To $06 Step $01
-        TXZDB8BD842(d_i\Field8[local0])
+        GUESSEDcreateentity_8(d_i\Field8[local0])
         showentity(d_i\Field8[local0])
     Next
     For local0 = $00 To $09 Step $01
@@ -97,7 +97,7 @@ Function loaddoors%()
         For local0 = $01 To local3 Step $01
             local6 = getchild(d_i\Field10[local5], local0)
             entitytexture(local6, local1[(local0 - $01)], $00, $00)
-            TXZDB8BD842(local6)
+            GUESSEDcreateentity_8(local6)
         Next
     Next
     For local5 = $00 To $03 Step $01
@@ -105,7 +105,7 @@ Function loaddoors%()
         For local0 = $01 To local3 Step $01
             local6 = getchild(d_i\Field4[local5], local0)
             entitytexture(local6, local1[(local0 - $01)], $00, $00)
-            TXZDB8BD842(local6)
+            GUESSEDcreateentity_8(local6)
         Next
     Next
     For local5 = $00 To $06 Step $01
@@ -113,14 +113,14 @@ Function loaddoors%()
         For local0 = $01 To local3 Step $01
             local6 = getchild(d_i\Field11[local5], local0)
             entitytexture(local6, d_i\Field1[(local0 - $01)], $00, $00)
-            X8F80Z2886(local6, $FFFFFFFF, $00)
-            TXZDB8BD842(local6)
+            GUESSEDfreeentity_7(local6, $FFFFFFFF, $00)
+            GUESSEDcreateentity_8(local6)
             local4 = countchildren(local6)
             For local7 = $01 To local4 Step $01
                 local8 = getchild(local6, local7)
                 entitytexture(local8, d_i\Field1[(local0 - $01)], $00, $00)
-                X8F80Z2886(local8, $FFFFFFFF, $00)
-                TXZDB8BD842(local8)
+                GUESSEDfreeentity_7(local8, $FFFFFFFF, $00)
+                GUESSEDcreateentity_8(local8)
             Next
         Next
     Next

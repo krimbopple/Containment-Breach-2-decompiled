@@ -35,7 +35,7 @@ Function updatecredits%()
         XZ0260X8X2\Field50 = -1.0
     EndIf
     If (-1.0 = XZ0260X8X2\Field50) Then
-        BXZ2846Z2()
+        GUESSEDupdatetxxf()
         Delete Each creditsline
         nullgame($00)
         stopstream_strict(musicchn)

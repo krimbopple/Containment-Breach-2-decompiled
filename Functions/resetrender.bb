@@ -25,6 +25,6 @@ Function resetrender%()
     Next
     XZ0260X8X2\Field16 = 0.0
     shouldentitiesfall = $00
-    T4XZDFZD(opt\Field76)
+    GUESSEDrenderresetrender(opt\Field76)
     Return $00
 End Function

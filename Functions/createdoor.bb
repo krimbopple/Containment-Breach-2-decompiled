@@ -111,7 +111,7 @@ Function createdoor.doors(arg0.rooms, arg1#, arg2#, arg3#, arg4#, arg5%, arg6%, 
     Next
     local15 = (arg6 = $03)
     If (arg6 <> $06) Then
-        local0\Field51 = A464F2006(d_i\Field16[local9], $00)
+        local0\Field51 = GUESSEDcopyentity_2(d_i\Field16[local9], $00)
         scaleentity(local0\Field51, local3, local4, local5, $00)
         If (local15 <> 0) Then
             entitytype(local0\Field51, $01, $00)
@@ -122,7 +122,7 @@ Function createdoor.doors(arg0.rooms, arg1#, arg2#, arg3#, arg4#, arg5%, arg6%, 
         local0\Field51 = createpivot($00)
     EndIf
     positionentity(local0\Field51, arg1, arg2, arg3, $00)
-    local0\Field0 = A464F2006(d_i\Field9[local10], $00)
+    local0\Field0 = GUESSEDcopyentity_2(d_i\Field9[local10], $00)
     scaleentity(local0\Field0, local6, local7, local8, $00)
     positionentity(local0\Field0, arg1, arg2, arg3, $00)
     rotateentity(local0\Field0, 0.0, arg4, 0.0, $00)
@@ -132,7 +132,7 @@ Function createdoor.doors(arg0.rooms, arg1#, arg2#, arg3#, arg4#, arg5%, arg6%, 
     local0\Field37[$00] = local10
     local0\Field28 = (((arg6 = $04) Lor (arg6 = $05)) Lor (arg6 = $06))
     If (local0\Field28 = $00) Then
-        local0\Field7 = A464F2006(d_i\Field9[local11], $00)
+        local0\Field7 = GUESSEDcopyentity_2(d_i\Field9[local11], $00)
         scaleentity(local0\Field7, local6, local7, local8, $00)
         positionentity(local0\Field7, arg1, arg2, arg3, $00)
         rotateentity(local0\Field7, 0.0, (((Float (local15 = $00)) * 180.0) + arg4), 0.0, $00)
@@ -173,8 +173,8 @@ Function createdoor.doors(arg0.rooms, arg1#, arg2#, arg3#, arg4#, arg5%, arg6%, 
     Next
     rotateentity(local0\Field51, 0.0, arg4, 0.0, $00)
     entityparent(local0\Field51, local1, $01)
-    T42Z6D220X(local0, $FFFFFFFF)
-    T4F0F62Z66(local0)
+    GUESSEDcountentity(local0, $FFFFFFFF)
+    GUESSEDcreatedoor(local0)
     Return local0
     Return Null
 End Function

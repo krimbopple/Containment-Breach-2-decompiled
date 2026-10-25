@@ -12,7 +12,7 @@ Function updateconsole%()
     Local local10$
     Local local11%
     catcherrors("UpdateConsole()")
-    If (((opt\Field28 = $00) Lor ((((T8X2046020\Field4 Lor TXB2BFFFFFX()) Lor $00) And (TX6X48DXXDX = $00)) = $00)) <> 0) Then
+    If (((opt\Field28 = $00) Lor ((((T8X2046020\Field4 Lor GUESSEDupdateanimatenpc()) Lor $00) And (TX6X48DXXDX = $00)) = $00)) <> 0) Then
         consoleopen = $00
         Return $00
     EndIf
@@ -144,8 +144,8 @@ Function updateconsole%()
             consolereissue = Null
             consolescroll = 0.0
             createconsolemsg(consoleinput, $FF, $FF, $00, $01)
-            If (((T8X2046020\Field4 Lor TXB2BFFFFFX()) Lor $01) <> 0) Then
-                TXD0XFXB2BB(consoleinput)
+            If (((T8X2046020\Field4 Lor GUESSEDupdateanimatenpc()) Lor $01) <> 0) Then
+                GUESSEDupdatetxxf_4(consoleinput)
             EndIf
             executeconsolecommand(consoleinput, $01)
             consoleinput = ""

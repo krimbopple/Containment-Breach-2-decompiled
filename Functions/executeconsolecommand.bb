@@ -405,7 +405,7 @@ Function executeconsolecommand%(arg0$, arg1%)
             local12 = $00
             For local8 = Each itemtemplates
                 If ((((lower(local8\Field19) = local15) Lor (lower(local8\Field24) = local15)) Lor ((Str local8\Field9) = local15)) <> 0) Then
-                    If (((X4BX024DX0() = $00) Lor TXB2BFFFFFX()) <> 0) Then
+                    If (((GUESSEDupdatexdb() = $00) Lor GUESSEDupdateanimatenpc()) <> 0) Then
                         local5 = createitem(local8\Field19, local8\Field9, entityx(XZ0260X8X2\Field74, $00, 1.0), entityy(camera, $01, 1.0), entityz(XZ0260X8X2\Field74, $00, 1.0), $00, $00, $00, 1.0, $00)
                         entitytype(local5\Field9, $03, $00)
                     EndIf
@@ -420,28 +420,28 @@ Function executeconsolecommand%(arg0$, arg1%)
         Case "spawncup","givecup","spawndrink","givedrink"
             local15 = upper(right(consoleinput, (len(consoleinput) - instr(consoleinput, " ", $01))))
             local12 = $00
-            If (TX6ZD06226X(i_294\Field3, local15) <> 0) Then
-                local22 = D8XX4X0D0(i_294\Field0, XF2FX4F0X2(i_294\Field3, local15))
+            If (_S2IMapContains(i_294\Field3, local15) <> 0) Then
+                local22 = _JsonGetArrayValue(i_294\Field0, _S2IMapGet(i_294\Field3, local15))
                 local23 = $00
-                local23 = TX0Z2Z4F86D(local22, "explosion")
-                If (TF46ZF6DB6(local23) = $00) Then
-                    If (TX8B6FFF244(local23) <> 0) Then
+                local23 = _JsonGetValue(local22, "explosion")
+                If (_JsonIsNull(local23) = $00) Then
+                    If (_JsonGetBool(local23) <> 0) Then
                         XZ0260X8X2\Field33 = 135.0
-                        local23 = TX0Z2Z4F86D(local22, "death_message")
-                        If (TF46ZF6DB6(local23) = $00) Then
-                            msg\Field8 = TX240XXB6Z6(local23)
+                        local23 = _JsonGetValue(local22, "death_message")
+                        If (_JsonIsNull(local23) = $00) Then
+                            msg\Field8 = _JsonGetString(local23)
                         EndIf
                     EndIf
                 EndIf
-                local24 = TD4644B68Z(TX0Z2Z4F86D(local22, "color"))
-                local25 = T4BFX842B(TX0Z2Z4F86D(local22, "alpha"))
-                local23 = TX0Z2Z4F86D(local22, "glow")
-                If (TF46ZF6DB6(local23) = $00) Then
-                    If (TX8B6FFF244(local23) <> 0) Then
+                local24 = _JsonGetArray(_JsonGetValue(local22, "color"))
+                local25 = _JsonGetFloat(_JsonGetValue(local22, "alpha"))
+                local23 = _JsonGetValue(local22, "glow")
+                If (_JsonIsNull(local23) = $00) Then
+                    If (_JsonGetBool(local23) <> 0) Then
                         local25 = (- local25)
                     EndIf
                 EndIf
-                local5 = createitem("Cup", $2B, entityx(XZ0260X8X2\Field74, $00, 1.0), entityy(camera, $01, 1.0), entityz(XZ0260X8X2\Field74, $00, 1.0), XB2460ZF4(D8XX4X0D0(local24, $00)), XB2460ZF4(D8XX4X0D0(local24, $01)), XB2460ZF4(D8XX4X0D0(local24, $02)), local25, $00)
+                local5 = createitem("Cup", $2B, entityx(XZ0260X8X2\Field74, $00, 1.0), entityy(camera, $01, 1.0), entityz(XZ0260X8X2\Field74, $00, 1.0), _JsonGetInt(_JsonGetArrayValue(local24, $00)), _JsonGetInt(_JsonGetArrayValue(local24, $01)), _JsonGetInt(_JsonGetArrayValue(local24, $02)), local25, $00)
                 local5\Field19 = local15
                 local5\Field24 = format(getlocalstring("items", "cupof"), local15, "%s")
                 entitytype(local5\Field9, $03, $00)
@@ -717,7 +717,7 @@ Function executeconsolecommand%(arg0$, arg1%)
                 entitytype(local5\Field9, $03, $00)
             Next
             playsound_strict(loadtempsound("SFX\Music\Using420J.ogg"), $00, $00)
-            X42666Z0B0(Null, "SFX\Music\Using420J.ogg", XZ0260X8X2\Field74, 20.0, 1.0)
+            GUESSEDisentity_10(Null, "SFX\Music\Using420J.ogg", XZ0260X8X2\Field74, 20.0, 1.0)
         Case "godmode","god"
             local15 = lower(right(consoleinput, (len(consoleinput) - instr(consoleinput, " ", $01))))
             Select local15
@@ -734,8 +734,8 @@ Function executeconsolecommand%(arg0$, arg1%)
                 createconsolemsg(getlocalstring("console", "god.off"), $FFFFFFFF, $FFFFFFFF, $FFFFFFFF, $00)
             EndIf
         Case "revive","undead","resurrect"
-            If (X4BX024DX0() <> $00) Then
-                YX440XFZX4(TXXF6F02DB2[TXXDZB2ZBXX()])
+            If (GUESSEDupdatexdb() <> $00) Then
+                GUESSEDfreeentity_12(TXXF6F02DB2[GUESSEDupdatedropitem()])
             EndIf
             resetnegativestats($01)
             If (X2Z260BF0Z\Field1[$0C] <> $00) Then
@@ -1118,10 +1118,10 @@ Function executeconsolecommand%(arg0$, arg1%)
                 local15 = ""
             EndIf
             If (local15 = "all") Then
-                local37 = TD4644B68Z(TX0Z2Z4F86D(achievementsarray, "achievements"))
-                local38 = TD0DFDZ4XX(local37)
+                local37 = _JsonGetArray(_JsonGetValue(achievementsarray, "achievements"))
+                local38 = _JsonGetArraySize(local37)
                 For local13 = $00 To (local38 - $01) Step $01
-                    local39 = TX240XXB6Z6(TX0Z2Z4F86D(D8XX4X0D0(local37, local13), "id"))
+                    local39 = _JsonGetString(_JsonGetValue(_JsonGetArrayValue(local37, local13), "id"))
                     If (opt\Field30 <> 0) Then
                         giveachievement(local39, $01)
                     ElseIf ((((local39 <> "console") And (local39 <> "keter")) And (local39 <> "apollyon")) <> 0) Then
@@ -1130,14 +1130,14 @@ Function executeconsolecommand%(arg0$, arg1%)
                 Next
                 saveachievementsfile()
                 createconsolemsg(getlocalstring("console", "ga.all"), $FFFFFFFF, $FFFFFFFF, $FFFFFFFF, $00)
-            ElseIf (TX6ZD06226X(achievementsindex, local15) <> 0) Then
+            ElseIf (_S2IMapContains(achievementsindex, local15) <> 0) Then
                 If ((((local15 <> "console") And (local15 <> "keter")) And (local15 <> "apollyon")) <> 0) Then
                     giveachievement(local15, $01)
-                    local40 = TX0Z2Z4F86D(TX0Z2Z4F86D(TX0Z2Z4F86D(localachievementsarray, "translations"), local15), "name")
-                    If (TF46ZF6DB6(local40) <> 0) Then
-                        local40 = TX0Z2Z4F86D(TX0Z2Z4F86D(TX0Z2Z4F86D(achievementsarray, "translations"), local15), "name")
+                    local40 = _JsonGetValue(_JsonGetValue(_JsonGetValue(localachievementsarray, "translations"), local15), "name")
+                    If (_JsonIsNull(local40) <> 0) Then
+                        local40 = _JsonGetValue(_JsonGetValue(_JsonGetValue(achievementsarray, "translations"), local15), "name")
                     EndIf
-                    createconsolemsg(format(getlocalstring("console", "ga.success"), TX240XXB6Z6(local40), "%s"), $FFFFFFFF, $FFFFFFFF, $FFFFFFFF, $00)
+                    createconsolemsg(format(getlocalstring("console", "ga.success"), _JsonGetString(local40), "%s"), $FFFFFFFF, $FFFFFFFF, $FFFFFFFF, $00)
                 Else
                     createconsolemsg(format(getlocalstring("console", "ga.cheat"), local15, "%s"), $FF, $00, $00, $00)
                 EndIf
@@ -1192,18 +1192,18 @@ Function executeconsolecommand%(arg0$, arg1%)
             createconsolemsg("Done", $FFFFFFFF, $FFFFFFFF, $FFFFFFFF, $00)
         Case "noff"
             local15 = lower(right(consoleinput, (len(consoleinput) - instr(consoleinput, " ", $01))))
-            X048ZF260(XF808DD2ZX, (Float local15))
+            GUESSEDloadexecuteconsolecommand(XF808DD2ZX, (Float local15))
             createconsolemsg("Done", $FFFFFFFF, $FFFFFFFF, $FFFFFFFF, $00)
         Case "sbias"
             local15 = lower(right(consoleinput, (len(consoleinput) - instr(consoleinput, " ", $01))))
-            X048ZF260((Float local15), X8D40BB8XF)
+            GUESSEDloadexecuteconsolecommand((Float local15), X8D40BB8XF)
             createconsolemsg("Done", $FFFFFFFF, $FFFFFFFF, $FFFFFFFF, $00)
         Case "genenv"
             local15 = lower(right(consoleinput, (len(consoleinput) - instr(consoleinput, " ", $01))))
             local42 = (Int local15)
             If (((local42 >= $01) And (local42 <= $1000)) <> 0) Then
                 local43 = createtexture((local42 * $06), local42, $4001, $01)
-                local44 = T20BFF42662(local42, entityx(camera, $00, 1.0), entityy(camera, $00, 1.0), entityz(camera, $00, 1.0))
+                local44 = GUESSEDsetcamera(local42, entityx(camera, $00, 1.0), entityy(camera, $00, 1.0), entityz(camera, $00, 1.0))
                 For local13 = $00 To $05 Step $01
                     setcubeface(local44, local13)
                     copyrect($00, $00, local42, local42, (local42 * local13), $00, texturebuffer(local44, $00), texturebuffer(local43, $00))

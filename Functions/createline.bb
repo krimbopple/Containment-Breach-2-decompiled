@@ -14,7 +14,7 @@ Function createline%(arg0#, arg1#, arg2#, arg3#, arg4#, arg5#, arg6%)
     addvertex(local0, ((arg0 + arg3) / 2.0), ((arg1 + arg4) / 2.0), ((arg2 + arg5) / 2.0), 0.0, 0.0, 1.0)
     addvertex(local0, arg3, arg4, arg5, 1.0, 0.0, 1.0)
     addtriangle(local0, local1, (local1 + $02), (local1 + $01))
-    YX2D2860X(arg6, $00, $FFFFFFFF)
+    GUESSEDcreatesurface(arg6, $00, $FFFFFFFF)
     Return arg6
     Return $00
 End Function

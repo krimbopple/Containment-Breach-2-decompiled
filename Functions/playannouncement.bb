@@ -1,6 +1,6 @@
 Function playannouncement%(arg0$, arg1%)
-    If (((X4BX024DX0() <> $00) And arg1) <> 0) Then
-        XDB8BB08X4(arg0, $02, Null, 10.0, 1.0, 0.0, 0.0, 0.0)
+    If (((GUESSEDupdatexdb() <> $00) And arg1) <> 0) Then
+        GUESSEDupdateplayannouncement(arg0, $02, Null, 10.0, 1.0, 0.0, 0.0, 0.0)
     EndIf
     If (playerinreachableroom($01, $01, $01) = $00) Then
         Return $00

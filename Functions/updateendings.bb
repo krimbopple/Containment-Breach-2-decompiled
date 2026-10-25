@@ -565,7 +565,7 @@ Function updateendings%()
                                         local0\Field7 = 2.0
                                     EndIf
                                 ElseIf (2.0 = local0\Field7) Then
-                                    If (((Y0DBXD6BBZ(unlockedachievements) - TX6ZD06226X(unlockedachievements, "apollyon")) - TX6ZD06226X(unlockedachievements, "keter")) >= (Y0DBXD6BBZ(achievementsindex) - $04)) Then
+                                    If (((_S2IMapSize(unlockedachievements) - _S2IMapContains(unlockedachievements, "apollyon")) - _S2IMapContains(unlockedachievements, "keter")) >= (_S2IMapSize(achievementsindex) - $04)) Then
                                         makemeunplayable($01)
                                         local0\Field2 = playsound_strict(loadtempsound("SFX\Ending\GateA\STOPRIGHTTHERE.ogg"), $01, $00)
                                         local0\Field7 = 3.0

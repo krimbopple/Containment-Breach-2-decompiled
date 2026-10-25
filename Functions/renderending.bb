@@ -81,23 +81,23 @@ Function renderending%()
                         ereaderunlocked = $01
                     EndIf
                     local14 = $01
-                    local15 = TD4644B68Z(TX0Z2Z4F86D(achievementsarray, "achievements"))
-                    local16 = TD0DFDZ4XX(local15)
+                    local15 = _JsonGetArray(_JsonGetValue(achievementsarray, "achievements"))
+                    local16 = _JsonGetArraySize(local15)
                     For local8 = $00 To (local16 - $01) Step $01
-                        local17 = TX240XXB6Z6(TX0Z2Z4F86D(D8XX4X0D0(local15, local8), "id"))
-                        If (TX6ZD06226X(unlockedachievements, local17) <> 0) Then
-                            If (TX8B6FFF244(TX0Z2Z4F86D(D8XX4X0D0(local15, local8), "scp")) <> 0) Then
+                        local17 = _JsonGetString(_JsonGetValue(_JsonGetArrayValue(local15, local8), "id"))
+                        If (_S2IMapContains(unlockedachievements, local17) <> 0) Then
+                            If (_JsonGetBool(_JsonGetValue(_JsonGetArrayValue(local15, local8), "scp")) <> 0) Then
                                 local14 = (local14 + $01)
                             EndIf
                         EndIf
                     Next
-                    local18 = Y0DBXD6BBZ(unlockedachievements)
+                    local18 = _S2IMapSize(unlockedachievements)
                     local19 = (escapetimer Mod $3C)
                     local20 = (Int floor((Float (escapetimer / $3C))))
                     local21 = (Int floor((Float (local20 / $3C))))
                     local20 = (local20 - (local21 * $3C))
                     textex(local4, local5, format(getlocalstring("menu", "end.scps"), (Str local14), "%s"), $00, $00)
-                    textex(local4, (Int ((20.0 * menuscale) + (Float local5))), format(format(getlocalstring("menu", "end.achi"), (Str local18), "{0}"), (Str Y0DBXD6BBZ(achievementsindex)), "{1}"), $00, $00)
+                    textex(local4, (Int ((20.0 * menuscale) + (Float local5))), format(format(getlocalstring("menu", "end.achi"), (Str local18), "{0}"), (Str _S2IMapSize(achievementsindex)), "{1}"), $00, $00)
                     textex(local4, (Int ((40.0 * menuscale) + (Float local5))), format(format(getlocalstring("menu", "end.room"), (Str local10), "{0}"), (Str local9), "{1}"), $00, $00)
                     textex(local4, (Int ((60.0 * menuscale) + (Float local5))), format(format(getlocalstring("menu", "end.doc"), (Str local13), "{0}"), (Str local12), "{1}"), $00, $00)
                     textex(local4, (Int ((80.0 * menuscale) + (Float local5))), format(getlocalstring("menu", "end.914"), (Str XZ0260X8X2\Field80), "%s"), $00, $00)

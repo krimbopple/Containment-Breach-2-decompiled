@@ -4,7 +4,7 @@ Function updatemtf%()
     Local local2%
     Local local3.rooms
     Local local4%
-    If (((playerroom\Field22\Field21 = $4B) Lor ((X4BX024DX0() <> $00) And (TXB2BFFFFFX() = $00))) <> 0) Then
+    If (((playerroom\Field22\Field21 = $4B) Lor ((GUESSEDupdatexdb() <> $00) And (GUESSEDupdateanimatenpc() = $00))) <> 0) Then
         Return $00
     EndIf
     If (0.0 = mtftimer) Then

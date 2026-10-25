@@ -19,7 +19,7 @@ Function createevent.events(arg0%, arg1%, arg2%, arg3#)
                 If (((local3 >= arg2) And (local4 = $00)) <> 0) Then
                     local0 = (New events)
                     local0\Field32 = arg0
-                    Y646Z4Z68(local0, $FFFFFFFF)
+                    GUESSEDcreateevent_2(local0, $FFFFFFFF)
                     findeventvariable(local0)
                     local0\Field19 = local2
                     Return local0
@@ -39,7 +39,7 @@ Function createevent.events(arg0%, arg1%, arg2%, arg3#)
                 If (((arg3 >= rnd(0.0, 1.0)) And (local4 = $00)) <> 0) Then
                     local0 = (New events)
                     local0\Field32 = arg0
-                    Y646Z4Z68(local0, $FFFFFFFF)
+                    GUESSEDcreateevent_2(local0, $FFFFFFFF)
                     findeventvariable(local0)
                     local0\Field19 = local2
                 EndIf

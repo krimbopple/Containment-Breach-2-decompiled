@@ -1,0 +1,4 @@
+Function GUESSEDgetsetnpcframe%()
+    Return XZ0260X8X2\Field85
+    Return $00
+End Function

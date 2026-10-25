@@ -124,7 +124,7 @@ Function loadrmesh%(arg0$, arg1.roomtemplates, arg2%)
         Else
             brushtexture(local23, missingtexture, $00, $00)
         EndIf
-        TZXZZ288XZ(local23, $FFFFFFFF, $00)
+        GUESSEDgetbrush_3(local23, $FFFFFFFF, $00)
         If (local24 > $00) Then
             paintsurface(local21, local23)
         EndIf
@@ -419,9 +419,9 @@ Function loadrmesh%(arg0$, arg1.roomtemplates, arg2%)
     createpivot(local57)
     createpivot(local57)
     entityparent(local13, local57, $01)
-    BZ80B2864(local18, $01)
+    GUESSEDloadmask(local18, $01)
     closefile(local0)
-    XB04X8D680()
+    GUESSEDloadstrict_2()
     If (((arg1 <> Null) And (local50 = $00)) <> 0) Then
         local41 = (New Y0D6F4BXB0)
         local41\Field7 = arg1

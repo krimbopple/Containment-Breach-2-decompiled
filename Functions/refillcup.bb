@@ -32,7 +32,7 @@ Function refillcup%()
                 entitytype(local1\Field9, $03, $00)
                 pickitem(local1, $01)
                 playsound_strict(loadtempsound("SFX\SCP\294\Dispense1.ogg"), $00, $00)
-                X42666Z0B0(Null, "SFX\SCP\294\Dispense1.ogg", XZ0260X8X2\Field17\Field0, 8.0, 1.0)
+                GUESSEDisentity_10(Null, "SFX\SCP\294\Dispense1.ogg", XZ0260X8X2\Field17\Field0, 8.0, 1.0)
                 createmsg(getlocalstring("msg", "refill"), 6.0)
             Else
                 createmsg(getlocalstring("msg", "cup.needed"), 6.0)

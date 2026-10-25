@@ -44,7 +44,7 @@ Function update035label%(arg0%)
             Next
         EndIf
     Next
-    freeimage(XF2FX4F0X2(achievementsimages, "035"))
-    YFZ8BD2F6(achievementsimages, "035", scaleimageex(loadimage_strict((("GFX\Menu\achievements\Achv" + local5) + ".png")), menuscale, menuscale, $01))
+    freeimage(_S2IMapGet(achievementsimages, "035"))
+    _S2IMapSet(achievementsimages, "035", scaleimageex(loadimage_strict((("GFX\Menu\achievements\Achv" + local5) + ".png")), menuscale, menuscale, $01))
     Return $00
 End Function

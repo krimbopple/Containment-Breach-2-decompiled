@@ -17,7 +17,7 @@ Function use914%(arg0.items, arg1%, arg2#, arg3#, arg4#)
     Local local65%
     Local local79%
     XZ0260X8X2\Field80 = (XZ0260X8X2\Field80 + $01)
-    If (((X4BX024DX0() <> $00) And (TXB2BFFFFFX() = $00)) <> 0) Then
+    If (((GUESSEDupdatexdb() <> $00) And (GUESSEDupdateanimatenpc() = $00)) <> 0) Then
         Return $00
     EndIf
     local5 = $01
@@ -470,7 +470,7 @@ Function use914%(arg0.items, arg1%, arg2#, arg3#, arg4#)
                                     EndIf
                             End Select
                         Case $5E
-                            local39 = (Int max((Float ((((Y0DBXD6BBZ(achievementsindex) - $04) - (Y0DBXD6BBZ(unlockedachievements) - $01)) - TX6ZD06226X(unlockedachievements, "apollyon")) * (selecteddifficulty\Field8 + $02))), 0.0))
+                            local39 = (Int max((Float ((((_S2IMapSize(achievementsindex) - $04) - (_S2IMapSize(unlockedachievements) - $01)) - _S2IMapContains(unlockedachievements, "apollyon")) * (selecteddifficulty\Field8 + $02))), 0.0))
                             If (rand($00, local39) = $00) Then
                                 local1 = createitem("Key Card Omni", $60, arg2, arg3, arg4, $00, $00, $00, 1.0, $00)
                             ElseIf (rand(((selecteddifficulty\Field8 * $06) + $10), $01) = $01) Then
@@ -494,7 +494,7 @@ Function use914%(arg0.items, arg1%, arg2#, arg3#, arg4#)
                             EndIf
                     End Select
                 Case $02
-                    local39 = (Int max((Float ((((Y0DBXD6BBZ(achievementsindex) - $04) - (Y0DBXD6BBZ(unlockedachievements) - $01)) - TX6ZD06226X(unlockedachievements, "apollyon")) * (selecteddifficulty\Field8 + $05))), 0.0))
+                    local39 = (Int max((Float ((((_S2IMapSize(achievementsindex) - $04) - (_S2IMapSize(unlockedachievements) - $01)) - _S2IMapContains(unlockedachievements, "apollyon")) * (selecteddifficulty\Field8 + $05))), 0.0))
                     If (rand($00, local39) = $00) Then
                         local1 = createitem("Key Card Omni", $60, arg2, arg3, arg4, $00, $00, $00, 1.0, $00)
                     ElseIf (rand(((selecteddifficulty\Field8 Shl $03) + $20), $01) = $01) Then

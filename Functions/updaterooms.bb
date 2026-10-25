@@ -50,7 +50,7 @@ Function updaterooms%()
         Next
         BXZDBZ0BB\Field4 = 17.5
     EndIf
-    B240DB4F()
+    GUESSEDshowroomscoll()
     local12 = (Int (floor((entityx(playerroom\Field15, $00, 1.0) / 8.0)) + (floor((entityz(playerroom\Field15, $00, 1.0) / 8.0)) * (Float X824BX6D68))))
     If (((local12 >= $00) And (local12 <= $1C)) <> 0) Then
         currmapgrid\Field0[local12] = $01
@@ -58,8 +58,8 @@ Function updaterooms%()
     playerroom\Field7 = $01
     showroomsnocoll(playerroom)
     showroomscoll(playerroom)
-    FFZ262644(playerroom)
-    T2026X80F28()
+    ShowRoomDoors(playerroom)
+    GUESSEDupdategame_2()
     catcherrors("Uncaught: UpdateRooms()")
     Return $00
 End Function

@@ -18,7 +18,7 @@ Function updatelights%()
             Else
                 local0\Field1 = curvevalue(1.0, local0\Field1, 2.5)
             EndIf
-            local0\Field12 = (T2640FXDZF(local5, (local6 / 1.2), local6) * local0\Field1)
+            local0\Field12 = (GUESSEDupdateclamp(local5, (local6 / 1.2), local6) * local0\Field1)
             If (0.0 = BXZDBZ0BB\Field1) Then
                 local4 = entityhidden(local0\Field7)
                 If (local6 > local5) Then

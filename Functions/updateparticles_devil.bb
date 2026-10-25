@@ -52,7 +52,7 @@ Function updateparticles_devil%()
                 local0\Field9 = $01
             EndIf
         EndIf
-        If (((0.0 < fps\Field3[$00]) And (TX6BB60B482(local0\Field14, playerroom) And (local5 > entitydistancesquared(local0\Field2, XZ0260X8X2\Field74)))) <> 0) Then
+        If (((0.0 < fps\Field3[$00]) And (GUESSEDupdatedecals(local0\Field14, playerroom) And (local5 > entitydistancesquared(local0\Field2, XZ0260X8X2\Field74)))) <> 0) Then
             If (local0\Field3\Field37 > $FFFFFFFF) Then
                 local6 = $00
                 For local1 = Each particle

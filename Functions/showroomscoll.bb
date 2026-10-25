@@ -16,7 +16,7 @@ Function showroomscoll%(arg0.rooms)
         Next
         For local4 = Each doors
             If (local4\Field32 = arg0) Then
-                EXDFFFFD2(local4, 1.0)
+                GUESSEDgetentity_2(local4, 1.0)
             EndIf
         Next
         For local5 = Each securitycams
@@ -63,7 +63,7 @@ Function showroomscoll%(arg0.rooms)
         Next
         For local8 = Each Y0D6F4BXB0
             If (local8\Field7 = arg0\Field22) Then
-                Y006X26F02(arg0, local8)
+                GUESSEDcreateentity_12(arg0, local8)
             EndIf
         Next
         entityalpha(getchild(arg0\Field15, $02), 1.0)

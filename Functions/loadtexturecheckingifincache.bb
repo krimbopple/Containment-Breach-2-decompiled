@@ -21,7 +21,7 @@ Function loadtexturecheckingifincache%(arg0$, arg1%, arg2%, arg3#)
         local1 = (lang\Field0 + local1)
     EndIf
     If ((arg1 And $80) <> 0) Then
-        local0\Field2 = TZ4BZFX06Z(local1, arg1)
+        local0\Field2 = GUESSEDloadtex(local1, arg1)
     Else
         local0\Field2 = loadtexture(local1, arg1)
     EndIf

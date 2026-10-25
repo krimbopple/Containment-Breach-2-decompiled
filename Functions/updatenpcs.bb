@@ -77,8 +77,8 @@ Function updatenpcs%()
     Local local119%
     Local local120%
     Local local121%
-    If (X4BX024DX0() <> $00) Then
-        Return X8DDX86DZ()
+    If (GUESSEDupdatexdb() <> $00) Then
+        Return MP_UpdateNPCs()
     EndIf
     catcherrors("UpdateNPCs()")
     For local0 = Each npcs
@@ -698,7 +698,7 @@ Function updatenpcs%()
                                     If (((T8660BZ460\Field11 = $00) And local48) <> 0) Then
                                         If (((((-16.0 > XZ0260X8X2\Field53) Lor (-6.0 < XZ0260X8X2\Field53)) And (0.0 = i_1025\Field1[$04])) And (T8660BZ460\Field5 = $00)) <> 0) Then
                                             playsound_strict(loadtempsound("SFX\SCP\096\Triggered.ogg"), $01, $00)
-                                            EB022F8Z(unlockedachievements, "096")
+                                            _S2IMapErase(unlockedachievements, "096")
                                             XZ0260X8X2\Field51 = 10.0
                                             setnpcframe(local0, 194.0, $01)
                                             stopstream_strict(local0\Field63)
@@ -773,7 +773,7 @@ Function updatenpcs%()
                                     If (((T8660BZ460\Field11 = $00) And local48) <> 0) Then
                                         If (((((-16.0 > XZ0260X8X2\Field53) Lor (-6.0 < XZ0260X8X2\Field53)) And (0.0 = i_1025\Field1[$04])) And (T8660BZ460\Field5 = $00)) <> 0) Then
                                             playsound_strict(loadtempsound("SFX\SCP\096\Triggered.ogg"), $01, $00)
-                                            EB022F8Z(unlockedachievements, "096")
+                                            _S2IMapErase(unlockedachievements, "096")
                                             XZ0260X8X2\Field51 = 10.0
                                             If (422.0 <= local0\Field103) Then
                                                 setnpcframe(local0, 677.0, $01)
@@ -959,7 +959,7 @@ Function updatenpcs%()
                                         If (0.64 > local14) Then
                                             If (local0\Field71[local0\Field48]\Field7 <> Null) Then
                                                 If (local0\Field71[local0\Field48]\Field7\Field39 = $00) Then
-                                                    X480XDB486(local0\Field71[local0\Field48]\Field7, entityx(local0\Field82, $00, 1.0), entityy(local0\Field82, $00, 1.0), entityz(local0\Field82, $00, 1.0))
+                                                    GUESSEDupdatetform(local0\Field71[local0\Field48]\Field7, entityx(local0\Field82, $00, 1.0), entityy(local0\Field82, $00, 1.0), entityz(local0\Field82, $00, 1.0))
                                                 EndIf
                                             EndIf
                                             If (0.08 > local14) Then
@@ -2080,7 +2080,7 @@ Function updatenpcs%()
                     rotateentity(local0\Field98, 0.0, (entityyaw(local0\Field82, $00, 1.0) + 180.0), 0.0, $00)
                 EndIf
             Case $18
-                TB6464DDF0(local0)
+                UpdateMTFUnit(local0)
             Case $16,$14
                 If (66.0 <> local0\Field66) Then
                     If (local0\Field1 = $00) Then
@@ -3662,7 +3662,7 @@ Function updatenpcs%()
                                             Select rand($06, $01)
                                                 Case $01
                                                     playsound_strict(loadtempsound("SFX\SCP\066\Beethoven.ogg"), $00, $00)
-                                                    X068DD6B4F(((((Float selecteddifficulty\Field8) * 15.0) + 45.0) * 70.0))
+                                                    GUESSEDupdategui(((((Float selecteddifficulty\Field8) * 15.0) + 45.0) * 70.0))
                                                     XZ0260X8X2\Field14 = 10.0
                                                 Case $02
                                                     local0\Field57 = (Float rand($2BC, $578))
@@ -5410,7 +5410,7 @@ Function updatenpcs%()
                     ElseIf (shouldentitiesfall <> 0) Then
                         local117 = $00
                         If (local0\Field24 = $00) Then
-                            local0\Field90 = X0D8ZZBB4F(local0\Field82, $00)
+                            local0\Field90 = GUESSEDloadxb(local0\Field82, $00)
                             If (local0\Field90 <> Null) Then
                                 If (((local0\Field90 = playerroom) Lor isroomadjacent(local0\Field90, playerroom)) <> 0) Then
                                     local117 = $01

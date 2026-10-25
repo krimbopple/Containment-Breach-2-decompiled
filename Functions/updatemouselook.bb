@@ -26,7 +26,7 @@ Function updatemouselook%()
     Local local24%
     Local local25%
     catcherrors("UpdateMouseLook()")
-    local0 = TXXF6F02DB2[TXXDZB2ZBXX()]
+    local0 = TXXF6F02DB2[GUESSEDupdatedropitem()]
     local1 = $01
     local2 = $01
     local3 = 0.0
@@ -46,7 +46,7 @@ Function updatemouselook%()
     XZ0260X8X2\Field1 = max((XZ0260X8X2\Field1 - local8), 0.0)
     XZ0260X8X2\Field14 = max((XZ0260X8X2\Field14 - local8), 0.0)
     If (0.0 < XZ0260X8X2\Field14) Then
-        T2B6ZDF4D4()
+        GUESSEDrotateentity()
     EndIf
     If ((TDD0Z6BXB6\Field10 And (0.0001 > XZ0260X8X2\Field13)) <> 0) Then
         XZ0260X8X2\Field81 = curvevalue(0.35, XZ0260X8X2\Field81, 7.0)
@@ -79,7 +79,7 @@ Function updatemouselook%()
             EndIf
             TDD0Z6BXB6\Field11 = curvevalue(TDD0Z6BXB6\Field13, TDD0Z6BXB6\Field11, 25.0)
             TDD0Z6BXB6\Field4 = curvevalue(TDD0Z6BXB6\Field14, TDD0Z6BXB6\Field4, 25.0)
-            If ((((((invopen Lor i_294\Field4) Lor (otheropen <> Null)) Lor (d_i\Field3 <> Null)) Lor (selectedscreen <> Null)) Lor ((((menuopen Lor consoleopen) Lor (0.0 > XZ0260X8X2\Field2)) Lor TX6X48DXXDX) And (X4BX024DX0() <> $00))) <> 0) Then
+            If ((((((invopen Lor i_294\Field4) Lor (otheropen <> Null)) Lor (d_i\Field3 <> Null)) Lor (selectedscreen <> Null)) Lor ((((menuopen Lor consoleopen) Lor (0.0 > XZ0260X8X2\Field2)) Lor TX6X48DXXDX) And (GUESSEDupdatexdb() <> $00))) <> 0) Then
                 stopmousemovement()
             EndIf
             local14 = (TDD0Z6BXB6\Field13 * 0.3)
@@ -93,9 +93,9 @@ Function updatemouselook%()
         local18 = (cos((Float DZ64X028\Field5)) * local17)
         local19 = (sin((Float DZ64X028\Field5)) * local17)
         local20 = local19
-        local21 = CFZD40FDB($01)
-        local22 = TD2D2BFZF($01)
-        local23 = YXDZX2480($01)
+        local21 = GUESSEDupdateentity($01)
+        local22 = GUESSEDupdateentity_3($01)
+        local23 = GUESSEDupdateentity_7($01)
         XZ0260X8X2\Field5 = curvevalue(0.0, XZ0260X8X2\Field5, 8.0)
         XZ0260X8X2\Field41 = curvevalue(XZ0260X8X2\Field5, XZ0260X8X2\Field41, 6.0)
         rotateentity(camera, clamp(((((rnd((- local16), local16) + camerapitch) + local18) + local21) + XZ0260X8X2\Field41), -89.9, 89.9), wrapangle((((entityyaw(XZ0260X8X2\Field74, $00, 1.0) + rnd((- local16), local16)) + local19) + local22), 360.0), (((local10 + local20) * (Float local1)) + local23), $00)
@@ -107,7 +107,7 @@ Function updatemouselook%()
         If (((((((menuopen Lor invopen) Lor consoleopen) Lor i_294\Field4) Lor (otheropen <> Null)) Lor (d_i\Field3 <> Null)) Lor TX6X48DXXDX) = $00) Then
             movemouse(TDD0Z6BXB6\Field6, TDD0Z6BXB6\Field9)
         EndIf
-    ElseIf (((((FD020X0BZ\Field5 And (0.0 >= FD020X0BZ\Field2)) = $00) Lor (X4BX024DX0() = $00)) Lor ((0.0 > XZ0260X8X2\Field52) And (0.0 = XZ0260X8X2\Field48))) <> 0) Then
+    ElseIf (((((FD020X0BZ\Field5 And (0.0 >= FD020X0BZ\Field2)) = $00) Lor (GUESSEDupdatexdb() = $00)) Lor ((0.0 > XZ0260X8X2\Field52) And (0.0 = XZ0260X8X2\Field48))) <> 0) Then
         If (entityhidden(XZ0260X8X2\Field74) = $00) Then
             hideentity(XZ0260X8X2\Field74)
         EndIf

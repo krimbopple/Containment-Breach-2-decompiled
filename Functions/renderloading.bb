@@ -13,29 +13,29 @@ Function renderloading%(arg0#, arg1$, arg2%, arg3#)
     Local local11%
     catcherrors((((("RenderLoading(" + (Str (Int floor(arg0)))) + ", ") + arg1) + ")"))
     local0 = rndseed()
-    local4 = TD0DFDZ4XX(loadingscreens)
+    local4 = _JsonGetArraySize(loadingscreens)
     hidepointer()
     If (0.0 = arg0) Then
         If (loadingimage = $00) Then
             descriptionindex = $00
-            selectedloadingscreens = D8XX4X0D0(loadingscreens, rand($00, (local4 - $01)))
-            loadingscreentitle = TX240XXB6Z6(TX0Z2Z4F86D(selectedloadingscreens, "title"))
-            If (TF46ZF6DB6(TX0Z2Z4F86D(selectedloadingscreens, "descriptions")) <> 0) Then
+            selectedloadingscreens = _JsonGetArrayValue(loadingscreens, rand($00, (local4 - $01)))
+            loadingscreentitle = _JsonGetString(_JsonGetValue(selectedloadingscreens, "title"))
+            If (_JsonIsNull(_JsonGetValue(selectedloadingscreens, "descriptions")) <> 0) Then
                 If (descriptiondoc <> $00) Then
-                    Y00DFZDDF6(descriptiondoc)
+                    _JsonFreeDocument(descriptiondoc)
                 EndIf
-                descriptiondoc = TB0Z440FF8(((("[" + chr($22)) + chr($22)) + "]"))
-                descriptions = TD4644B68Z(descriptiondoc)
+                descriptiondoc = _JsonParseFromString(((("[" + chr($22)) + chr($22)) + "]"))
+                descriptions = _JsonGetArray(descriptiondoc)
             Else
-                descriptions = TD4644B68Z(TX0Z2Z4F86D(selectedloadingscreens, "descriptions"))
+                descriptions = _JsonGetArray(_JsonGetValue(selectedloadingscreens, "descriptions"))
             EndIf
-            imagealignx = TX240XXB6Z6(TX0Z2Z4F86D(selectedloadingscreens, "align_x"))
-            imagealigny = TX240XXB6Z6(TX0Z2Z4F86D(selectedloadingscreens, "align_y"))
+            imagealignx = _JsonGetString(_JsonGetValue(selectedloadingscreens, "align_x"))
+            imagealigny = _JsonGetString(_JsonGetValue(selectedloadingscreens, "align_y"))
             TX62X4DD402 = 0.0
             EF28D22B2 = scaleimageex(loadimage_strict("GFX\Menu\QuickLoading.png"), (menuscale * 2.3), (menuscale * 2.3), $01)
-            loadingimage = scaleimageex(loadimage_strict(("GFX\LoadingScreens\" + TX240XXB6Z6(TX0Z2Z4F86D(selectedloadingscreens, "image")))), menuscale, menuscale, $01)
+            loadingimage = scaleimageex(loadimage_strict(("GFX\LoadingScreens\" + _JsonGetString(_JsonGetValue(selectedloadingscreens, "image")))), menuscale, menuscale, $01)
             maskimage(loadingimage, $00, $00, $00)
-            If (TX8B6FFF244(TX0Z2Z4F86D(selectedloadingscreens, "background")) <> 0) Then
+            If (_JsonGetBool(_JsonGetValue(selectedloadingscreens, "background")) <> 0) Then
                 If (loadingback = $00) Then
                     loadingback = scaleimageex(loadimage_strict("GFX\LoadingScreens\loading_back.png"), menuscale, menuscale, $01)
                     maskimage(loadingback, $00, $00, $00)
@@ -58,7 +58,7 @@ Function renderloading%(arg0#, arg1$, arg2%, arg3#)
     E2F4Z648F = arg2
     AZ4Z48BBX = arg3
     local3 = $01
-    local5 = TD0DFDZ4XX(descriptions)
+    local5 = _JsonGetArraySize(descriptions)
     local6 = (loadingscreentitle = "CWM")
     seedrnd(millisecs())
     Repeat
@@ -110,7 +110,7 @@ Function renderloading%(arg0#, arg1$, arg2%, arg3#)
         setfontex(XD00026ZX2\Field0[$00])
         If (local6 <> 0) Then
             If (local3 <> 0) Then
-                If (((((Int arg0) = $64) And (0.0 = XZDBX4X4FD(arg0))) And (initializeintromovie = $00)) <> 0) Then
+                If (((((Int arg0) = $64) And (0.0 = GUESSEDloadrenderloading(arg0))) And (initializeintromovie = $00)) <> 0) Then
                     playsound_strict(loadtempsound("SFX\SCP\990\cwm1.cwm"), $00, $00)
                 EndIf
             EndIf
@@ -176,7 +176,7 @@ Function renderloading%(arg0#, arg1$, arg2%, arg3#)
             setfontex(XD00026ZX2\Field0[$01])
             textex(TDD0Z6BXB6\Field6, (Int ((Float TDD0Z6BXB6\Field9) - (450.0 * menuscale))), loadingscreentitle, $01, $01)
             setfontex(XD00026ZX2\Field0[$0A])
-            rowtext(TX240XXB6Z6(D8XX4X0D0(descriptions, descriptionindex)), (Int ((Float TDD0Z6BXB6\Field6) - (200.0 * menuscale))), (Int ((Float TDD0Z6BXB6\Field9) + (200.0 * menuscale))), (Int (400.0 * menuscale)), (Int (300.0 * menuscale)), $01, 1.0)
+            rowtext(_JsonGetString(_JsonGetArrayValue(descriptions, descriptionindex)), (Int ((Float TDD0Z6BXB6\Field6) - (200.0 * menuscale))), (Int ((Float TDD0Z6BXB6\Field9) + (200.0 * menuscale))), (Int (400.0 * menuscale)), (Int (300.0 * menuscale)), $01, 1.0)
         EndIf
         setfontex(XD00026ZX2\Field0[$00])
         If ((Int floor(arg0)) <> $64) Then
@@ -206,7 +206,7 @@ Function renderloading%(arg0#, arg1$, arg2%, arg3#)
             delay($10)
         EndIf
         If ((((initializeintromovie And local6) Lor (getkey() <> $00)) Lor mousehit($01)) <> 0) Then
-            X64Z0X8D64()
+            GUESSEDresetdeletemenugadgets()
             Exit
         EndIf
     Forever

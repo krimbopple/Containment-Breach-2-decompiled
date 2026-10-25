@@ -1,10 +1,10 @@
 Function LoadSound%(arg0$)
     Local local0%
-    local0 = TZBD40DX0F($00, arg0, $00, $00, $00, $08, $00)
+    local0 = BASS_SampleLoad($00, arg0, $00, $00, $00, $08, $00)
     If (local0 <> $00) Then
-        TX848600ZFD(local0, T2X868F684())
-        pokefloat(T2X868F684(), $04, 0.0)
-        XDD60DBZX6(local0, T2X868F684())
+        BASS_SampleGetInfo(local0, GUESSEDloadentry())
+        pokefloat(GUESSEDloadentry(), $04, 0.0)
+        BASS_SampleSetInfo(local0, GUESSEDloadentry())
     EndIf
     Return local0
     Return $00

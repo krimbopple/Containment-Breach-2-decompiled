@@ -33,7 +33,7 @@ Function updatechunks%(arg0.rooms, arg1%, arg2%)
     local13 = ((local10 * 40.0) + -120.0)
     local14 = 14400.0
     local15 = $00
-    local16 = TD0DFDZ4XX(scp1499chunks)
+    local16 = _JsonGetArraySize(scp1499chunks)
     Repeat
         local17 = $00
         For local0 = Each chunk

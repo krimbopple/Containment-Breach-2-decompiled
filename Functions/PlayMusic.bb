@@ -5,7 +5,7 @@ Function PlayMusic%(arg0$, arg1%, arg2#)
     If ((arg1 And $02) <> 0) Then
         local0 = (local0 Or $04)
     EndIf
-    local1 = TBDF4X0X4X($00, arg0, $00, $00, $00, $00, local0)
+    local1 = BASS_StreamCreateFile($00, arg0, $00, $00, $00, $00, local0)
     If (((local1 <> $00) And (0.0 <= arg2)) <> 0) Then
         ChannelVolume(local1, arg2)
         ResumeChannel(local1)

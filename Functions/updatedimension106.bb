@@ -25,7 +25,7 @@ Function updatedimension106%()
     Local local27%
     For local0 = Each events
         If (local0\Field32 = $4B) Then
-            If (X4BX024DX0() = $00) Then
+            If (GUESSEDupdatexdb() = $00) Then
                 local12 = (sin((local0\Field4 * 1.6)) * 4.0)
                 local13 = (cos((local0\Field4 * 0.8)) * 5.0)
                 positionentity(local0\Field19\Field27[$09], (entityx(local0\Field19\Field27[$08], $01, 1.0) + 13.21875), local0\Field19\Field3, entityz(local0\Field19\Field27[$08], $01, 1.0), $00)
@@ -37,10 +37,10 @@ Function updatedimension106%()
             Else
                 For local7 = $00 To $1D Step $01
                     If (((local7 <> $09) And (local7 <> $0A)) <> 0) Then
-                        T806XXBD42(local0\Field19, local7)
+                        GUESSEDupdatedimension(local0\Field19, local7)
                     EndIf
                 Next
-                T806XXBD42(local0\Field19, $13)
+                GUESSEDupdatedimension(local0\Field19, $13)
             EndIf
             If (playerroom = local0\Field19) Then
                 showroomsnocoll(local0\Field19)
@@ -399,7 +399,7 @@ Function updatedimension106%()
                                 local0\Field19\Field25[local7]\Field39 = $00
                                 local0\Field19\Field25[local7]\Field13 = 0.0
                             Next
-                            EB022F8Z(unlockedachievements, "pocketdimension")
+                            _S2IMapErase(unlockedachievements, "pocketdimension")
                             loadeventsound(local0, "SFX\Room\PocketDimension\Rumble.ogg", $00)
                             loadeventsound(local0, "SFX\Room\PocketDimension\PrisonVoices.ogg", $01)
                             local0\Field4 = 0.0

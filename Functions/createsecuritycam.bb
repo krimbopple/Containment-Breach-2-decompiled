@@ -18,8 +18,8 @@ Function createsecuritycam.securitycams(arg0.rooms, arg1#, arg2#, arg3#, arg4#, 
     scaleentity(local0\Field7, 0.01, 0.01, 0.01, $00)
     rotateentity(local0\Field7, arg4, 0.0, 0.0, $00)
     hideentity(local0\Field7)
-    YX2D2860X(local0\Field0, $00, $FFFFFFFF)
-    YX2D2860X(local0\Field7, $00, $FFFFFFFF)
+    GUESSEDcreatesurface(local0\Field0, $00, $FFFFFFFF)
+    GUESSEDcreatesurface(local0\Field7, $00, $FFFFFFFF)
     local0\Field12 = arg5
     If (arg5 <> 0) Then
         local0\Field17 = $01
@@ -37,7 +37,7 @@ Function createsecuritycam.securitycams(arg0.rooms, arg1#, arg2#, arg3#, arg4#, 
             entityparent(local0\Field3, arg0\Field15, $01)
         EndIf
         hideentity(local0\Field3)
-        YX2D2860X(local0\Field3, $00, $420)
+        GUESSEDcreatesurface(local0\Field3, $00, $420)
         entitytexture(local0\Field3, sc_i\Field0, $00, $00)
         entitycolor(local0\Field3, 200.0, 200.0, 200.0)
         local0\Field22 = createsprite(local0\Field3)
@@ -47,7 +47,7 @@ Function createsecuritycam.securitycams(arg0.rooms, arg1#, arg2#, arg3#, arg4#, 
         spriteviewmode(local0\Field22, $02)
         entityfx(local0\Field22, $11)
         entityblend(local0\Field22, $03)
-        YX2D2860X(local0\Field22, $00, $60)
+        GUESSEDcreatesurface(local0\Field22, $00, $60)
         hideentity(local0\Field22)
         local0\Field15 = copyentity(mon_i\Field3[$00], local0\Field3)
         scaleentity(local0\Field15, local1, local1, local1, $01)

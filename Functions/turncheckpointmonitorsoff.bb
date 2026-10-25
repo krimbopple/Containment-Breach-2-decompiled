@@ -16,7 +16,7 @@ Function turncheckpointmonitorsoff%(arg0%)
                 If (local3 <> $00) Then
                     If (lower(strippath(texturename(local3))) <> "monitortexture.jpg") Then
                         brushtexture(local2, mon_i\Field2[$02], $00, $00)
-                        TZXZZ288XZ(local2, $FFFFFFFF, $00)
+                        GUESSEDgetbrush_3(local2, $FFFFFFFF, $00)
                         paintsurface(local1, local2)
                         freetexture(local3)
                         local3 = $00

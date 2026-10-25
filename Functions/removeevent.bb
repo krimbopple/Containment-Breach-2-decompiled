@@ -36,7 +36,7 @@ Function removeevent%(arg0.events)
         freeimage(arg0\Field16)
         arg0\Field16 = $00
     EndIf
-    TX0ZZ4B6B8X(arg0)
+    GUESSEDdeleteremoveevent(arg0)
     Delete arg0
     Return $00
 End Function

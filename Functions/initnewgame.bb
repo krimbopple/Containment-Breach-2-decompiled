@@ -18,8 +18,8 @@ Function initnewgame%()
     Local local18%
     Local local19%
     catcherrors("InitNewGame()")
-    TBXX4B0X6("", "Loading in game", "")
-    XFZ4XXX8D("steam_display", "#loading")
+    _Discord_SetPresence("", "Loading in game", "")
+    Steam_SetRichPresence("steam_display", "#loading")
     loadentities($00)
     loadsounds()
     fog\Field13 = 8.0
@@ -110,7 +110,7 @@ Function initnewgame%()
         EndIf
     Next
     renderloading(85.0, getlocalstring("loading", "reflections"), $41, 0.025)
-    XDF40D6XXF()
+    GUESSEDupdateentity_5()
     renderloading(86.0, getlocalstring("loading", "events"), $00, 0.025)
     seedrnd((generateseednumber(randomseed) + $02))
     For local3 = Each rooms
@@ -189,39 +189,39 @@ Function initnewgame%()
     renderloading(95.0, getlocalstring("loading", "pos"), $00, 0.025)
     mainmenuopen = $00
     clearunusedtextures()
-    X4D2DBX640()
-    XFZ4XXX8D("steam_display", "#playing")
-    TBXX4B0X6("", "Playing", "")
+    GUESSEDhideentity_6()
+    Steam_SetRichPresence("steam_display", "#playing")
+    _Discord_SetPresence("", "Playing", "")
     T8X2046020\Field4 = $01
-    If (TXB2BFFFFFX() <> 0) Then
+    If (GUESSEDupdateanimatenpc() <> 0) Then
         TXDFXDZXXDD\Field7 = $01
-        If (T2XZF288FFX() <> $01) Then
-            XFB6ZXXX66(TXXDZB2ZBXX(), Z2XBX862F("localhost"), udpstreamport(X4BX024DX0()))
+        If (MP_IsConnected() <> $01) Then
+            GUESSEDcreateint(GUESSEDupdatedropitem(), GUESSEDcounthost("localhost"), udpstreamport(GUESSEDupdatexdb()))
         Else
-            F0Z646402(TXB68F6DF06(), local18, local19)
-            XFB6ZXXX66(TXXDZB2ZBXX(), local18, local19)
+            _Steam_GetUInt64(_Steam_GetPlayerID(), local18, local19)
+            GUESSEDcreateint(GUESSEDupdatedropitem(), local18, local19)
         EndIf
-        TXXF6F02DB2[TXXDZB2ZBXX()]\Field23 = X2F0BZ80F2(opt\Field42)
-        TXB4426Z828(TXXF6F02DB2[TXXDZB2ZBXX()])
+        TXXF6F02DB2[GUESSEDupdatedropitem()]\Field23 = GUESSEDinitinitnewgame_6(opt\Field42)
+        GUESSEDinitinitnewgame_3(TXXF6F02DB2[GUESSEDupdatedropitem()])
         renderloading(100.0, "", $00, 0.025)
-    ElseIf (X22ZB4026Z() <> $00) Then
-        If (T2XZF288FFX() = $01) Then
-            YX0D84FX06(X22ZB4026Z(), TX824024XZF())
+    ElseIf (GUESSEDinitinitnewgame_5() <> $00) Then
+        If (MP_IsConnected() = $01) Then
+            MP_SendLocalPlayer(GUESSEDinitinitnewgame_5(), GUESSEDinitinitnewgame_2())
         Else
-            TXX6BX64D88(X22ZB4026Z(), TX824024XZF())
+            MP_SendPlayerInfo(GUESSEDinitinitnewgame_5(), GUESSEDinitinitnewgame_2())
         EndIf
         renderloading(99.5, getlocalstring("loading", "establish"), $00, 0.025)
         resetinput(10.0)
-        TXZ22FF244X()
+        GUESSEDinitinitnewgame_4()
         Repeat
-            ZDF08F86X()
-            D42X0DXX2()
-            F200DBZ86()
-            If ((((T64ZZ6Z68F\Field1 <> $00) Lor (ZZ8068B0F() <> $00)) Lor mainmenuopen) <> 0) Then
+            GUESSEDinitentry_2()
+            Steam_Update()
+            GUESSEDresetnullgame()
+            If ((((T64ZZ6Z68F\Field1 <> $00) Lor (GUESSEDinitinitnewgame_8() <> $00)) Lor mainmenuopen) <> 0) Then
                 Exit
             EndIf
             If (keyhit($01) <> 0) Then
-                XZ24ZD260F($00, "", $00)
+                GUESSEDinitinitnewgame_7($00, "", $00)
             EndIf
             renderloading(99.5, "", $00, 0.025)
             delay($01)
@@ -230,7 +230,7 @@ Function initnewgame%()
     fps\Field3[$00] = 0.0
     fps\Field6 = millisecs()
     shoulddeletegadgets = $01
-    X64Z0X8D64()
+    GUESSEDresetdeletemenugadgets()
     resetinput(10.0)
     catcherrors("Uncaught: InitNewGame()")
     Return $00

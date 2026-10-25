@@ -7,7 +7,7 @@ Function usedoor%(arg0%)
     Local local8%
     Local local9%
     Local local11.emitter
-    XD8DBX4X2(d_i\Field6, selecteditem, d_i\Field12, (Int msg\Field6))
+    GUESSEDsetdd_2(d_i\Field6, selecteditem, d_i\Field12, (Int msg\Field6))
     local1 = $00
     If (selecteditem <> Null) Then
         local1 = getusingitem(selecteditem)
@@ -15,15 +15,15 @@ Function usedoor%(arg0%)
     local2 = (((((d_i\Field6\Field44 > $00) + (((d_i\Field6\Field44 > $FFFFFFFC) And (d_i\Field6\Field44 < $00)) Shl $01)) + ((d_i\Field6\Field52 <> $00) * $03)) + ((((d_i\Field6\Field46 = $05) Lor (d_i\Field6\Field46 = $04)) Lor (d_i\Field6\Field46 = $06)) Shl $02)) + ((d_i\Field6\Field46 = $01) * $05))
     local3 = $00
     d_i\Field6\Field43 = buttondirection
-    If (X4BX024DX0() <> $00) Then
+    If (GUESSEDupdatexdb() <> $00) Then
         d_i\Field6\Field43 = $01
         local4 = local2
         If (local4 = $05) Then
             local2 = $06
         EndIf
     EndIf
-    If ((TXB2BFFFFFX() And (CB64D8DZF = Null)) <> 0) Then
-        CB64D8DZF = TXXF6F02DB2[TXXDZB2ZBXX()]
+    If ((GUESSEDupdateanimatenpc() And (CB64D8DZF = Null)) <> 0) Then
+        CB64D8DZF = TXXF6F02DB2[GUESSEDupdatedropitem()]
     EndIf
     Select local2
         Case $01
@@ -32,7 +32,7 @@ Function usedoor%(arg0%)
                     createmsg(getlocalstring("msg", "key.require"), 6.0)
                 EndIf
                 playsoundex(buttonsfx[$00], camera, d_i\Field15, 10.0, 1.0, $00, $00)
-                X42666Z0B0(CB64D8DZF, XX0D06202F(buttonsfx[$00]), d_i\Field15, 10.0, 1.0)
+                GUESSEDisentity_10(CB64D8DZF, GUESSEDopenopenclosedoor(buttonsfx[$00]), d_i\Field15, 10.0, 1.0)
                 Return $00
             Else
                 If (local1 <= $00) Then
@@ -68,14 +68,14 @@ Function usedoor%(arg0%)
                 EndIf
                 If ((((d_i\Field6\Field21 <> $01) And ((((local1 > $00) And (local1 <> $01)) And (local1 >= d_i\Field6\Field44)) Lor (local1 = $09))) And (d_i\Field6\Field38 = $00)) <> 0) Then
                     playsoundex(snd_i\Field3[$00], camera, d_i\Field15, 10.0, 1.0, $00, $00)
-                    X42666Z0B0(CB64D8DZF, XX0D06202F(snd_i\Field3[$00]), d_i\Field15, 10.0, 1.0)
+                    GUESSEDisentity_10(CB64D8DZF, GUESSEDopenopenclosedoor(snd_i\Field3[$00]), d_i\Field15, 10.0, 1.0)
                 Else
                     If (local1 <= $00) Then
                         playsoundex(buttonsfx[$00], camera, d_i\Field15, 10.0, 1.0, $00, $00)
-                        X42666Z0B0(CB64D8DZF, XX0D06202F(buttonsfx[$00]), d_i\Field15, 10.0, 1.0)
+                        GUESSEDisentity_10(CB64D8DZF, GUESSEDopenopenclosedoor(buttonsfx[$00]), d_i\Field15, 10.0, 1.0)
                     Else
                         playsoundex(snd_i\Field3[$01], camera, d_i\Field15, 10.0, 1.0, $00, $00)
-                        X42666Z0B0(CB64D8DZF, XX0D06202F(snd_i\Field3[$01]), d_i\Field15, 10.0, 1.0)
+                        GUESSEDisentity_10(CB64D8DZF, GUESSEDopenopenclosedoor(snd_i\Field3[$01]), d_i\Field15, 10.0, 1.0)
                     EndIf
                     Return $00
                 EndIf
@@ -86,7 +86,7 @@ Function usedoor%(arg0%)
                     createmsg(getlocalstring("msg", "dna.denied_1"), 6.0)
                 EndIf
                 playsoundex(snd_i\Field21[$01], camera, d_i\Field15, 10.0, 1.0, $00, $00)
-                X42666Z0B0(CB64D8DZF, XX0D06202F(snd_i\Field21[$01]), d_i\Field15, 10.0, 1.0)
+                GUESSEDisentity_10(CB64D8DZF, GUESSEDopenopenclosedoor(snd_i\Field21[$01]), d_i\Field15, 10.0, 1.0)
                 Return $00
             Else
                 If ((((local1 >= $00) Lor (local1 < $FFFFFFFD)) And (local1 <> $09)) <> 0) Then
@@ -114,10 +114,10 @@ Function usedoor%(arg0%)
                 EndIf
                 If ((((d_i\Field6\Field21 = $00) And ((local1 = d_i\Field6\Field44) Lor (local1 = $09))) And (d_i\Field6\Field38 = $00)) <> 0) Then
                     playsoundex(snd_i\Field21[$00], camera, d_i\Field15, 10.0, 1.0, $00, $00)
-                    X42666Z0B0(CB64D8DZF, XX0D06202F(snd_i\Field21[$00]), d_i\Field15, 10.0, 1.0)
+                    GUESSEDisentity_10(CB64D8DZF, GUESSEDopenopenclosedoor(snd_i\Field21[$00]), d_i\Field15, 10.0, 1.0)
                 Else
                     playsoundex(snd_i\Field21[$01], camera, d_i\Field15, 10.0, 1.0, $00, $00)
-                    X42666Z0B0(CB64D8DZF, XX0D06202F(snd_i\Field21[$01]), d_i\Field15, 10.0, 1.0)
+                    GUESSEDisentity_10(CB64D8DZF, GUESSEDopenopenclosedoor(snd_i\Field21[$01]), d_i\Field15, 10.0, 1.0)
                     Return $00
                 EndIf
             EndIf
@@ -125,10 +125,10 @@ Function usedoor%(arg0%)
             If (selecteditem = Null) Then
                 If (((((d_i\Field6\Field21 = $00) And (d_i\Field6\Field52 <> $FFFFFFFF)) And (d_i\Field6\Field52 = (Int msg\Field6))) And (d_i\Field6\Field38 = $00)) <> 0) Then
                     playsoundex(snd_i\Field21[$00], camera, d_i\Field15, 10.0, 1.0, $00, $00)
-                    X42666Z0B0(CB64D8DZF, XX0D06202F(snd_i\Field21[$00]), d_i\Field15, 10.0, 1.0)
+                    GUESSEDisentity_10(CB64D8DZF, GUESSEDopenopenclosedoor(snd_i\Field21[$00]), d_i\Field15, 10.0, 1.0)
                 Else
                     playsoundex(snd_i\Field21[$01], camera, d_i\Field15, 10.0, 1.0, $00, $00)
-                    X42666Z0B0(CB64D8DZF, XX0D06202F(snd_i\Field21[$01]), d_i\Field15, 10.0, 1.0)
+                    GUESSEDisentity_10(CB64D8DZF, GUESSEDopenopenclosedoor(snd_i\Field21[$01]), d_i\Field15, 10.0, 1.0)
                     Return $00
                 EndIf
             Else
@@ -145,10 +145,10 @@ Function usedoor%(arg0%)
                 selecteditem = Null
                 If (((((d_i\Field6\Field21 = $00) And (d_i\Field6\Field52 <> $FFFFFFFF)) And (local1 = $09)) And (d_i\Field6\Field38 = $00)) <> 0) Then
                     playsoundex(snd_i\Field21[$00], camera, d_i\Field15, 10.0, 1.0, $00, $00)
-                    X42666Z0B0(CB64D8DZF, XX0D06202F(snd_i\Field21[$00]), d_i\Field15, 10.0, 1.0)
+                    GUESSEDisentity_10(CB64D8DZF, GUESSEDopenopenclosedoor(snd_i\Field21[$00]), d_i\Field15, 10.0, 1.0)
                 Else
                     playsoundex(snd_i\Field21[$01], camera, d_i\Field15, 10.0, 1.0, $00, $00)
-                    X42666Z0B0(CB64D8DZF, XX0D06202F(snd_i\Field21[$01]), d_i\Field15, 10.0, 1.0)
+                    GUESSEDisentity_10(CB64D8DZF, GUESSEDopenopenclosedoor(snd_i\Field21[$01]), d_i\Field15, 10.0, 1.0)
                     Return $00
                 EndIf
             EndIf
@@ -170,12 +170,12 @@ Function usedoor%(arg0%)
                     EndIf
                     If (((d_i\Field6\Field46 = $04) Lor (d_i\Field6\Field46 = $06)) <> 0) Then
                         playsoundex(snd_i\Field0[$00], camera, d_i\Field15, 10.0, 1.0, $00, $00)
-                        X42666Z0B0(CB64D8DZF, XX0D06202F(snd_i\Field0[$00]), d_i\Field15, 10.0, 1.0)
+                        GUESSEDisentity_10(CB64D8DZF, GUESSEDopenopenclosedoor(snd_i\Field0[$00]), d_i\Field15, 10.0, 1.0)
                         setanimtime(d_i\Field6\Field0, 1.0, $00)
                         d_i\Field6\Field20 = $01
                     Else
                         playsoundex(snd_i\Field0[$01], camera, d_i\Field15, 10.0, 1.0, $00, $00)
-                        X42666Z0B0(CB64D8DZF, XX0D06202F(snd_i\Field0[$01]), d_i\Field15, 10.0, 1.0)
+                        GUESSEDisentity_10(CB64D8DZF, GUESSEDopenopenclosedoor(snd_i\Field0[$01]), d_i\Field15, 10.0, 1.0)
                     EndIf
                 Else
                     If (((local1 > $FFFFFFFC) And (local1 <> $09)) <> 0) Then
@@ -202,7 +202,7 @@ Function usedoor%(arg0%)
                                 ElseIf (forest_event\Field19\Field32[$00] = Null) Then
                                     forest_event\Field19\Field32[$00] = createnpc($0C, 0.0, 0.0, 0.0)
                                 EndIf
-                                If (((CB64D8DZF <> Null) And (CB64D8DZF <> TXXF6F02DB2[TXXDZB2ZBXX()])) <> 0) Then
+                                If (((CB64D8DZF <> Null) And (CB64D8DZF <> TXXF6F02DB2[GUESSEDupdatedropitem()])) <> 0) Then
                                     Return $00
                                 EndIf
                                 createconsolemsg("", $FFFFFFFF, $FFFFFFFF, $FFFFFFFF, $00)
@@ -216,22 +216,22 @@ Function usedoor%(arg0%)
                     If (((local1 > $FFFFFFFC) And (local1 <> $09)) <> 0) Then
                         If (((d_i\Field6\Field46 = $04) Lor (d_i\Field6\Field46 = $06)) <> 0) Then
                             playsoundex(snd_i\Field0[$00], camera, d_i\Field15, 10.0, 1.0, $00, $00)
-                            X42666Z0B0(CB64D8DZF, XX0D06202F(snd_i\Field0[$00]), d_i\Field15, 10.0, 1.0)
+                            GUESSEDisentity_10(CB64D8DZF, GUESSEDopenopenclosedoor(snd_i\Field0[$00]), d_i\Field15, 10.0, 1.0)
                             setanimtime(d_i\Field6\Field0, 1.0, $00)
                             d_i\Field6\Field20 = $01
                         Else
                             playsoundex(snd_i\Field0[$01], camera, d_i\Field15, 10.0, 1.0, $00, $00)
-                            X42666Z0B0(CB64D8DZF, XX0D06202F(snd_i\Field0[$01]), d_i\Field15, 10.0, 1.0)
+                            GUESSEDisentity_10(CB64D8DZF, GUESSEDopenopenclosedoor(snd_i\Field0[$01]), d_i\Field15, 10.0, 1.0)
                         EndIf
                     Else
                         playsoundex(snd_i\Field38, camera, d_i\Field15, 10.0, 1.0, $00, $00)
-                        X42666Z0B0(CB64D8DZF, XX0D06202F(snd_i\Field38), d_i\Field15, 10.0, 1.0)
+                        GUESSEDisentity_10(CB64D8DZF, GUESSEDopenopenclosedoor(snd_i\Field38), d_i\Field15, 10.0, 1.0)
                     EndIf
                 EndIf
                 Return $00
             ElseIf (((d_i\Field6\Field46 = $04) Lor (d_i\Field6\Field46 = $06)) <> 0) Then
                 playsoundex(snd_i\Field0[$00], camera, d_i\Field15, 10.0, 1.0, $00, $00)
-                X42666Z0B0(CB64D8DZF, XX0D06202F(snd_i\Field0[$00]), d_i\Field15, 10.0, 1.0)
+                GUESSEDisentity_10(CB64D8DZF, GUESSEDopenopenclosedoor(snd_i\Field0[$00]), d_i\Field15, 10.0, 1.0)
                 setanimtime(d_i\Field6\Field0, 1.0, $00)
                 d_i\Field6\Field20 = $01
             EndIf
@@ -240,7 +240,7 @@ Function usedoor%(arg0%)
                 If ((d_i\Field6\Field19 > $00) = $00) Then
                     createmsg(getlocalstring("msg", "elev.broken"), 6.0)
                     playsoundex(buttonsfx[$01], camera, d_i\Field15, 10.0, 1.0, $00, $00)
-                    X42666Z0B0(CB64D8DZF, XX0D06202F(buttonsfx[$01]), d_i\Field15, 10.0, 1.0)
+                    GUESSEDisentity_10(CB64D8DZF, GUESSEDopenopenclosedoor(buttonsfx[$01]), d_i\Field15, 10.0, 1.0)
                     setanimtime(d_i\Field15, (((Float (d_i\Field6\Field43 = $00)) * 20.0) + 1.0), $00)
                     d_i\Field6\Field49 = d_i\Field12
                     Return $00
@@ -264,14 +264,14 @@ Function usedoor%(arg0%)
                         createmsg(getlocalstring("msg", "elev.already"), 6.0)
                     EndIf
                     playsoundex(buttonsfx[$00], camera, d_i\Field15, 10.0, 1.0, $00, $00)
-                    X42666Z0B0(CB64D8DZF, XX0D06202F(buttonsfx[$00]), d_i\Field15, 10.0, 1.0)
+                    GUESSEDisentity_10(CB64D8DZF, GUESSEDopenopenclosedoor(buttonsfx[$00]), d_i\Field15, 10.0, 1.0)
                     setanimtime(d_i\Field15, (((Float (d_i\Field6\Field43 = $00)) * 20.0) + 1.0), $00)
                     d_i\Field6\Field49 = d_i\Field12
                     Return $00
                 EndIf
             Else
                 playsoundex(buttonsfx[$00], camera, d_i\Field15, 10.0, 1.0, $00, $00)
-                X42666Z0B0(CB64D8DZF, XX0D06202F(buttonsfx[$00]), d_i\Field15, 10.0, 1.0)
+                GUESSEDisentity_10(CB64D8DZF, GUESSEDopenopenclosedoor(buttonsfx[$00]), d_i\Field15, 10.0, 1.0)
                 setanimtime(d_i\Field15, (((Float (d_i\Field6\Field43 = $00)) * 20.0) + 1.0), $00)
                 d_i\Field6\Field49 = d_i\Field12
             EndIf
@@ -279,7 +279,7 @@ Function usedoor%(arg0%)
             If ((((d_i\Field6\Field35 = Null) Lor (d_i\Field6\Field21 = $01)) Lor ((d_i\Field6\Field35 <> Null) And (d_i\Field6\Field35\Field21 = $01))) <> 0) Then
                 createmsg(getlocalstring("msg", "elev.broken"), 6.0)
                 playsoundex(buttonsfx[$01], camera, d_i\Field15, 10.0, 1.0, $00, $00)
-                X42666Z0B0(CB64D8DZF, XX0D06202F(buttonsfx[$01]), d_i\Field15, 10.0, 1.0)
+                GUESSEDisentity_10(CB64D8DZF, GUESSEDopenopenclosedoor(buttonsfx[$01]), d_i\Field15, 10.0, 1.0)
                 d_i\Field6\Field43 = $01
                 setanimtime(d_i\Field15, 1.0, $00)
                 d_i\Field6\Field49 = d_i\Field12
@@ -288,7 +288,7 @@ Function usedoor%(arg0%)
             local8 = isinsideelevator(entityx(XZ0260X8X2\Field74, $00, 1.0), entityy(XZ0260X8X2\Field74, $00, 1.0), entityz(XZ0260X8X2\Field74, $00, 1.0), d_i\Field6\Field31)
             local9 = $00
             playsoundex(buttonsfx[$00], camera, d_i\Field15, 10.0, 1.0, $00, $00)
-            X42666Z0B0(CB64D8DZF, XX0D06202F(buttonsfx[$00]), d_i\Field15, 10.0, 1.0)
+            GUESSEDisentity_10(CB64D8DZF, GUESSEDopenopenclosedoor(buttonsfx[$00]), d_i\Field15, 10.0, 1.0)
             If (((d_i\Field6\Field39 = $00) And (0.0 = d_i\Field6\Field13)) <> 0) Then
                 If (((d_i\Field6\Field35\Field39 And (180.0 = d_i\Field6\Field35\Field13)) And (0.0 >= d_i\Field6\Field35\Field25)) <> 0) Then
                     openclosedoor(d_i\Field6\Field35, $01, $00)
@@ -351,7 +351,7 @@ Function usedoor%(arg0%)
                     createmsg(getlocalstring("msg", "button.locked"), 6.0)
                 EndIf
                 playsoundex(buttonsfx[$01], camera, d_i\Field15, 10.0, 1.0, $00, $00)
-                X42666Z0B0(CB64D8DZF, XX0D06202F(buttonsfx[$01]), d_i\Field15, 10.0, 1.0)
+                GUESSEDisentity_10(CB64D8DZF, GUESSEDopenopenclosedoor(buttonsfx[$01]), d_i\Field15, 10.0, 1.0)
                 If (animlength(d_i\Field15) >= $00) Then
                     setanimtime(d_i\Field15, 1.0, $00)
                     d_i\Field6\Field49 = d_i\Field12
@@ -359,7 +359,7 @@ Function usedoor%(arg0%)
                 Return $00
             Else
                 playsoundex(buttonsfx[$00], camera, d_i\Field15, 10.0, 1.0, $00, $00)
-                X42666Z0B0(CB64D8DZF, XX0D06202F(buttonsfx[$00]), d_i\Field15, 10.0, 1.0)
+                GUESSEDisentity_10(CB64D8DZF, GUESSEDopenopenclosedoor(buttonsfx[$00]), d_i\Field15, 10.0, 1.0)
                 If (animlength(d_i\Field15) >= $00) Then
                     setanimtime(d_i\Field15, (((Float (d_i\Field6\Field43 = $00)) * 20.0) + 1.0), $00)
                     d_i\Field6\Field49 = d_i\Field12
@@ -376,7 +376,7 @@ Function usedoor%(arg0%)
         local11 = setemitter(Null, entityx(d_i\Field6\Field0, $01, 1.0), entityy(d_i\Field6\Field0, $01, 1.0), entityz(d_i\Field6\Field0, $01, 1.0), $10)
         entityparent(local11\Field2, d_i\Field6\Field0, $01)
         playsoundex(snd_i\Field53, camera, d_i\Field6\Field51, 10.0, 1.0, $00, $00)
-        X42666Z0B0(CB64D8DZF, XX0D06202F(snd_i\Field53), d_i\Field6\Field51, 10.0, 1.0)
+        GUESSEDisentity_10(CB64D8DZF, GUESSEDopenopenclosedoor(snd_i\Field53), d_i\Field6\Field51, 10.0, 1.0)
     EndIf
     CB64D8DZF = Null
     Return $00

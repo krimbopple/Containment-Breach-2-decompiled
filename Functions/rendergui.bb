@@ -120,7 +120,7 @@ Function rendergui%()
     If (((selecteddifficulty\Field7 <> difficulties[$03]\Field7) And opt\Field68) <> 0) Then
         local25 = 1.0
         If (((((((((menuopen Lor invopen) Lor consoleopen) Lor i_294\Field4) Lor (otheropen <> Null)) Lor (d_i\Field3 <> Null)) Lor (selectedscreen <> Null)) Lor (Int XZ0260X8X2\Field48)) Lor TX6X48DXXDX) = $00) Then
-            local26 = ((TXBD40D4Z22() = $00) And T8X2046020\Field1)
+            local26 = ((GUESSEDrenderrendergui_2() = $00) And T8X2046020\Field1)
             If (d_i\Field15 <> $00) Then
                 render3dhandicon($05, d_i\Field15, $FFFFFFFF)
                 local26 = $00
@@ -144,7 +144,7 @@ Function rendergui%()
         EndIf
         renderhud(1.0)
     EndIf
-    XZ0260X8X2\Field59 = TXX2F60Z0XB(local25, XZ0260X8X2\Field59, 4.0, TX8FF82X024())
+    XZ0260X8X2\Field59 = GUESSEDrenderrendergui_3(local25, XZ0260X8X2\Field59, 4.0, MP_GetLoadingProgress())
     If (chs\Field4 <> $00) Then
         renderdebughud()
     EndIf
@@ -265,7 +265,7 @@ Function rendergui%()
                     Case $18
                         local41 = (i_714\Field0 = $01)
                     Default
-                        If (TX8BXZD868F() = otheropen\Field8[local20]) Then
+                        If (GUESSEDrenderitems() = otheropen\Field8[local20]) Then
                             local41 = $01
                         EndIf
                 End Select
@@ -306,12 +306,12 @@ Function rendergui%()
                     If (local34 = $FFFFFFFF) Then
                         renderbar(blinkmeterimg, (Int (mouseposx - (Float local38))), (Int ((mouseposy - (Float local38)) - (15.0 * menuscale))), imagewidth(selecteditem\Field20), (Int (7.0 * menuscale)), XZ0260X8X2\Field84, 1.0, $96, $96, $96, $00)
                         If (XZ0260X8X2\Field35 = $00) Then
-                            XZ0260X8X2\Field84 = blitz_TX006X4ZF080(1.0, XZ0260X8X2\Field84, 0.008, TX8FF82X024())
+                            XZ0260X8X2\Field84 = blitz_TX006X4ZF080(1.0, XZ0260X8X2\Field84, 0.008, MP_GetLoadingProgress())
                             If (1.0 = XZ0260X8X2\Field84) Then
                                 XZ0260X8X2\Field35 = $01
                             EndIf
                         Else
-                            XZ0260X8X2\Field84 = blitz_TX006X4ZF080(0.0, XZ0260X8X2\Field84, 0.008, TX8FF82X024())
+                            XZ0260X8X2\Field84 = blitz_TX006X4ZF080(0.0, XZ0260X8X2\Field84, 0.008, MP_GetLoadingProgress())
                             If (0.0 = XZ0260X8X2\Field84) Then
                                 XZ0260X8X2\Field35 = $00
                             EndIf
@@ -397,7 +397,7 @@ Function rendergui%()
                     Case $18
                         local41 = (i_714\Field0 = $01)
                     Default
-                        If (TX8BXZD868F() = TX60DB8XBBZ(local20)) Then
+                        If (GUESSEDrenderitems() = TX60DB8XBBZ(local20)) Then
                             local41 = $01
                         EndIf
                 End Select
@@ -423,7 +423,7 @@ Function rendergui%()
                     drawimage(TX60DB8XBBZ(local20)\Field20, (Int ((Float ((local36 Sar $01) + local4)) - (32.0 * menuscale))), $00, $00)
                 EndIf
             EndIf
-            If ((((local20 <= $04) And (X4BX024DX0() <> $00)) And T8X2046020\Field22) <> 0) Then
+            If ((((local20 <= $04) And (GUESSEDupdatexdb() <> $00)) And T8X2046020\Field22) <> 0) Then
                 renderframe(local4, local5, (Int ((Float local36) * 0.2)), (Int ((Float local36) * 0.2)), (local4 Mod $40), (local4 Mod $40), $00, $01)
                 setfontex(XD00026ZX2\Field0[$0D])
                 textex((Int ((((Float local36) * 0.2) / 2.0) + (Float local4))), (Int ((((Float local36) * 0.2) / 2.0) + (Float local5))), (Str (local20 + $01)), $01, $01)
@@ -440,7 +440,7 @@ Function rendergui%()
                         color($FF, $FF, $FF, $FF)
                         local45 = ""
                         If (((TX60DB8XBBZ(local20)\Field6\Field11 > $00) And ((0.0 < TX60DB8XBBZ(local20)\Field15) Lor (0.0 < TX60DB8XBBZ(local20)\Field3))) <> 0) Then
-                            local46 = X4DZBDB0DZ(TX60DB8XBBZ(local20)\Field6\Field11)
+                            local46 = GUESSEDrenderrendergui_4(TX60DB8XBBZ(local20)\Field6\Field11)
                             If ((((local46 <> Null) And (local46\Field3\Field26 = $00)) And (local46\Field3\Field42 = $00)) <> 0) Then
                                 local45 = ((((" (" + (Str (Int TX60DB8XBBZ(local20)\Field15))) + "/") + (Str (Int TX60DB8XBBZ(local20)\Field3))) + ")")
                             EndIf
@@ -464,12 +464,12 @@ Function rendergui%()
                     If (local34 = $FFFFFFFF) Then
                         renderbar(blinkmeterimg, (Int (mouseposx - (Float local38))), (Int ((mouseposy - (Float local38)) - (15.0 * menuscale))), imagewidth(selecteditem\Field20), (Int (7.0 * menuscale)), XZ0260X8X2\Field84, 1.0, $96, $96, $96, $00)
                         If (XZ0260X8X2\Field35 = $00) Then
-                            XZ0260X8X2\Field84 = blitz_TX006X4ZF080(1.0, XZ0260X8X2\Field84, 0.008, TX8FF82X024())
+                            XZ0260X8X2\Field84 = blitz_TX006X4ZF080(1.0, XZ0260X8X2\Field84, 0.008, MP_GetLoadingProgress())
                             If (1.0 = XZ0260X8X2\Field84) Then
                                 XZ0260X8X2\Field35 = $01
                             EndIf
                         Else
-                            XZ0260X8X2\Field84 = blitz_TX006X4ZF080(0.0, XZ0260X8X2\Field84, 0.008, TX8FF82X024())
+                            XZ0260X8X2\Field84 = blitz_TX006X4ZF080(0.0, XZ0260X8X2\Field84, 0.008, MP_GetLoadingProgress())
                             If (0.0 = XZ0260X8X2\Field84) Then
                                 XZ0260X8X2\Field35 = $00
                             EndIf
@@ -569,8 +569,8 @@ Function rendergui%()
                 EndIf
         End Select
     EndIf
-    If (TX8BXZD868F() <> Null) Then
-        local50 = TX8BXZD868F()
+    If (GUESSEDrenderitems() <> Null) Then
+        local50 = GUESSEDrenderitems()
         Select local50\Field6\Field9
             Case $45,$46,$47,$48
                 setbuffer(texturebuffer(resizetexture, $00), $00, $00)
@@ -632,7 +632,7 @@ Function rendergui%()
                         EndIf
                     EndIf
                 EndIf
-                copyrectstretch((Int ((Float local4) - (10.0 * menuscale))), (Int ((Float local5) - (30.0 * menuscale))), (Int (120.0 * menuscale)), (Int (110.0 * menuscale)), $00, $00, texturewidth(XF2ZXZ0884()), textureheight(XF2ZXZ0884()), texturebuffer(resizetexture, $00), texturebuffer(XF2ZXZ0884(), $00))
+                copyrectstretch((Int ((Float local4) - (10.0 * menuscale))), (Int ((Float local5) - (30.0 * menuscale))), (Int (120.0 * menuscale)), (Int (110.0 * menuscale)), $00, $00, texturewidth(GUESSEDcreatetex_3()), textureheight(GUESSEDcreatetex_3()), texturebuffer(resizetexture, $00), texturebuffer(GUESSEDcreatetex_3(), $00))
                 setbuffer(backbuffer(), $00, $00)
             Case $49,$4A,$4B,$4C
                 setbuffer(texturebuffer(resizetexture, $00), $00, $00)
@@ -741,7 +741,7 @@ Function rendergui%()
                                                 local76 = entitydistancesquared(camera, local77\Field82)
                                                 If (900.0 > local76) Then
                                                     local24 = sqr(local76)
-                                                    T2XX60BD226((Int ((Float local4) - ((1.5 * menuscale) * local24))), (Int ((Float local5) - ((1.5 * menuscale) * local24))), (Int ((3.0 * menuscale) * local24)), (Int ((3.0 * menuscale) * local24)), $00)
+                                                    GUESSEDdrawoval((Int ((Float local4) - ((1.5 * menuscale) * local24))), (Int ((Float local5) - ((1.5 * menuscale) * local24))), (Int ((3.0 * menuscale) * local24)), (Int ((3.0 * menuscale) * local24)), $00)
                                                     textex((Int ((10.0 * menuscale) + (Float (local4 - local60)))), (Int (((30.0 * menuscale) + (Float (local5 - local61))) + ((Float ($14 * local75)) * menuscale))), local77\Field72, $00, $00)
                                                     local75 = (local75 + $01)
                                                 EndIf
@@ -750,7 +750,7 @@ Function rendergui%()
                                 Next
                                 If (((playerroom\Field22\Field21 = $2D) And (8.0 > coffindistance)) <> 0) Then
                                     local76 = rnd(4.0, 8.0)
-                                    T2XX60BD226((Int ((Float local4) - ((1.5 * menuscale) * local76))), (Int ((Float local5) - ((1.5 * menuscale) * local76))), (Int ((3.0 * menuscale) * local76)), (Int ((3.0 * menuscale) * local76)), $00)
+                                    GUESSEDdrawoval((Int ((Float local4) - ((1.5 * menuscale) * local76))), (Int ((Float local5) - ((1.5 * menuscale) * local76))), (Int ((3.0 * menuscale) * local76)), (Int ((3.0 * menuscale) * local76)), $00)
                                     textex((Int ((10.0 * menuscale) + (Float (local4 - local60)))), (Int (((30.0 * menuscale) + (Float (local5 - local61))) + ((Float ($14 * local75)) * menuscale))), "SCP-895", $00, $00)
                                 EndIf
                             EndIf
@@ -768,7 +768,7 @@ Function rendergui%()
                     EndIf
                     setfontex(XD00026ZX2\Field0[$00])
                 EndIf
-                copyrectstretch((Int ((71.0 * menuscale) + (Float local53))), (Int ((11.0 * menuscale) + (Float local54))), (Int (289.0 * menuscale)), (Int (319.0 * menuscale)), $00, $00, texturewidth(XF2ZXZ0884()), textureheight(XF2ZXZ0884()), texturebuffer(resizetexture, $00), texturebuffer(XF2ZXZ0884(), $00))
+                copyrectstretch((Int ((71.0 * menuscale) + (Float local53))), (Int ((11.0 * menuscale) + (Float local54))), (Int (289.0 * menuscale)), (Int (319.0 * menuscale)), $00, $00, texturewidth(GUESSEDcreatetex_3()), textureheight(GUESSEDcreatetex_3()), texturebuffer(resizetexture, $00), texturebuffer(GUESSEDcreatetex_3(), $00))
                 setbuffer(backbuffer(), $00, $00)
             Case $75
                 setbuffer(texturebuffer(resizetexture, $00), $00, $00)
@@ -786,7 +786,7 @@ Function rendergui%()
                     local23 = right(left(local23, ((millisec / $12C) Mod len(local23))), $0F)
                     textex((Int (-40.0 * menuscale)), (Int ((67.5 * menuscale) - ((Float fontheight()) / 2.0))), (("          " + local23) + "          "), $00, $00)
                 EndIf
-                copyrectstretch($00, $00, (Int (135.0 * menuscale)), (Int (135.0 * menuscale)), $00, $00, texturewidth(XF2ZXZ0884()), textureheight(XF2ZXZ0884()), texturebuffer(resizetexture, $00), texturebuffer(XF2ZXZ0884(), $00))
+                copyrectstretch($00, $00, (Int (135.0 * menuscale)), (Int (135.0 * menuscale)), $00, $00, texturewidth(GUESSEDcreatetex_3()), textureheight(GUESSEDcreatetex_3()), texturebuffer(resizetexture, $00), texturebuffer(GUESSEDcreatetex_3(), $00))
                 setbuffer(backbuffer(), $00, $00)
         End Select
     EndIf

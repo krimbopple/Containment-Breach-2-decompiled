@@ -15,12 +15,12 @@ Function initmainmenuassets%()
     positionentity(T42DZ064FB\Field8, 10.0, 10.5, 10.0, $00)
     rotateentity(T42DZ064FB\Field8, 15.0, 0.0, 0.0, $00)
     T42DZ064FB\Field11 = 0.8
-    TXFBZFFFX4X("Frank Morris", "GFX\NPCs\class_d.b3d", "GFX\NPCs\class_d.png", 0.03, -1.1, $0F, XF2F44B806($D2, $EB), 0.1)
-    TXFBZFFFX4X("John Coffrey", "GFX\NPCs\class_d.b3d", "GFX\NPCs\class_d(2).png", 0.03, -1.1, $0F, XF2F44B806($D2, $EB), 0.1)
-    TXFBZFFFX4X("Vladislav", "GFX\NPCs\class_d.b3d", "GFX\NPCs\class_d(3).png", 0.03, -1.1, $0F, XF2F44B806($D2, $EB), 0.1)
-    TXFBZFFFX4X("Benjamin Walker", "GFX\NPCs\class_d.b3d", "GFX\NPCs\D_9341.png", 0.03, -1.1, $0F, XF2F44B806($D2, $EB), 0.1)
-    TXFBZFFFX4X("Walter", "GFX\NPCs\class_d.b3d", "GFX\NPCs\class_d(4).png", 0.03, -1.1, $0F, XF2F44B806($D2, $EB), 0.1)
-    TXFBZFFFX4X("Dmitriy", "GFX\NPCs\class_d.b3d", "GFX\NPCs\class_d(5).png", 0.03, -1.1, $0F, XF2F44B806($D2, $EB), 0.1)
+    GUESSEDloadentity_3("Frank Morris", "GFX\NPCs\class_d.b3d", "GFX\NPCs\class_d.png", 0.03, -1.1, $0F, PackTwoValues($D2, $EB), 0.1)
+    GUESSEDloadentity_3("John Coffrey", "GFX\NPCs\class_d.b3d", "GFX\NPCs\class_d(2).png", 0.03, -1.1, $0F, PackTwoValues($D2, $EB), 0.1)
+    GUESSEDloadentity_3("Vladislav", "GFX\NPCs\class_d.b3d", "GFX\NPCs\class_d(3).png", 0.03, -1.1, $0F, PackTwoValues($D2, $EB), 0.1)
+    GUESSEDloadentity_3("Benjamin Walker", "GFX\NPCs\class_d.b3d", "GFX\NPCs\D_9341.png", 0.03, -1.1, $0F, PackTwoValues($D2, $EB), 0.1)
+    GUESSEDloadentity_3("Walter", "GFX\NPCs\class_d.b3d", "GFX\NPCs\class_d(4).png", 0.03, -1.1, $0F, PackTwoValues($D2, $EB), 0.1)
+    GUESSEDloadentity_3("Dmitriy", "GFX\NPCs\class_d.b3d", "GFX\NPCs\class_d(5).png", 0.03, -1.1, $0F, PackTwoValues($D2, $EB), 0.1)
     T42DZ064FB\Field6 = (First XZ8B4B628)
     For local1 = Each XZ8B4B628
         If (local1\Field1 = opt\Field42) Then
@@ -33,9 +33,9 @@ Function initmainmenuassets%()
         buttonsfx[local0] = loadsound_strict((("SFX\Interact\Button" + (Str local0)) + ".ogg"))
     Next
     TXFD22D0402\Field5 = $00
-    TFDBX0XZ8Z()
+    GUESSEDscalescaleimageex()
     If (opt\Field20 = $00) Then
-        X88D840448(getlocalstring("mpmenu", "earlyaccessheader"), getlocalstring("mpmenu", "earlyaccesstext"), getlocalstring("gui", "ok"), "", $00, FuncPtr(TDDF00XF20), $01, $00)
+        GUESSEDresetresetinput(getlocalstring("mpmenu", "earlyaccessheader"), getlocalstring("mpmenu", "earlyaccesstext"), getlocalstring("gui", "ok"), "", $00, FuncPtr(TDDF00XF20), $01, $00)
     EndIf
     Return $00
 End Function

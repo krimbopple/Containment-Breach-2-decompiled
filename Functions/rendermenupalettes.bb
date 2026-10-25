@@ -17,7 +17,7 @@ Function rendermenupalettes%()
                 opt\Field1 = readpixelcolor(local3, $00)
             EndIf
             color($00, $00, $00, $FF)
-            T2XX60BD226((Int mouseposx), (Int mouseposy), local1, local1, $00)
+            GUESSEDdrawoval((Int mouseposx), (Int mouseposy), local1, local1, $00)
         EndIf
     Next
     Return $00

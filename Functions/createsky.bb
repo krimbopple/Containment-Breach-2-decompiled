@@ -36,7 +36,7 @@ Function createsky%(arg0$, arg1%)
     flipmesh(local0)
     entityfx(local0, $09)
     entityorder(local0, $3E8)
-    YX2D2860X(local0, $00, $21)
+    GUESSEDcreatesurface(local0, $00, $21)
     Return local0
     Return $00
 End Function

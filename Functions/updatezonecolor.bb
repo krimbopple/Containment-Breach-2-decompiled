@@ -28,25 +28,25 @@ Function updatezonecolor%()
     camerarange(camera, 0.01, (((Float opt\Field30) * 100.0) + (((Float (opt\Field30 = $00)) * local4) * 1.25)))
     If (((playerroom\Field22\Field21 = $20) And (infacility = $FFFFFFFF)) <> 0) Then
         setzonecolor("002007000", "031031031")
-        BDD60668Z("GFX\EnvMaps\HCZ_env.png")
+        GUESSEDsettex("GFX\EnvMaps\HCZ_env.png")
     ElseIf (playerroom\Field22\Field21 = $04) Then
         setzonecolor("030030030", "045045045")
         lightvolume = 1.0
         camerafogrange(camera, 5.0, (fog\Field0 + 60.0))
         camerarange(camera, 0.01, (fog\Field0 + 72.0))
-        BDD60668Z("GFX\EnvMaps\LCZ_env.png")
+        GUESSEDsettex("GFX\EnvMaps\LCZ_env.png")
     ElseIf (local1 <> 0) Then
         setzonecolor("015015015", "045045045")
         lightvolume = 1.0
         camerafogrange(camera, 5.0, (fog\Field0 + 60.0))
         camerarange(camera, 0.01, (fog\Field0 + 72.0))
-        BDD60668Z("GFX\EnvMaps\outside_env.png")
+        GUESSEDsettex("GFX\EnvMaps\outside_env.png")
     ElseIf (playerroom\Field22\Field21 = $70) Then
         setzonecolor("096097104", "050050050")
         lightvolume = 1.0
         camerafogrange(camera, 40.0, (fog\Field0 + 80.0))
         camerarange(camera, 0.01, (fog\Field0 + 96.0))
-        BDD60668Z("GFX\EnvMaps\PD_env.png")
+        GUESSEDsettex("GFX\EnvMaps\PD_env.png")
     ElseIf (((pd_event <> Null) And (pd_event\Field19 = playerroom)) <> 0) Then
         lightvolume = 1.0
         If (((3.0 = pd_event\Field7) Lor (6.0 = pd_event\Field7)) <> 0) Then
@@ -61,17 +61,17 @@ Function updatezonecolor%()
         Else
             setzonecolor("000000000", "100100100")
         EndIf
-        BDD60668Z("GFX\EnvMaps\PD_env.png")
+        GUESSEDsettex("GFX\EnvMaps\PD_env.png")
     ElseIf (((forest_event <> Null) And (forest_event\Field19 = playerroom)) <> 0) Then
         If (20.0 < entityy(XZ0260X8X2\Field74, $00, 1.0)) Then
             If (forest_event\Field19\Field32[$00] <> Null) Then
                 setzonecolor("098133162", "031031031")
                 lightvolume = 1.0
-                BDD60668Z("GFX\EnvMaps\forest_env.png")
+                GUESSEDsettex("GFX\EnvMaps\forest_env.png")
             Else
                 setzonecolor("045020020", "031031031")
                 lightvolume = 0.8
-                BDD60668Z("GFX\EnvMaps\forest_red_env.png")
+                GUESSEDsettex("GFX\EnvMaps\forest_red_env.png")
             EndIf
             If (forest_event\Field19\Field32[$00] <> Null) Then
                 If (2.0 <= forest_event\Field19\Field32[$00]\Field66) Then
@@ -84,11 +84,11 @@ Function updatezonecolor%()
     Else
         Select XZ0260X8X2\Field10
             Case $00
-                BDD60668Z("GFX\EnvMaps\LCZ_env.png")
+                GUESSEDsettex("GFX\EnvMaps\LCZ_env.png")
             Case $01
-                BDD60668Z("GFX\EnvMaps\HCZ_env.png")
+                GUESSEDsettex("GFX\EnvMaps\HCZ_env.png")
             Case $02
-                BDD60668Z("GFX\EnvMaps\EZ_env.png")
+                GUESSEDsettex("GFX\EnvMaps\EZ_env.png")
         End Select
     EndIf
     If (fog\Field14 <> "") Then
@@ -119,7 +119,7 @@ Function updatezonecolor%()
     fog\Field11 = curvevalue((Float local9), fog\Field11, ZX0F0Z06F)
     fog\Field12 = curvevalue((Float local10), fog\Field12, ZX0F0Z06F)
     fog\Field3 = curvevalue(1.0, fog\Field3, (ZX0F0Z06F * 0.5))
-    TXD8484Z6B(fog\Field3, $00)
+    GUESSEDupdateeffect_2(fog\Field3, $00)
     local11 = ((fog\Field2 * max(local5, 0.4)) * 1.75)
     local12 = ((fog\Field11 * max(local5, 0.4)) * 1.75)
     local13 = ((fog\Field12 * max(local5, 0.4)) * 1.75)
@@ -151,7 +151,7 @@ Function updatezonecolor%()
                 local13 = (local13 * 3.0)
         End Select
     EndIf
-    local15 = (XF28BZ6DDD(opt\Field50, 1.0, 0.5) * 0.4)
+    local15 = (lerp(opt\Field50, 1.0, 0.5) * 0.4)
     fog\Field9 = (local11 * local15)
     fog\Field16 = (local12 * local15)
     fog\Field7 = (local13 * local15)

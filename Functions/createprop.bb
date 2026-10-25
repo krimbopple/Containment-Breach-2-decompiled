@@ -4,7 +4,7 @@ Function createprop.props(arg0.rooms, arg1$, arg2#, arg3#, arg4#, arg5#, arg6#, 
     Local local2%
     Local local3%
     local0 = (New props)
-    local0\Field0 = T2FB42464Z(arg1, arg13)
+    local0\Field0 = GUESSEDcreateprop(arg1, arg13)
     local0\Field3 = arg1
     local0\Field5 = arg0
     local0\Field2 = arg13

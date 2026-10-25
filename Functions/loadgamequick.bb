@@ -218,13 +218,13 @@ Function loadgamequick%(arg0$)
     remotedooron = readbyte(local20)
     soundtransmission = readbyte(local20)
     key2_spawnrate = readbyte(local20)
-    T2DFFBB4DX(unlockedachievements)
+    _ClearS2IMap(unlockedachievements)
     Repeat
         local24 = readstring(local20)
         If (local24 = "EOA") Then
             Exit
         EndIf
-        YFZ8BD2F6(unlockedachievements, local24, $1)
+        _S2IMapSet(unlockedachievements, local24, $1)
     Forever
     usedconsole = readbyte(local20)
     mtftimer = readfloat(local20)
@@ -424,7 +424,7 @@ Function loadgamequick%(arg0$)
         EndIf
     Next
     For local1 = Each npcs
-        local1\Field90 = X0D8ZZBB4F(local1\Field82, $00)
+        local1\Field90 = GUESSEDloadxb(local1\Field82, $00)
     Next
     If (readint(local20) <> $3BA) Then
         runtimeerrorex(getlocalstring("save", "corrupted_3"))
@@ -619,7 +619,7 @@ Function loadgamequick%(arg0$)
                                 local13 = loadtexture_strict("GFX\Map\Textures\tank2_damaged.png", $01, $00, 1.0)
                                 entityinstance(local60\Field0, $00)
                                 entitytexture(local60\Field0, local13, $00, $00)
-                                X8F80Z2886(local60\Field0, $FFFFFFFF, $00)
+                                GUESSEDfreeentity_7(local60\Field0, $FFFFFFFF, $00)
                                 deletesingletextureentryfromcache(local13, $00)
                                 local13 = $00
                                 Exit
@@ -836,7 +836,7 @@ Function loadgamequick%(arg0$)
         local12 = readint(local20)
         For local63 = Each items
             If (local63\Field27 = local12) Then
-                TX842ZZB6XD(local63, local12)
+                GUESSEDloadgame(local63, local12)
                 local63\Field18 = readint(local20)
             EndIf
         Next

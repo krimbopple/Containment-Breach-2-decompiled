@@ -38,7 +38,7 @@ Function updatelanguageselector%()
     Local local38%
     Local local39%
     Local local40%
-    countryflags = TBFZ246642()
+    countryflags = _CreateS2IMap()
     local1 = getuserlanguage()
     If (((local1 = "zh-CN") Lor (local1 = "ru-RU")) <> 0) Then
         local0 = "https://files.ziyuebot.cn/cbue/"
@@ -46,30 +46,30 @@ Function updatelanguageselector%()
         local0 = "https://files.ziyuesinicization.site/cbue/"
     EndIf
     local2 = "Localization\"
-    local4 = X22X8B6X80((local2 + "languages.json"))
-    If (YBF6BXF6X(local4) = $00) Then
-        local6 = TD4644B68Z(local4)
-        local7 = TD0DFDZ4XX(local6)
+    local4 = _JsonParseFromFile((local2 + "languages.json"))
+    If (_JsonHasParseError(local4) = $00) Then
+        local6 = _JsonGetArray(local4)
+        local7 = _JsonGetArraySize(local6)
         For local8 = $00 To (local7 - $01) Step $01
-            local9 = D8XX4X0D0(local6, local8)
+            local9 = _JsonGetArrayValue(local6, local8)
             local3 = (New listlanguage)
-            local3\Field7 = TX240XXB6Z6(TX0Z2Z4F86D(local9, "name"))
-            local3\Field6 = TX240XXB6Z6(TX0Z2Z4F86D(local9, "id"))
-            local3\Field2 = TX240XXB6Z6(TX0Z2Z4F86D(local9, "author"))
-            local3\Field1 = TX240XXB6Z6(TX0Z2Z4F86D(local9, "update"))
-            local3\Field4 = TF46ZF6DB6(TX0Z2Z4F86D(local9, "size"))
-            local3\Field0 = TX8B6FFF244(TX0Z2Z4F86D(local9, "perfect"))
-            local3\Field8 = TX240XXB6Z6(TX0Z2Z4F86D(local9, "flag"))
-            local3\Field3 = XB2460ZF4(TX0Z2Z4F86D(local9, "size"))
-            local3\Field5 = TX240XXB6Z6(TX0Z2Z4F86D(local9, "compatible"))
+            local3\Field7 = _JsonGetString(_JsonGetValue(local9, "name"))
+            local3\Field6 = _JsonGetString(_JsonGetValue(local9, "id"))
+            local3\Field2 = _JsonGetString(_JsonGetValue(local9, "author"))
+            local3\Field1 = _JsonGetString(_JsonGetValue(local9, "update"))
+            local3\Field4 = _JsonIsNull(_JsonGetValue(local9, "size"))
+            local3\Field0 = _JsonGetBool(_JsonGetValue(local9, "perfect"))
+            local3\Field8 = _JsonGetString(_JsonGetValue(local9, "flag"))
+            local3\Field3 = _JsonGetInt(_JsonGetValue(local9, "size"))
+            local3\Field5 = _JsonGetString(_JsonGetValue(local9, "compatible"))
             If (filetype(((local2 + "flags/") + local3\Field8)) <> $01) Then
-                X44X4F8B46(((local0 + "flags/") + local3\Field8), ((local2 + "flags/") + local3\Field8), $00, $7D0)
+                Steam_DownloadFile(((local0 + "flags/") + local3\Field8), ((local2 + "flags/") + local3\Field8), $00, $7D0)
             EndIf
-            If (TX6ZD06226X(countryflags, local3\Field8) = $00) Then
+            If (_S2IMapContains(countryflags, local3\Field8) = $00) Then
                 local10 = loadimage(((local2 + "flags\") + local3\Field8), $00)
-                YFZ8BD2F6(countryflags, local3\Field8, local10)
+                _S2IMapSet(countryflags, local3\Field8, local10)
             EndIf
-            If (TX6ZD06226X(countryflags, local3\Field8) = $00) Then
+            If (_S2IMapContains(countryflags, local3\Field8) = $00) Then
                 Return $01
             EndIf
         Next
@@ -96,19 +96,19 @@ Function updatelanguageselector%()
         TDD0Z6BXB6\Field7 = mousehit($01)
         TDD0Z6BXB6\Field1 = mousedown($01)
         TDD0Z6BXB6\Field8 = mousedown($02)
-        TX8F404DXB4()
+        _Steam_Update()
         Select local18
             Case $02
                 
-                X44X4F8B46((("https://weblate.ziyuesinicization.site/api/translations/scpcb-ue/local-ini/" + eax_0175) + "/file/"), (local2 + "/local.ini"), $00, $1388)
+                Steam_DownloadFile((("https://weblate.ziyuesinicization.site/api/translations/scpcb-ue/local-ini/" + eax_0175) + "/file/"), (local2 + "/local.ini"), $00, $1388)
                 
-                X44X4F8B46((("https://weblate.ziyuesinicization.site/api/translations/scpcb-ue/achievements-jsonc/" + eax_0192) + "/file/"), (local2 + "/achievements.jsonc"), $00, $1388)
+                Steam_DownloadFile((("https://weblate.ziyuesinicization.site/api/translations/scpcb-ue/achievements-jsonc/" + eax_0192) + "/file/"), (local2 + "/achievements.jsonc"), $00, $1388)
                 
-                X44X4F8B46((("https://weblate.ziyuesinicization.site/api/translations/scpcbm-reborn/mp-local-ini/" + eax_01AF) + "/file/"), (local2 + "/MP_local.ini"), $00, $1388)
+                Steam_DownloadFile((("https://weblate.ziyuesinicization.site/api/translations/scpcbm-reborn/mp-local-ini/" + eax_01AF) + "/file/"), (local2 + "/MP_local.ini"), $00, $1388)
                 
                 If (eax_01C4 = $00) Then
                     
-                    local21 = X44X4F8B46(((local0 + eax_01D0) + ".zip"), (local2 + "/local.zip"), $00, $00)
+                    local21 = Steam_DownloadFile(((local0 + eax_01D0) + ".zip"), (local2 + "/local.zip"), $00, $00)
                     If (local21 = Null) Then
                         local18 = $00
                         Goto section__521
@@ -158,7 +158,7 @@ Function updatelanguageselector%()
             local25 = $00
             For local3 = Each listlanguage
                 color($FF, $FF, $FF, $FF)
-                limittextwithimage((((local3\Field7 + "(") + local3\Field6) + ")"), $02, (Int (local24 - 195.0)), $1B0, XF2FX4F0X2(countryflags, local3\Field8), $00)
+                limittextwithimage((((local3\Field7 + "(") + local3\Field6) + ")"), $02, (Int (local24 - 195.0)), $1B0, _S2IMapGet(countryflags, local3\Field8), $00)
                 If (mouseon($14, (Int (local24 - (Float local15))), $1B0, $14) <> 0) Then
                     ebx_00C3 = (Int ((local24 - 195.0) - (Float local15)))
                     drawimage(local14, $19A, $05, $00)
@@ -198,7 +198,7 @@ Function updatelanguageselector%()
             local25 = $00
             For local3 = Each listlanguage
                 color($FF, $FF, $FF, $FF)
-                limittextwithimage((((local3\Field7 + "(") + local3\Field6) + ")"), $15, (Int local24), $1B0, XF2FX4F0X2(countryflags, local3\Field8), $00)
+                limittextwithimage((((local3\Field7 + "(") + local3\Field6) + ")"), $15, (Int local24), $1B0, _S2IMapGet(countryflags, local3\Field8), $00)
                 If (mouseon($14, (Int (local24 - (Float local15))), $1AE, $14) <> 0) Then
                     ebx_0106 = (Int (local24 - 4.0))
                     drawimage(local14, $1AE, $05, $00)
@@ -247,9 +247,9 @@ Function updatelanguageselector%()
             Case $03
                 If (((opt\Field19 = $00) And (local21 <> Null)) <> 0) Then
                     
-                    local26 = format(format(getlocalstring("language", "downloading.filesize"), simplefilesize(T8XBDBZ6(local21)), "{0}"), simplefilesize(eax_0394), "{1}")
+                    local26 = format(format(getlocalstring("language", "downloading.filesize"), simplefilesize(GUESSEDgetupdatelanguageselector(local21)), "{0}"), simplefilesize(eax_0394), "{1}")
                     
-                    updatelauncherbutton($1DF, $13B, $9B, $1E, ((Str (Int ceil((((Float T8XBDBZ6(local21)) / (Float eax_03A1)) * 100.0)))) + "%"), $00, $00, $01, $FF, $FF, $FF)
+                    updatelauncherbutton($1DF, $13B, $9B, $1E, ((Str (Int ceil((((Float GUESSEDgetupdatelanguageselector(local21)) / (Float eax_03A1)) * 100.0)))) + "%"), $00, $00, $01, $FF, $FF, $FF)
                 Else
                     local18 = $04
                 EndIf
@@ -361,10 +361,10 @@ Function updatelanguageselector%()
     scrollbary = 0.0
     scrollmenuheight = 0.0
     For local3 = Each listlanguage
-        freeimage(XF2FX4F0X2(countryflags, local3\Field8))
+        freeimage(_S2IMapGet(countryflags, local3\Field8))
         Delete local3
     Next
-    X2B80X0XBB(countryflags)
+    _DestroyS2IMap(countryflags)
     countryflags = $00
     freeimage(local12)
     local12 = $00

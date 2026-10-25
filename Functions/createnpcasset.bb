@@ -58,7 +58,7 @@ Function createnpcasset%(arg0.npcs)
             setnpcframe(arg0, local2, $01)
     End Select
     If (arg0\Field101 <> $00) Then
-        YX2D2860X(arg0\Field101, $01, $FFFFFFFF)
+        GUESSEDcreatesurface(arg0\Field101, $01, $FFFFFFFF)
     EndIf
     arg0\Field79 = $01
     Return $00

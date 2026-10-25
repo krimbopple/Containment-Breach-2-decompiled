@@ -2,23 +2,23 @@ Function removetextureinstances%()
     Local local0%
     Local local1%
     Local local2%
-    local1 = TD4644B68Z(TX0Z2Z4F86D(achievementsarray, "achievements"))
-    local2 = TD0DFDZ4XX(local1)
+    local1 = _JsonGetArray(_JsonGetValue(achievementsarray, "achievements"))
+    local2 = _JsonGetArraySize(local1)
     For local0 = $00 To (local2 - $01) Step $01
-        freeimage(XF2FX4F0X2(achievementsimages, TX240XXB6Z6(TX0Z2Z4F86D(D8XX4X0D0(local1, local0), "id"))))
+        freeimage(_S2IMapGet(achievementsimages, _JsonGetString(_JsonGetValue(_JsonGetArrayValue(local1, local0), "id"))))
     Next
-    freeimage(XF2FX4F0X2(achievementsimages, "locked"))
-    X2B80X0XBB(achievementsindex)
+    freeimage(_S2IMapGet(achievementsimages, "locked"))
+    _DestroyS2IMap(achievementsindex)
     achievementsindex = $00
-    X2B80X0XBB(achievementsimages)
+    _DestroyS2IMap(achievementsimages)
     achievementsimages = $00
-    X2B80X0XBB(unlockedachievements)
+    _DestroyS2IMap(unlockedachievements)
     unlockedachievements = $00
     If (achievementsarray <> $00) Then
-        Y00DFZDDF6(achievementsarray)
+        _JsonFreeDocument(achievementsarray)
     EndIf
     If (localachievementsarray <> $00) Then
-        Y00DFZDDF6(localachievementsarray)
+        _JsonFreeDocument(localachievementsarray)
     EndIf
     achievementsarray = $00
     localachievementsarray = $00

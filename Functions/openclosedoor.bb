@@ -52,7 +52,7 @@ Function openclosedoor%(arg0.doors, arg1%, arg2%)
                 local4 = local3
             EndIf
             If (CB64D8DZF <> Null) Then
-                X42666Z0B0(CB64D8DZF, XX0D06202F(local4), arg0\Field0, 10.0, 1.0)
+                GUESSEDisentity_10(CB64D8DZF, GUESSEDopenopenclosedoor(local4), arg0\Field0, 10.0, 1.0)
             EndIf
             arg0\Field14 = 25.0
         EndIf

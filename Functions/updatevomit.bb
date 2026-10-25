@@ -44,7 +44,7 @@ Function updatevomit%()
         If (XZ0260X8X2\Field37 = $00) Then
             XZ0260X8X2\Field64 = 2800.0
             snd_i\Field8 = loadsound_strict("SFX\SCP\294\Vomit.ogg")
-            XDB8BB08X4("SFX\SCP\294\Vomit.ogg", $01, TXXF6F02DB2[TXXDZB2ZBXX()], 10.0, 1.0, 0.0, 0.0, 0.0)
+            GUESSEDupdateplayannouncement("SFX\SCP\294\Vomit.ogg", $01, TXXF6F02DB2[GUESSEDupdatedropitem()], 10.0, 1.0, 0.0, 0.0, 0.0)
             vomitchn = playsound_strict(snd_i\Field8, $01, $00)
             XZ0260X8X2\Field20 = XZ0260X8X2\Field11
             XZ0260X8X2\Field73 = XZ0260X8X2\Field39

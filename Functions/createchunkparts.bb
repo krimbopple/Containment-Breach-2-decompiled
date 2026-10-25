@@ -10,17 +10,17 @@ Function createchunkparts%(arg0.rooms)
     Local local8$
     Local local9$
     Local local10$
-    local6 = TD0DFDZ4XX(scp1499chunks)
+    local6 = _JsonGetArraySize(scp1499chunks)
     seedrnd(generateseednumber(randomseed))
     For local2 = $00 To (local6 - $01) Step $01
-        local5 = TD4644B68Z(TX0Z2Z4F86D(D8XX4X0D0(scp1499chunks, local2), "objects"))
+        local5 = _JsonGetArray(_JsonGetValue(_JsonGetArrayValue(scp1499chunks, local2), "objects"))
         local0 = (New chunkpart)
-        local0\Field1 = TD0DFDZ4XX(local5)
+        local0\Field1 = _JsonGetArraySize(local5)
         For local4 = $00 To (local0\Field1 - $01) Step $01
-            local7 = XB2460ZF4(TX0Z2Z4F86D(D8XX4X0D0(local5, local4), "id"))
-            local8 = (Str XB2460ZF4(TX0Z2Z4F86D(D8XX4X0D0(local5, local4), "x")))
-            local9 = (Str XB2460ZF4(TX0Z2Z4F86D(D8XX4X0D0(local5, local4), "z")))
-            local10 = (Str TX0Z2Z4F86D(D8XX4X0D0(local5, local4), "yaw"))
+            local7 = _JsonGetInt(_JsonGetValue(_JsonGetArrayValue(local5, local4), "id"))
+            local8 = (Str _JsonGetInt(_JsonGetValue(_JsonGetArrayValue(local5, local4), "x")))
+            local9 = (Str _JsonGetInt(_JsonGetValue(_JsonGetArrayValue(local5, local4), "z")))
+            local10 = (Str _JsonGetValue(_JsonGetArrayValue(local5, local4), "yaw"))
             local0\Field2[local4] = copyentity(arg0\Field27[local7], $00)
             (Int local10)
             
@@ -28,7 +28,7 @@ Function createchunkparts%(arg0.rooms)
                 local0\Field0[local4] = rnd(360.0, 0.0)
                 rotateentity(local0\Field2[local4], 0.0, local0\Field0[local4], 0.0, $00)
             Else
-                rotateentity(local0\Field2[local4], 0.0, T4BFX842B((Int local10)), 0.0, $00)
+                rotateentity(local0\Field2[local4], 0.0, _JsonGetFloat((Int local10)), 0.0, $00)
             EndIf
             positionentity(local0\Field2[local4], (Float local8), 0.0, (Float local9), $00)
             scaleentity(local0\Field2[local4], (1.0 / 256.0), (1.0 / 256.0), (1.0 / 256.0), $00)

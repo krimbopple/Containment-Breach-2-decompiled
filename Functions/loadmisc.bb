@@ -13,7 +13,7 @@ Function loadmisc%()
     Next
     misc_i\Field4 = loadmesh_strict("GFX\Items\cup_liquid.b3d", $00, $01)
     entityfx(misc_i\Field4, $20)
-    YX2D2860X(misc_i\Field4, $00, $10040)
+    GUESSEDcreatesurface(misc_i\Field4, $00, $10040)
     hideentity(misc_i\Field4)
     misc_i\Field5 = loadmesh_strict("GFX\Map\Props\save_screen.b3d", $00, $01)
     hideentity(misc_i\Field5)

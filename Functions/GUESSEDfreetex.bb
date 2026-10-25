@@ -1,0 +1,42 @@
+Function GUESSEDfreetex%()
+    Local local0%
+    Local local1%
+    local0 = texturewidth(T22FB2Z0B2)
+    local1 = textureheight(T22FB2Z0B2)
+    XZ40D084Z4 = $00
+    If (TX02ZXFF4BF <> $00) Then
+        freeentity(TX02ZXFF4BF)
+        freetexture(DBZD2DXZ)
+        freetexture(Y04D28208)
+        freetexture(XB2X8FZ084)
+        freetexture(X848D48FB0)
+        freetexture(XD6XFFXB4D)
+        freetexture(Y0DX44D0D4)
+        freetexture(TXFX4DBBDDF)
+        freetexture(X448F8Z0XB)
+        freetexture(Y8X620XBX)
+        freetexture(T48Z6664XF)
+        freetexture(X48D6Z02F0)
+        freetexture(XF0XD8XBDD)
+        freetexture(ABBZX2DF)
+    EndIf
+    TX02ZXFF4BF = GUESSEDcreatesprite(texturewidth(T22FB2Z0B2), textureheight(T22FB2Z0B2), XFXFXB6F68)
+    entitytexture(TX02ZXFF4BF, T22FB2Z0B2, $00, $00)
+    entityorder(TX02ZXFF4BF, $989680)
+    entityfx(TX02ZXFF4BF, $08)
+    hideentity(TX02ZXFF4BF)
+    DBZD2DXZ = createtexture((local0 Sar $01), (local1 Sar $01), $1400, $01)
+    Y04D28208 = createtexture((local0 Sar $01), (local1 Sar $01), $1400, $01)
+    XB2X8FZ084 = createtexture((local0 Sar $01), (local1 Sar $01), $1400, $01)
+    X848D48FB0 = createtexture((local0 Sar $02), (local1 Sar $02), $1400, $01)
+    XD6XFFXB4D = createtexture((local0 Sar $02), (local1 Sar $02), $1400, $01)
+    Y0DX44D0D4 = createtexture((local0 Sar $03), (local1 Sar $03), $1400, $01)
+    TXFX4DBBDDF = createtexture((local0 Sar $03), (local1 Sar $03), $1400, $01)
+    X448F8Z0XB = createtexture((local0 Sar $01), (local1 Sar $01), $20400, $01)
+    Y8X620XBX = createtexture((local0 Sar $01), (local1 Sar $01), $20400, $01)
+    T48Z6664XF = createtexture(local0, local1, $C00, $01)
+    X48D6Z02F0 = createtexture((local0 Sar $01), (local1 Sar $01), $C00, $01)
+    XF0XD8XBDD = createtexture((local0 Sar $01), (local1 Sar $01), $1400, $01)
+    ABBZX2DF = createtexture(local0, local1, $C00, $01)
+    Return $00
+End Function

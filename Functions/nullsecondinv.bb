@@ -3,7 +3,7 @@ Function nullsecondinv%(arg0.items)
     Local local1%
     For local0 = $00 To (arg0\Field36 - $01) Step $01
         If (arg0\Field8[local0] = selecteditem) Then
-            XBZ0FD8262(selecteditem, Null)
+            GUESSEDsetnullsecondinv(selecteditem, Null)
             selecteditem\Field26 = 35.0
             arg0\Field26 = 35.0
             arg0\Field8[local0] = Null

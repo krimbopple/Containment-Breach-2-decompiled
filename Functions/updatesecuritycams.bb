@@ -47,10 +47,10 @@ Function updatesecuritycams%()
                     If (((60.0 > (Abs deltayaw(local0\Field7, camera))) And entityvisible(local0\Field7, camera, 0.0)) <> 0) Then
                         If ((millisec Mod $546) < $320) Then
                             entitytexture(local0\Field7, sc_i\Field4[$00], $00, $00)
-                            X8F80Z2886(local0\Field7, $FFFFFFFF, $00)
+                            GUESSEDfreeentity_7(local0\Field7, $FFFFFFFF, $00)
                         Else
                             entitytexture(local0\Field7, sc_i\Field4[$01], $00, $00)
-                            X8F80Z2886(local0\Field7, $FFFFFFFF, $00)
+                            GUESSEDfreeentity_7(local0\Field7, $FFFFFFFF, $00)
                         EndIf
                         mtfcameracheckdetected = (0.0 < mtfcamerachecktimer)
                     EndIf

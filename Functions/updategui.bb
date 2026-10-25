@@ -128,9 +128,9 @@ Function updategui%()
                         If (d_i\Field6\Field52 <> $00) Then
                             d_i\Field3 = d_i\Field6
                         ElseIf (XZ0260X8X2\Field38 = $02) Then
-                            local20 = T24D66F2D()
+                            local20 = GUESSEDupdateevents_2()
                             usedoor($01)
-                            F0X200Z62(local20)
+                            GUESSEDupdateevents(local20)
                         EndIf
                     EndIf
                 EndIf
@@ -277,7 +277,7 @@ Function updategui%()
                                 invopen = $00
                                 TDD0Z6BXB6\Field0 = $00
                                 DZ64X028\Field29 = 20.0
-                                XB80D84602(selecteditem)
+                                GUESSEDupdatetxbfb(selecteditem)
                                 Exit
                             EndIf
                         EndIf
@@ -364,7 +364,7 @@ Function updategui%()
                                 invopen = $00
                                 TDD0Z6BXB6\Field0 = $00
                                 DZ64X028\Field29 = 20.0
-                                XB80D84602(selecteditem)
+                                GUESSEDupdatetxbfb(selecteditem)
                                 Exit
                             EndIf
                         EndIf
@@ -408,7 +408,7 @@ Function updategui%()
                 If (local22 = $42) Then
                     Select selecteditem\Field6\Field9
                         Case $27,$28,$3C,$3D,$3E,$3F
-                            local39 = (X4BX024DX0() = $00)
+                            local39 = (GUESSEDupdatexdb() = $00)
                         Case $38
                             local39 = (T8660BZ460\Field3 = $01)
                         Case $39
@@ -513,7 +513,7 @@ Function updategui%()
                                 For local42 = $00 To (TX60DB8XBBZ(local22)\Field36 - $01) Step $01
                                     If (TX60DB8XBBZ(local22)\Field8[local42] = Null) Then
                                         If (selecteditem <> Null) Then
-                                            XBZ0FD8262(selecteditem, TX60DB8XBBZ(local22))
+                                            GUESSEDsetnullsecondinv(selecteditem, TX60DB8XBBZ(local22))
                                             TX60DB8XBBZ(local22)\Field8[local42] = selecteditem
                                             For local43 = $00 To (maxitemamount - $01) Step $01
                                                 If (TX60DB8XBBZ(local43) = selecteditem) Then
@@ -578,7 +578,7 @@ Function updategui%()
                                                 For local42 = $00 To (TX60DB8XBBZ(local22)\Field36 - $01) Step $01
                                                     If (TX60DB8XBBZ(local22)\Field8[local42] = Null) Then
                                                         If (selecteditem <> Null) Then
-                                                            XBZ0FD8262(selecteditem, TX60DB8XBBZ(local22))
+                                                            GUESSEDsetnullsecondinv(selecteditem, TX60DB8XBBZ(local22))
                                                             TX60DB8XBBZ(local22)\Field8[local42] = selecteditem
                                                             TX60DB8XBBZ(local22)\Field20 = TX60DB8XBBZ(local22)\Field6\Field14
                                                             For local43 = $00 To (maxitemamount - $01) Step $01
@@ -635,7 +635,7 @@ Function updategui%()
                                                 For local42 = $00 To (TX60DB8XBBZ(local22)\Field36 - $01) Step $01
                                                     If (TX60DB8XBBZ(local22)\Field8[local42] = Null) Then
                                                         If (selecteditem <> Null) Then
-                                                            XBZ0FD8262(selecteditem, TX60DB8XBBZ(local22))
+                                                            GUESSEDsetnullsecondinv(selecteditem, TX60DB8XBBZ(local22))
                                                             TX60DB8XBBZ(local22)\Field8[local42] = selecteditem
                                                             TX60DB8XBBZ(local22)\Field20 = TX60DB8XBBZ(local22)\Field6\Field14
                                                             For local43 = $00 To (maxitemamount - $01) Step $01
@@ -667,7 +667,7 @@ Function updategui%()
                                             For local42 = $00 To (TX60DB8XBBZ(local22)\Field36 - $01) Step $01
                                                 If (TX60DB8XBBZ(local22)\Field8[local42] = Null) Then
                                                     If (selecteditem <> Null) Then
-                                                        XBZ0FD8262(selecteditem, TX60DB8XBBZ(local22))
+                                                        GUESSEDsetnullsecondinv(selecteditem, TX60DB8XBBZ(local22))
                                                         TX60DB8XBBZ(local22)\Field8[local42] = selecteditem
                                                         For local43 = $00 To (maxitemamount - $01) Step $01
                                                             If (TX60DB8XBBZ(local43) = selecteditem) Then
@@ -1268,7 +1268,7 @@ Function updategui%()
                 If (100.0 = selecteditem\Field15) Then
                     If (T8660BZ460\Field6 > $00) Then
                         T8660BZ460\Field6 = $00
-                        If (X4BX024DX0() = $00) Then
+                        If (GUESSEDupdatexdb() = $00) Then
                             createmsg(getlocalstring("msg", "vest.off"), 6.0)
                             dropitem(selecteditem, $01)
                         EndIf
@@ -1332,7 +1332,7 @@ Function updategui%()
                 EndIf
                 selecteditem = Null
             Case $7B
-                If (((X4BX024DX0() <> $00) And XZ0260X8X2\Field61) <> 0) Then
+                If (((GUESSEDupdatexdb() <> $00) And XZ0260X8X2\Field61) <> 0) Then
                     createmsg(getlocalstring("mpmsg", "513"), 6.0)
                 Else
                     giveachievement("513", $01)
@@ -1345,7 +1345,7 @@ Function updategui%()
                         kill($01, $01, $00, $01)
                     EndIf
                     XZ0260X8X2\Field64 = max(1000.0, XZ0260X8X2\Field64)
-                    X068DD6B4F(((((Float selecteddifficulty\Field8) * 15.0) + 67.5) * 70.0))
+                    GUESSEDupdategui(((((Float selecteddifficulty\Field8) * 15.0) + 67.5) * 70.0))
                     XZ0260X8X2\Field14 = 8.0
                     setemitter(Null, entityx(XZ0260X8X2\Field74, $00, 1.0), entityy(XZ0260X8X2\Field74, $00, 1.0), entityz(XZ0260X8X2\Field74, $00, 1.0), $1D)
                     For local3 = Each npcs
@@ -1476,7 +1476,7 @@ Function updategui%()
                                     createmsg(getlocalstring("msg", "aid.106"), 6.0)
                                 EndIf
                             Case $05
-                                chs\Field1 = (X4BX024DX0() = $00)
+                                chs\Field1 = (GUESSEDupdatexdb() = $00)
                                 createmsg(getlocalstring("msg", "aid.super"), 6.0)
                             Case $06
                                 kill($00, $01, $00, $01)
@@ -1512,7 +1512,7 @@ Function updategui%()
                         If (100.0 = selecteditem\Field15) Then
                             For local9 = $00 To (maxitemamount - $01) Step $01
                                 If (((TX60DB8XBBZ(local9) <> Null) And (TX60DB8XBBZ(local9)\Field6\Field11 > $00)) <> 0) Then
-                                    local73 = X4DZBDB0DZ(TX60DB8XBBZ(local9)\Field6\Field11)
+                                    local73 = GUESSEDrenderrendergui_4(TX60DB8XBBZ(local9)\Field6\Field11)
                                     If (((local73 <> Null) And (local73\Field3\Field48 = "")) <> 0) Then
                                         TX60DB8XBBZ(local9)\Field3 = (Float local73\Field3\Field6)
                                     EndIf
@@ -1672,7 +1672,7 @@ Function updategui%()
             Case $1F
                 giveachievement("1025", $01)
                 If (0.0 = selecteditem\Field39) Then
-                    selecteditem\Field15 = (Float rand(((X4BX024DX0() <> $00) + $00), $05))
+                    selecteditem\Field15 = (Float rand(((GUESSEDupdatexdb() <> $00) + $00), $05))
                     If ((((i_714\Field0 = $00) And (T8660BZ460\Field3 <> $04)) And (T8660BZ460\Field10 <> $04)) <> 0) Then
                         Select selecteditem\Field15
                             Case 0.0
@@ -1704,100 +1704,100 @@ Function updategui%()
                 selecteditem = Null
             Case $2B
                 If (canuseitem($01, $00, $00) <> 0) Then
-                    If (TX6ZD06226X(i_294\Field3, selecteditem\Field19) <> 0) Then
-                        local76 = D8XX4X0D0(i_294\Field0, XF2FX4F0X2(i_294\Field3, selecteditem\Field19))
-                        If (TF46ZF6DB6(TX0Z2Z4F86D(local76, "refuse_message")) <> 0) Then
+                    If (_S2IMapContains(i_294\Field3, selecteditem\Field19) <> 0) Then
+                        local76 = _JsonGetArrayValue(i_294\Field0, _S2IMapGet(i_294\Field3, selecteditem\Field19))
+                        If (_JsonIsNull(_JsonGetValue(local76, "refuse_message")) <> 0) Then
                             XZ0260X8X2\Field76 = curvevalue(0.0, XZ0260X8X2\Field76, 10.0)
                             selecteditem\Field39 = min((selecteditem\Field39 + (fps\Field3[$00] / 0.6)), 100.0)
                             If (100.0 = selecteditem\Field39) Then
-                                local5 = TX0Z2Z4F86D(local76, "drink_message")
-                                If (TF46ZF6DB6(local5) = $00) Then
-                                    createmsg(TX240XXB6Z6(local5), 6.0)
+                                local5 = _JsonGetValue(local76, "drink_message")
+                                If (_JsonIsNull(local5) = $00) Then
+                                    createmsg(_JsonGetString(local5), 6.0)
                                 EndIf
-                                local5 = TX0Z2Z4F86D(local76, "vomit")
-                                If (TF46ZF6DB6(local5) = $00) Then
+                                local5 = _JsonGetValue(local76, "vomit")
+                                If (_JsonIsNull(local5) = $00) Then
                                     If (0.0 = XZ0260X8X2\Field82) Then
-                                        XZ0260X8X2\Field82 = T4BFX842B(local5)
+                                        XZ0260X8X2\Field82 = _JsonGetFloat(local5)
                                     Else
-                                        XZ0260X8X2\Field82 = min(XZ0260X8X2\Field82, T4BFX842B(local5))
+                                        XZ0260X8X2\Field82 = min(XZ0260X8X2\Field82, _JsonGetFloat(local5))
                                     EndIf
                                 EndIf
-                                local5 = TX0Z2Z4F86D(local76, "blur")
-                                If (TF46ZF6DB6(local5) = $00) Then
-                                    XZ0260X8X2\Field64 = max((XZ0260X8X2\Field64 + (T4BFX842B(local5) * 70.0)), 0.0)
+                                local5 = _JsonGetValue(local76, "blur")
+                                If (_JsonIsNull(local5) = $00) Then
+                                    XZ0260X8X2\Field64 = max((XZ0260X8X2\Field64 + (_JsonGetFloat(local5) * 70.0)), 0.0)
                                 EndIf
-                                local5 = TX0Z2Z4F86D(local76, "camera_shake")
-                                If (TF46ZF6DB6(local5) = $00) Then
-                                    XZ0260X8X2\Field60 = max((XZ0260X8X2\Field60 + T4BFX842B(local5)), 0.0)
+                                local5 = _JsonGetValue(local76, "camera_shake")
+                                If (_JsonIsNull(local5) = $00) Then
+                                    XZ0260X8X2\Field60 = max((XZ0260X8X2\Field60 + _JsonGetFloat(local5)), 0.0)
                                 EndIf
-                                local5 = TX0Z2Z4F86D(local76, "deaf_timer")
-                                If (TF46ZF6DB6(local5) = $00) Then
-                                    XZ0260X8X2\Field9 = max((XZ0260X8X2\Field9 + T4BFX842B(local5)), 0.0)
+                                local5 = _JsonGetValue(local76, "deaf_timer")
+                                If (_JsonIsNull(local5) = $00) Then
+                                    XZ0260X8X2\Field9 = max((XZ0260X8X2\Field9 + _JsonGetFloat(local5)), 0.0)
                                 EndIf
-                                local5 = TX0Z2Z4F86D(local76, "damage")
-                                If (TF46ZF6DB6(local5) = $00) Then
-                                    XZ0260X8X2\Field11 = max((XZ0260X8X2\Field11 + T4BFX842B(local5)), 0.0)
+                                local5 = _JsonGetValue(local76, "damage")
+                                If (_JsonIsNull(local5) = $00) Then
+                                    XZ0260X8X2\Field11 = max((XZ0260X8X2\Field11 + _JsonGetFloat(local5)), 0.0)
                                 EndIf
-                                local5 = TX0Z2Z4F86D(local76, "bloodloss")
-                                If (TF46ZF6DB6(local5) = $00) Then
-                                    XZ0260X8X2\Field39 = max((XZ0260X8X2\Field39 + T4BFX842B(local5)), 0.0)
+                                local5 = _JsonGetValue(local76, "bloodloss")
+                                If (_JsonIsNull(local5) = $00) Then
+                                    XZ0260X8X2\Field39 = max((XZ0260X8X2\Field39 + _JsonGetFloat(local5)), 0.0)
                                 EndIf
-                                local5 = TX0Z2Z4F86D(local76, "energy")
-                                If (TF46ZF6DB6(local5) = $00) Then
-                                    XZ0260X8X2\Field56 = min((((Float rand((Int (T4BFX842B(local5) / 2.0)), (Int T4BFX842B(local5)))) * selecteditem\Field15) + XZ0260X8X2\Field56), 100.0)
+                                local5 = _JsonGetValue(local76, "energy")
+                                If (_JsonIsNull(local5) = $00) Then
+                                    XZ0260X8X2\Field56 = min((((Float rand((Int (_JsonGetFloat(local5) / 2.0)), (Int _JsonGetFloat(local5)))) * selecteditem\Field15) + XZ0260X8X2\Field56), 100.0)
                                 EndIf
-                                local5 = TX0Z2Z4F86D(local76, "drink_sound")
-                                If (TF46ZF6DB6(local5) = $00) Then
-                                    local18 = TX240XXB6Z6(local5)
+                                local5 = _JsonGetValue(local76, "drink_sound")
+                                If (_JsonIsNull(local5) = $00) Then
+                                    local18 = _JsonGetString(local5)
                                     If (((local18 = "SFX\SCP\294\Burn.ogg") And (0.0 < i_1025\Field1[$03])) = $00) Then
                                         playsound_strict(loadtempsound(local18), $01, $00)
-                                        XDB8BB08X4(local18, $01, TXXF6F02DB2[TXXDZB2ZBXX()], 10.0, 1.0, 0.0, 0.0, 0.0)
+                                        GUESSEDupdateplayannouncement(local18, $01, TXXF6F02DB2[GUESSEDupdatedropitem()], 10.0, 1.0, 0.0, 0.0, 0.0)
                                     Else
                                         XZ0260X8X2\Field11 = (XZ0260X8X2\Field11 + 0.5)
                                         playsound_strict(loadtempsound("SFX\SCP\294\Slurp.ogg"), $01, $00)
-                                        XDB8BB08X4("SFX\SCP\294\Slurp.ogg", $01, TXXF6F02DB2[TXXDZB2ZBXX()], 10.0, 1.0, 0.0, 0.0, 0.0)
+                                        GUESSEDupdateplayannouncement("SFX\SCP\294\Slurp.ogg", $01, TXXF6F02DB2[GUESSEDupdatedropitem()], 10.0, 1.0, 0.0, 0.0, 0.0)
                                     EndIf
                                 EndIf
-                                local5 = TX0Z2Z4F86D(local76, "stomachache")
-                                If (TF46ZF6DB6(local5) = $00) Then
-                                    If (TX8B6FFF244(local5) <> 0) Then
+                                local5 = _JsonGetValue(local76, "stomachache")
+                                If (_JsonIsNull(local5) = $00) Then
+                                    If (_JsonGetBool(local5) <> 0) Then
                                         i_1025\Field0[$03] = 1.0
                                     EndIf
                                 EndIf
-                                local5 = TX0Z2Z4F86D(local76, "infection")
-                                If (TF46ZF6DB6(local5) = $00) Then
-                                    If (TX8B6FFF244(local5) <> 0) Then
+                                local5 = _JsonGetValue(local76, "infection")
+                                If (_JsonIsNull(local5) = $00) Then
+                                    If (_JsonGetBool(local5) <> 0) Then
                                         i_008\Field0 = (i_008\Field0 + 0.001)
                                     EndIf
                                 EndIf
-                                local5 = TX0Z2Z4F86D(local76, "crystallization")
-                                If (TF46ZF6DB6(local5) = $00) Then
-                                    If (TX8B6FFF244(local5) <> 0) Then
+                                local5 = _JsonGetValue(local76, "crystallization")
+                                If (_JsonIsNull(local5) = $00) Then
+                                    If (_JsonGetBool(local5) <> 0) Then
                                         i_409\Field0 = (i_409\Field0 + 0.001)
                                     EndIf
                                 EndIf
-                                local5 = TX0Z2Z4F86D(local76, "mutation")
-                                If (TF46ZF6DB6(local5) = $00) Then
-                                    If (TX8B6FFF244(local5) <> 0) Then
+                                local5 = _JsonGetValue(local76, "mutation")
+                                If (_JsonIsNull(local5) = $00) Then
+                                    If (_JsonGetBool(local5) <> 0) Then
                                         If (25200.0 > i_427\Field1) Then
                                             i_427\Field1 = 25200.0
                                         EndIf
                                     EndIf
                                 EndIf
-                                local5 = TX0Z2Z4F86D(local76, "revitalize")
-                                If (TF46ZF6DB6(local5) = $00) Then
-                                    If (TX8B6FFF244(local5) <> 0) Then
+                                local5 = _JsonGetValue(local76, "revitalize")
+                                If (_JsonIsNull(local5) = $00) Then
+                                    If (_JsonGetBool(local5) <> 0) Then
                                         For local9 = $00 To $06 Step $01
                                             i_1025\Field0[local9] = 0.0
                                         Next
                                     EndIf
                                 EndIf
-                                local5 = TX0Z2Z4F86D(local76, "death_timer")
-                                If (TF46ZF6DB6(local5) = $00) Then
-                                    local77 = (Int T4BFX842B(local5))
-                                    local5 = TX0Z2Z4F86D(local76, "death_message")
-                                    If (TF46ZF6DB6(local5) = $00) Then
-                                        msg\Field8 = TX240XXB6Z6(local5)
+                                local5 = _JsonGetValue(local76, "death_timer")
+                                If (_JsonIsNull(local5) = $00) Then
+                                    local77 = (Int _JsonGetFloat(local5))
+                                    local5 = _JsonGetValue(local76, "death_message")
+                                    If (_JsonIsNull(local5) = $00) Then
+                                        msg\Field8 = _JsonGetString(local5)
                                     EndIf
                                     If (0.0 = (Float local77)) Then
                                         kill($00, $01, $00, $01)
@@ -1805,21 +1805,21 @@ Function updategui%()
                                         XZ0260X8X2\Field26 = ((Float local77) * 70.0)
                                     EndIf
                                 EndIf
-                                local5 = TX0Z2Z4F86D(local76, "blink_effect")
-                                If (TF46ZF6DB6(local5) = $00) Then
-                                    XZ0260X8X2\Field7 = (T4BFX842B(local5) ^ selecteditem\Field15)
+                                local5 = _JsonGetValue(local76, "blink_effect")
+                                If (_JsonIsNull(local5) = $00) Then
+                                    XZ0260X8X2\Field7 = (_JsonGetFloat(local5) ^ selecteditem\Field15)
                                 EndIf
-                                local5 = TX0Z2Z4F86D(local76, "blink_timer")
-                                If (TF46ZF6DB6(local5) = $00) Then
-                                    XZ0260X8X2\Field30 = (T4BFX842B(local5) * selecteditem\Field15)
+                                local5 = _JsonGetValue(local76, "blink_timer")
+                                If (_JsonIsNull(local5) = $00) Then
+                                    XZ0260X8X2\Field30 = (_JsonGetFloat(local5) * selecteditem\Field15)
                                 EndIf
-                                local5 = TX0Z2Z4F86D(local76, "stamina_effect")
-                                If (TF46ZF6DB6(local5) = $00) Then
-                                    XZ0260X8X2\Field65 = (max(T4BFX842B(local5), 0.1) ^ selecteditem\Field15)
+                                local5 = _JsonGetValue(local76, "stamina_effect")
+                                If (_JsonIsNull(local5) = $00) Then
+                                    XZ0260X8X2\Field65 = (max(_JsonGetFloat(local5), 0.1) ^ selecteditem\Field15)
                                 EndIf
-                                local5 = TX0Z2Z4F86D(local76, "stamina_timer")
-                                If (TF46ZF6DB6(local5) = $00) Then
-                                    XZ0260X8X2\Field34 = (min(T4BFX842B(local5), 300.0) * selecteditem\Field15)
+                                local5 = _JsonGetValue(local76, "stamina_timer")
+                                If (_JsonIsNull(local5) = $00) Then
+                                    XZ0260X8X2\Field34 = (min(_JsonGetFloat(local5), 300.0) * selecteditem\Field15)
                                 EndIf
                                 local1 = createitem("Empty Cup", $2C, 0.0, 0.0, 0.0, $00, $00, $00, 1.0, $00)
                                 local1\Field17 = $01
@@ -1833,7 +1833,7 @@ Function updategui%()
                                 removeitem(selecteditem, $01)
                             EndIf
                         Else
-                            createmsg(TX240XXB6Z6(TX0Z2Z4F86D(local76, "refuse_message")), 6.0)
+                            createmsg(_JsonGetString(_JsonGetValue(local76, "refuse_message")), 6.0)
                             selecteditem = Null
                         EndIf
                     Else
@@ -1950,7 +1950,7 @@ Function updategui%()
                         XZ0260X8X2\Field64 = 500.0
                         giveachievement("420j", $01)
                         playsound_strict(loadtempsound("SFX\Music\Using420J.ogg"), $00, $00)
-                        X42666Z0B0(Null, "SFX\Music\Using420J.ogg", XZ0260X8X2\Field74, 20.0, 1.0)
+                        GUESSEDisentity_10(Null, "SFX\Music\Using420J.ogg", XZ0260X8X2\Field74, 20.0, 1.0)
                     EndIf
                     removeitem(selecteditem, $01)
                 EndIf
@@ -2088,7 +2088,7 @@ Function updategui%()
                 EndIf
             Case $24
                 If (0.0 < selecteditem\Field15) Then
-                    If (TXZ0ZBZBFF0() < maxitemamount) Then
+                    If (GUESSEDrenderrenderdebughud_3() < maxitemamount) Then
                         local1 = createitem("SCP-2022-01", $25, 0.0, 0.0, 0.0, $00, $00, $00, 1.0, $00)
                         entitytype(local1\Field9, $03, $00)
                         pickitem(local1, $00)
@@ -2257,10 +2257,10 @@ Function updategui%()
                     playsound_strict(loadtempsound("SFX\Interact\OpenBottle.ogg"), $00, $00)
                 EndIf
                 If (selecteditem\Field6\Field11 > $00) Then
-                    If (TX8BXZD868F() = selecteditem) Then
-                        TX0Z8FFZ8Z0(Null, Null, $01)
+                    If (GUESSEDrenderitems() = selecteditem) Then
+                        GUESSEDfindchild(Null, Null, $01)
                     Else
-                        TX0Z8FFZ8Z0(X4DZBDB0DZ(selecteditem\Field6\Field11), selecteditem, $00)
+                        GUESSEDfindchild(GUESSEDrenderrendergui_4(selecteditem\Field6\Field11), selecteditem, $00)
                     EndIf
                     selecteditem = Null
                 Else
@@ -2278,7 +2278,7 @@ Function updategui%()
                         selecteditem\Field15 = 0.0
                     Case $27,$28
                         selecteditem\Field15 = 0.0
-                        If (X4BX024DX0() = $00) Then
+                        If (GUESSEDupdatexdb() = $00) Then
                             If (T8660BZ460\Field6 = $00) Then
                                 dropitem(selecteditem, $00)
                             EndIf
@@ -2316,21 +2316,21 @@ Function updategui%()
         StopChannel(lowbatterychn[$00])
         lowbatterychn[$00] = $00
     EndIf
-    If (TX8BXZD868F() <> Null) Then
-        local87 = TX8BXZD868F()
+    If (GUESSEDrenderitems() <> Null) Then
+        local87 = GUESSEDrenderitems()
         Select local87\Field6\Field9
             Case $45,$46,$47,$48
                 local5 = ((local87\Field6\Field9 = $47) Lor (local87\Field6\Field9 = $48))
                 If (TDD0Z6BXB6\Field12 <> 0) Then
-                    XFX4B08X8B(buttonsfx[$00], $00)
+                    GUESSEDplaychannel_4(buttonsfx[$00], $00)
                     local87\Field3 = (- local87\Field3)
-                    TZ046B44BZ(local87)
+                    GUESSEDsettxbfb(local87)
                 EndIf
                 local87\Field15 = max(0.0, (local87\Field15 - (fps\Field3[$00] * (((Float (local87\Field6\Field9 = $45)) * 0.002) + 0.002))))
                 If ((((0.0 < local87\Field15) Lor local5) And (0.0 < local87\Field3)) <> 0) Then
                     If (local87\Field6\Field25 = $00) Then
                         local87\Field6\Field2 = "GFX\Items\HUD Textures\radio_off.png"
-                        local87\Field6\Field25 = X0BBB0D868(loadimage_strict(local87\Field6\Field2), (252.0 * menuscale), (590.0 * menuscale), $01)
+                        local87\Field6\Field25 = GUESSEDscaleresize_2(loadimage_strict(local87\Field6\Field2), (252.0 * menuscale), (590.0 * menuscale), $01)
                         local87\Field6\Field3 = imagewidth(local87\Field6\Field25)
                         local87\Field6\Field4 = imageheight(local87\Field6\Field25)
                         createhintmsg(getlocalstring("msg", "radio"), 6.0, $00)
@@ -2376,7 +2376,7 @@ Function updategui%()
                                 local87\Field3 = min((local87\Field3 + 2.0), 80000.0)
                             EndIf
                         EndIf
-                        TZ046B44BZ(local87)
+                        GUESSEDsettxbfb(local87)
                         For local9 = $00 To $06 Step $01
                             If (ChannelPlaying(radiochn[local9]) <> 0) Then
                                 StopChannel(radiochn[local9])
@@ -2391,7 +2391,7 @@ Function updategui%()
                                 EndIf
                             Next
                             If (ChannelPlaying(radiochn[$06]) = $00) Then
-                                radiochn[$06] = XFX4B08X8B(snd_i\Field20, $00)
+                                radiochn[$06] = GUESSEDplaychannel_4(snd_i\Field20, $00)
                             EndIf
                         ElseIf (8.0 > coffindistance) Then
                             For local9 = $00 To $05 Step $01
@@ -2400,17 +2400,17 @@ Function updategui%()
                                 EndIf
                             Next
                             If (ChannelPlaying(radiochn[$06]) = $00) Then
-                                radiochn[$06] = XFX4B08X8B(snd_i\Field57, $00)
+                                radiochn[$06] = GUESSEDplaychannel_4(snd_i\Field57, $00)
                             EndIf
                         ElseIf (local87\Field6\Field9 = $48) Then
                             local87\Field3 = -1.0
                             If (ChannelPlaying(radiochn[$06]) = $00) Then
-                                radiochn[$06] = XFX4B08X8B(snd_i\Field20, $00)
+                                radiochn[$06] = GUESSEDplaychannel_4(snd_i\Field20, $00)
                             EndIf
                             radiostate[$06] = (fps\Field3[$00] + radiostate[$06])
                             local6 = (Int mid((Str code_dr_gears), (Int (radiostate[$08] + 1.0)), $01))
                             If ((((radiostate[$07] * 50.0) >= (radiostate[$06] - fps\Field3[$00])) And (radiostate[$06] > (radiostate[$07] * 50.0))) <> 0) Then
-                                XFX4B08X8B(snd_i\Field45, $00)
+                                GUESSEDplaychannel_4(snd_i\Field45, $00)
                                 radiostate[$07] = (radiostate[$07] + 1.0)
                                 If ((Float local6) <= radiostate[$07]) Then
                                     radiostate[$07] = 0.0
@@ -2427,11 +2427,11 @@ Function updategui%()
                                 Case $00
                                     If (opt\Field81 = $00) Then
                                         If (ChannelPlaying(radiochn[$06]) = $00) Then
-                                            radiochn[$06] = XFX4B08X8B(snd_i\Field20, $00)
+                                            radiochn[$06] = GUESSEDplaychannel_4(snd_i\Field20, $00)
                                         EndIf
                                     ElseIf (usertrackmusicamount < $01) Then
                                         If (ChannelPlaying(radiochn[$06]) = $00) Then
-                                            radiochn[$06] = XFX4B08X8B(snd_i\Field20, $00)
+                                            radiochn[$06] = GUESSEDplaychannel_4(snd_i\Field20, $00)
                                         EndIf
                                     Else
                                         If (ChannelPlaying(radiochn[$06]) <> 0) Then
@@ -2456,12 +2456,12 @@ Function updategui%()
                                                 currusertrack = $00
                                             EndIf
                                             currusertrack = loadsound_strict(("SFX\Radio\UserTracks\" + usertrackname[(Int radiostate[$00])]))
-                                            radiochn[$00] = XFX4B08X8B(currusertrack, $00)
+                                            radiochn[$00] = GUESSEDplaychannel_4(currusertrack, $00)
                                         Else
                                             usertrackflag = $00
                                         EndIf
                                         If (keyhit($02) <> 0) Then
-                                            XFX4B08X8B(snd_i\Field39, $00)
+                                            GUESSEDplaychannel_4(snd_i\Field39, $00)
                                             If (usertrackflag = $00) Then
                                                 If (opt\Field81 = $01) Then
                                                     If ((Float (usertrackmusicamount - $01)) > radiostate[$00]) Then
@@ -2479,7 +2479,7 @@ Function updategui%()
                                                 currusertrack = $00
                                             EndIf
                                             currusertrack = loadsound_strict(("SFX\Radio\UserTracks\" + usertrackname[(Int radiostate[$00])]))
-                                            radiochn[$00] = XFX4B08X8B(currusertrack, $00)
+                                            radiochn[$00] = GUESSEDplaychannel_4(currusertrack, $00)
                                         EndIf
                                     EndIf
                                 Case $01
@@ -2489,11 +2489,11 @@ Function updategui%()
                                     EndIf
                                     If (ChannelPlaying(radiochn[$01]) = $00) Then
                                         If (5.0 <= radiostate[$01]) Then
-                                            radiochn[$01] = XFX4B08X8B(YXZ2BB66B($00, $01), $00)
+                                            radiochn[$01] = GUESSEDplaychannel_4(YXZ2BB66B($00, $01), $00)
                                             radiostate[$01] = 0.0
                                         Else
                                             radiostate[$01] = (radiostate[$01] + 1.0)
-                                            radiochn[$01] = XFX4B08X8B(YXZ2BB66B($00, $00), $00)
+                                            radiochn[$01] = GUESSEDplaychannel_4(YXZ2BB66B($00, $00), $00)
                                         EndIf
                                     EndIf
                                 Case $02
@@ -2507,14 +2507,14 @@ Function updategui%()
                                             radiostate[$02] = 1.0
                                         EndIf
                                         If (ceil((radiostate[$02] / 2.0)) = floor((radiostate[$02] / 2.0))) Then
-                                            radiochn[$02] = XFX4B08X8B(YXZ2BB66B($01, (Int (radiostate[$02] / 2.0))), $00)
+                                            radiochn[$02] = GUESSEDplaychannel_4(YXZ2BB66B($01, (Int (radiostate[$02] / 2.0))), $00)
                                         Else
-                                            radiochn[$02] = XFX4B08X8B(YXZ2BB66B($01, $00), $00)
+                                            radiochn[$02] = GUESSEDplaychannel_4(YXZ2BB66B($01, $00), $00)
                                         EndIf
                                     EndIf
                                 Case $03
                                     If (((ChannelPlaying(radiochn[$06]) = $00) And (ChannelPlaying(radiochn[$03]) = $00)) <> 0) Then
-                                        radiochn[$06] = XFX4B08X8B(snd_i\Field20, $00)
+                                        radiochn[$06] = GUESSEDplaychannel_4(snd_i\Field20, $00)
                                     EndIf
                                     If (0.0 < mtftimer) Then
                                         If (radiostate2[$06] = $00) Then
@@ -2523,43 +2523,43 @@ Function updategui%()
                                         Select radiostate[$03]
                                             Case 40.0
                                                 If (radiostate2[$00] = $00) Then
-                                                    radiochn[$03] = XFX4B08X8B(loadtempsound("SFX\Character\MTF\Random0.ogg"), $01)
+                                                    radiochn[$03] = GUESSEDplaychannel_4(loadtempsound("SFX\Character\MTF\Random0.ogg"), $01)
                                                     radiostate[$03] = (radiostate[$03] + 1.0)
                                                     radiostate2[$00] = $01
                                                 EndIf
                                             Case 400.0
                                                 If (radiostate2[$01] = $00) Then
-                                                    radiochn[$03] = XFX4B08X8B(loadtempsound("SFX\Character\MTF\Random1.ogg"), $01)
+                                                    radiochn[$03] = GUESSEDplaychannel_4(loadtempsound("SFX\Character\MTF\Random1.ogg"), $01)
                                                     radiostate[$03] = (radiostate[$03] + 1.0)
                                                     radiostate2[$01] = $01
                                                 EndIf
                                             Case 800.0
                                                 If (radiostate2[$02] = $00) Then
-                                                    radiochn[$03] = XFX4B08X8B(loadtempsound("SFX\Character\MTF\Random2.ogg"), $01)
+                                                    radiochn[$03] = GUESSEDplaychannel_4(loadtempsound("SFX\Character\MTF\Random2.ogg"), $01)
                                                     radiostate[$03] = (radiostate[$03] + 1.0)
                                                     radiostate2[$02] = $01
                                                 EndIf
                                             Case 1200.0
                                                 If (radiostate2[$03] = $00) Then
-                                                    radiochn[$03] = XFX4B08X8B(loadtempsound("SFX\Character\MTF\Random3.ogg"), $01)
+                                                    radiochn[$03] = GUESSEDplaychannel_4(loadtempsound("SFX\Character\MTF\Random3.ogg"), $01)
                                                     radiostate[$03] = (radiostate[$03] + 1.0)
                                                     radiostate2[$03] = $01
                                                 EndIf
                                             Case 1600.0
                                                 If (radiostate2[$04] = $00) Then
-                                                    radiochn[$03] = XFX4B08X8B(loadtempsound("SFX\Character\MTF\Random4.ogg"), $01)
+                                                    radiochn[$03] = GUESSEDplaychannel_4(loadtempsound("SFX\Character\MTF\Random4.ogg"), $01)
                                                     radiostate[$03] = (radiostate[$03] + 1.0)
                                                     radiostate2[$04] = $01
                                                 EndIf
                                             Case 2000.0
                                                 If (radiostate2[$05] = $00) Then
-                                                    radiochn[$03] = XFX4B08X8B(loadtempsound("SFX\Character\MTF\Random5.ogg"), $01)
+                                                    radiochn[$03] = GUESSEDplaychannel_4(loadtempsound("SFX\Character\MTF\Random5.ogg"), $01)
                                                     radiostate[$03] = (radiostate[$03] + 1.0)
                                                     radiostate2[$05] = $01
                                                 EndIf
                                             Case 2400.0
                                                 If (radiostate2[$06] = $00) Then
-                                                    radiochn[$03] = XFX4B08X8B(loadtempsound("SFX\Character\MTF\Random6.ogg"), $01)
+                                                    radiochn[$03] = GUESSEDplaychannel_4(loadtempsound("SFX\Character\MTF\Random6.ogg"), $01)
                                                     radiostate[$03] = (radiostate[$03] + 1.0)
                                                     radiostate2[$06] = $01
                                                 EndIf
@@ -2567,11 +2567,11 @@ Function updategui%()
                                     EndIf
                                 Case $04
                                     If (ChannelPlaying(radiochn[$06]) = $00) Then
-                                        radiochn[$06] = XFX4B08X8B(snd_i\Field20, $00)
+                                        radiochn[$06] = GUESSEDplaychannel_4(snd_i\Field20, $00)
                                     EndIf
                                     If (ChannelPlaying(radiochn[$04]) = $00) Then
                                         If (((remotedooron = $00) And (0.0 = radiostate[$08])) <> 0) Then
-                                            radiochn[$04] = XFX4B08X8B(loadtempsound("SFX\Radio\Chatter2.ogg"), $01)
+                                            radiochn[$04] = GUESSEDplaychannel_4(loadtempsound("SFX\Radio\Chatter2.ogg"), $01)
                                             radiostate[$08] = 1.0
                                         Else
                                             radiostate[$04] = (max((Float rand($FFFFFFF6, $01)), 0.0) + radiostate[$04])
@@ -2579,62 +2579,62 @@ Function updategui%()
                                                 Case 10.0
                                                     If (n_i\Field2\Field93 = $00) Then
                                                         If (radiostate3[$00] = $00) Then
-                                                            radiochn[$04] = XFX4B08X8B(loadtempsound("SFX\Radio\OhGod.ogg"), $01)
+                                                            radiochn[$04] = GUESSEDplaychannel_4(loadtempsound("SFX\Radio\OhGod.ogg"), $01)
                                                             radiostate[$04] = (radiostate[$04] + 1.0)
                                                             radiostate3[$00] = $01
                                                         EndIf
                                                     EndIf
                                                 Case 100.0
                                                     If (radiostate3[$01] = $00) Then
-                                                        radiochn[$04] = XFX4B08X8B(loadtempsound("SFX\Radio\Chatter1.ogg"), $01)
+                                                        radiochn[$04] = GUESSEDplaychannel_4(loadtempsound("SFX\Radio\Chatter1.ogg"), $01)
                                                         radiostate[$04] = (radiostate[$04] + 1.0)
                                                         radiostate3[$01] = $01
                                                     EndIf
                                                 Case 158.0
                                                     If (((0.0 = mtftimer) And (radiostate3[$02] = $00)) <> 0) Then
-                                                        radiochn[$04] = XFX4B08X8B(loadtempsound("SFX\Radio\Franklin0.ogg"), $01)
+                                                        radiochn[$04] = GUESSEDplaychannel_4(loadtempsound("SFX\Radio\Franklin0.ogg"), $01)
                                                         radiostate[$04] = (radiostate[$04] + 1.0)
                                                         radiostate[$02] = 1.0
                                                     EndIf
                                                 Case 200.0
                                                     If (radiostate3[$03] = $00) Then
-                                                        radiochn[$04] = XFX4B08X8B(loadtempsound("SFX\Radio\Chatter3.ogg"), $01)
+                                                        radiochn[$04] = GUESSEDplaychannel_4(loadtempsound("SFX\Radio\Chatter3.ogg"), $01)
                                                         radiostate[$04] = (radiostate[$04] + 1.0)
                                                         radiostate3[$03] = $01
                                                     EndIf
                                                 Case 260.0
                                                     If (radiostate3[$04] = $00) Then
-                                                        radiochn[$04] = XFX4B08X8B(loadtempsound("SFX\Radio\035Help0.ogg"), $01)
+                                                        radiochn[$04] = GUESSEDplaychannel_4(loadtempsound("SFX\Radio\035Help0.ogg"), $01)
                                                         radiostate[$04] = (radiostate[$04] + 1.0)
                                                         radiostate3[$04] = $01
                                                     EndIf
                                                 Case 300.0
                                                     If (radiostate3[$05] = $00) Then
-                                                        radiochn[$04] = XFX4B08X8B(loadtempsound("SFX\Radio\Chatter0.ogg"), $01)
+                                                        radiochn[$04] = GUESSEDplaychannel_4(loadtempsound("SFX\Radio\Chatter0.ogg"), $01)
                                                         radiostate[$04] = (radiostate[$04] + 1.0)
                                                         radiostate3[$05] = $01
                                                     EndIf
                                                 Case 350.0
                                                     If (radiostate3[$06] = $00) Then
-                                                        radiochn[$04] = XFX4B08X8B(loadtempsound("SFX\Radio\Franklin1.ogg"), $01)
+                                                        radiochn[$04] = GUESSEDplaychannel_4(loadtempsound("SFX\Radio\Franklin1.ogg"), $01)
                                                         radiostate[$04] = (radiostate[$04] + 1.0)
                                                         radiostate3[$06] = $01
                                                     EndIf
                                                 Case 400.0
                                                     If (radiostate3[$07] = $00) Then
-                                                        radiochn[$04] = XFX4B08X8B(loadtempsound("SFX\Radio\035Help1.ogg"), $01)
+                                                        radiochn[$04] = GUESSEDplaychannel_4(loadtempsound("SFX\Radio\035Help1.ogg"), $01)
                                                         radiostate[$04] = (radiostate[$04] + 1.0)
                                                         radiostate3[$07] = $01
                                                     EndIf
                                                 Case 450.0
                                                     If (radiostate3[$08] = $00) Then
-                                                        radiochn[$04] = XFX4B08X8B(loadtempsound("SFX\Radio\Franklin2.ogg"), $01)
+                                                        radiochn[$04] = GUESSEDplaychannel_4(loadtempsound("SFX\Radio\Franklin2.ogg"), $01)
                                                         radiostate[$04] = (radiostate[$04] + 1.0)
                                                         radiostate3[$08] = $01
                                                     EndIf
                                                 Case 600.0
                                                     If (radiostate3[$09] = $00) Then
-                                                        radiochn[$04] = XFX4B08X8B(loadtempsound("SFX\Radio\Franklin3.ogg"), $01)
+                                                        radiochn[$04] = GUESSEDplaychannel_4(loadtempsound("SFX\Radio\Franklin3.ogg"), $01)
                                                         radiostate[$04] = (radiostate[$04] + 1.0)
                                                         radiostate3[$09] = $01
                                                     EndIf
@@ -2647,7 +2647,7 @@ Function updategui%()
                                         radiochn[$06] = $00
                                     EndIf
                                     If (ChannelPlaying(radiochn[$05]) = $00) Then
-                                        radiochn[$05] = XFX4B08X8B(snd_i\Field20, $00)
+                                        radiochn[$05] = GUESSEDplaychannel_4(snd_i\Field20, $00)
                                     EndIf
                             End Select
                             If (ChannelPlaying(radiochn[(Int min((local87\Field3 / 100.0), 5.0))]) = $00) Then
@@ -2659,7 +2659,7 @@ Function updategui%()
                                 If (70.0 <= batmsgtimer) Then
                                     If (ChannelPlaying(lowbatterychn[$00]) = $00) Then
                                         XZ0260X8X2\Field68 = max(4.0, XZ0260X8X2\Field68)
-                                        lowbatterychn[$00] = XFX4B08X8B(snd_i\Field4[$00], $00)
+                                        lowbatterychn[$00] = GUESSEDplaychannel_4(snd_i\Field4[$00], $00)
                                     EndIf
                                 EndIf
                             EndIf
@@ -2687,7 +2687,7 @@ Function updategui%()
                 If (((0.0 < local87\Field15) Lor local5) <> 0) Then
                     If (local87\Field6\Field25 = $00) Then
                         local87\Field6\Field2 = "GFX\Items\HUD Textures\navigator_off.png"
-                        local87\Field6\Field25 = X0BBB0D868(loadimage_strict(local87\Field6\Field2), (434.0 * menuscale), (509.0 * menuscale), $01)
+                        local87\Field6\Field25 = GUESSEDscaleresize_2(loadimage_strict(local87\Field6\Field2), (434.0 * menuscale), (509.0 * menuscale), $01)
                         local87\Field6\Field3 = (imagewidth(local87\Field6\Field25) Sar $01)
                         local87\Field6\Field4 = (imageheight(local87\Field6\Field25) Sar $01)
                     EndIf

@@ -80,7 +80,7 @@ Function renderhud%(arg0#)
             color($FF, $FF, $FF, $FF)
         EndIf
         drawimage((local2 - local9), ((local3 + $01) - local10), $00, $01)
-        If (Z868X8B02((Float local11), (Float local8), local15, (Float local9), (Float local10), (Float local2), (Float local3), local4, local5) <> 0) Then
+        If (GUESSEDrendercolor_4((Float local11), (Float local8), local15, (Float local9), (Float local10), (Float local2), (Float local3), local4, local5) <> 0) Then
             local3 = (Int ((Float local3) - local15))
         EndIf
         If (XF42DX80F4 > (-399.0 * menuscale)) Then
@@ -126,7 +126,7 @@ Function renderhud%(arg0#)
     Else
         local3 = (Int ((Float local3) - local15))
         local3 = (Int ((Float local3) - local15))
-        If (Z868X8B02((Float local11), (Float local8), local15, (Float local9), (Float local10), (Float local2), (Float local3), local4, local5) <> 0) Then
+        If (GUESSEDrendercolor_4((Float local11), (Float local8), local15, (Float local9), (Float local10), (Float local2), (Float local3), local4, local5) <> 0) Then
             local3 = (Int ((Float local3) - local15))
         EndIf
         If (XF42DX80F4 > (-399.0 * menuscale)) Then
@@ -140,7 +140,7 @@ Function renderhud%(arg0#)
         resizeimage(X2Z260BF0Z\Field3[local1], XD426XD680[local1], TX2X228ZZ0X[local1])
     Next
     local3 = (Int ((Float local3) - (40.0 * local0)))
-    TFF8FFBBDD((30.0 * menuscale), (Float local3))
+    GUESSEDrenderrenderhud((30.0 * menuscale), (Float local3))
     menuscale = local0
     color($FF, $FF, $FF, (Int ((1.0 - XZ0260X8X2\Field59) * 64.0)))
     imagewidth(X2Z260BF0Z\Field3[$12])

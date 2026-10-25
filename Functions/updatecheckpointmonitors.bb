@@ -16,10 +16,10 @@ Function updatecheckpointmonitors%(arg0%)
                 If (lower(strippath(texturename(local3))) <> "monitortexture.jpg") Then
                     If (50.0 > mon_i\Field0[($01 - arg0)]) Then
                         brushtexture(local2, mon_i\Field2[$01], $01, $00)
-                        TZXZZ288XZ(local2, $FFFFFFFF, $01)
+                        GUESSEDgetbrush_3(local2, $FFFFFFFF, $01)
                     Else
                         brushtexture(local2, mon_i\Field2[$01], (arg0 Shl $01), $00)
-                        TZXZZ288XZ(local2, $FFFFFFFF, (arg0 Shl $01))
+                        GUESSEDgetbrush_3(local2, $FFFFFFFF, (arg0 Shl $01))
                     EndIf
                     paintsurface(local1, local2)
                     freetexture(local3)

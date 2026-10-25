@@ -200,7 +200,7 @@ Function loadgame%(arg0$)
         If (local19 = "EOA") Then
             Exit
         EndIf
-        YFZ8BD2F6(unlockedachievements, local19, $1)
+        _S2IMapSet(unlockedachievements, local19, $1)
     Forever
     usedconsole = readbyte(local15)
     mtftimer = readfloat(local15)
@@ -406,7 +406,7 @@ Function loadgame%(arg0$)
         EndIf
     Next
     For local1 = Each npcs
-        local1\Field90 = X0D8ZZBB4F(local1\Field82, $00)
+        local1\Field90 = GUESSEDloadxb(local1\Field82, $00)
     Next
     If (readint(local15) <> $3BA) Then
         runtimeerrorex(getlocalstring("save", "corrupted_3"))
@@ -658,7 +658,7 @@ Function loadgame%(arg0$)
                                 local13 = loadtexture_strict("GFX\Map\Textures\tank2_damaged.png", $01, $00, 1.0)
                                 entityinstance(local60\Field0, $00)
                                 entitytexture(local60\Field0, local13, $00, $00)
-                                X8F80Z2886(local60\Field0, $FFFFFFFF, $00)
+                                GUESSEDfreeentity_7(local60\Field0, $FFFFFFFF, $00)
                                 deletesingletextureentryfromcache(local13, $00)
                                 local13 = $00
                                 Exit
@@ -782,7 +782,7 @@ Function loadgame%(arg0$)
         local14 = readint(local15)
         For local63 = Each items
             If (local63\Field27 = local14) Then
-                TX842ZZB6XD(local63, local14)
+                GUESSEDloadgame(local63, local14)
                 local63\Field18 = readint(local15)
             EndIf
         Next

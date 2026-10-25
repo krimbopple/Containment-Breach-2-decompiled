@@ -29,7 +29,7 @@ Function setemitter.emitter(arg0.rooms, arg1#, arg2#, arg3#, arg4%)
     If ((local0\Field3\Field42 And $08) <> 0) Then
         local2 = (local2 Or $400)
     EndIf
-    YX2D2860X(local0\Field1, $00, ($10000 Or local2))
+    GUESSEDcreatesurface(local0\Field1, $00, ($10000 Or local2))
     entitydestructor(local0\Field2, FuncPtr(X8F48ZZ8ZD))
     local0\Field0 = $00
     local0\Field0 = findfreeemitterid()

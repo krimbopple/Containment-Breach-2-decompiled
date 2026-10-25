@@ -17,12 +17,12 @@ Function rendersecuritycams%()
                     EndIf
                     If (local0\Field9 <= local0\Field23) Then
                         If ((((sc_i\Field2 = Null) Lor (rand($05, $01) = $05)) Lor (local0\Field2 <> $03)) <> 0) Then
-                            TX0F0BX6X46(local0\Field21, 1.0, -1.0, -1.0, $01, $00)
+                            GUESSEDrendertex(local0\Field21, 1.0, -1.0, -1.0, $01, $00)
                         Else
                             showentity(sc_i\Field2\Field6\Field15)
                             entityalpha(getchild(sc_i\Field2\Field6\Field15, $02), 1.0)
                             showentity(sc_i\Field2\Field21)
-                            TX0F0BX6X46(sc_i\Field2\Field21, 1.0, -1.0, -1.0, $01, $00)
+                            GUESSEDrendertex(sc_i\Field2\Field21, 1.0, -1.0, -1.0, $01, $00)
                             hideentity(sc_i\Field2\Field21)
                             hideentity(sc_i\Field2\Field6\Field15)
                         EndIf

@@ -127,6 +127,6 @@ Function loadevents%()
     If (T8X2046020\Field12 <> 0) Then
         createevent($4D, $72, $00, 0.0)
     EndIf
-    BDDXBF8Z()
+    GUESSEDloadevents()
     Return $00
 End Function

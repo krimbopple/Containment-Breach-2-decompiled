@@ -92,7 +92,7 @@ Function renderdebughud%()
             textex(local3, (Int ((300.0 * menuscale) + (Float local4))), format(getlocalstring("console", "debug_2.vomit"), (Str XZ0260X8X2\Field82), "%s"), $00, $00)
             textex(local3, (Int ((340.0 * menuscale) + (Float local4))), format(getlocalstring("console", "debug_2.playable"), (Str XZ0260X8X2\Field38), "%s"), $00, $00)
             textex(local3, (Int ((380.0 * menuscale) + (Float local4))), format(getlocalstring("console", "debug_2.refitems"), (Str XZ0260X8X2\Field80), "%s"), $00, $00)
-            textex(local3, (Int ((400.0 * menuscale) + (Float local4))), format(getlocalstring("console", "debug_2.itemamount"), (Str TXZ0ZBZBFF0()), "%s"), $00, $00)
+            textex(local3, (Int ((400.0 * menuscale) + (Float local4))), format(getlocalstring("console", "debug_2.itemamount"), (Str GUESSEDrenderrenderdebughud_3()), "%s"), $00, $00)
             textex(local3, (Int ((440.0 * menuscale) + (Float local4))), format(getlocalstring("console", "debug_2.escape"), (Str escapetimer), "%s"), $00, $00)
             textex(local3, (Int ((480.0 * menuscale) + (Float local4))), ("Drop Speed: " + (Str XZ0260X8X2\Field16)), $00, $00)
         Case $03
@@ -137,7 +137,7 @@ Function renderdebughud%()
             Else
                 textex(local3, local4, getlocalstring("console", "debug_3.005.maynard"), $00, $00)
             EndIf
-            local8 = (Int max((Float ((((Y0DBXD6BBZ(achievementsindex) - $04) - (Y0DBXD6BBZ(unlockedachievements) - $01)) - TX6ZD06226X(unlockedachievements, "apollyon")) * (selecteddifficulty\Field8 + $05))), 0.0))
+            local8 = (Int max((Float ((((_S2IMapSize(achievementsindex) - $04) - (_S2IMapSize(unlockedachievements) - $01)) - _S2IMapContains(unlockedachievements, "apollyon")) * (selecteddifficulty\Field8 + $05))), 0.0))
             textex(local3, (Int ((20.0 * menuscale) + (Float local4))), format(getlocalstring("console", "debug_3.OmniChance.Any"), (Str (local8 + $01)), "%s"), $00, $00)
             textex(local3, (Int ((40.0 * menuscale) + (Float local4))), format(getlocalstring("console", "debug_3.OmniChance.5"), (Str ((local8 Sar $01) + $01)), "%s"), $00, $00)
             local9 = $00
@@ -152,9 +152,9 @@ Function renderdebughud%()
             textex(local3, (Int ((60.0 * menuscale) + (Float local4))), format(getlocalstring("console", "debug_3.NavUltiChance"), (Str (Int max((Float ((local9 - (local10 Shl $01)) * (selecteddifficulty\Field8 + $01))), 1.0))), "%s"), $00, $00)
         Case $04
             textex(local3, (Int ((20.0 * menuscale) + (Float local4))), format(getlocalstring("console", "debug_4.MultiplayerIP"), (Str T8X2046020\Field25), "%s"), $00, $00)
-            textex(local3, (Int ((40.0 * menuscale) + (Float local4))), format(getlocalstring("console", "debug_4.MultiplayerID"), (Str TXXDZB2ZBXX()), "%s"), $00, $00)
-            textex(local3, (Int ((60.0 * menuscale) + (Float local4))), format(getlocalstring("console", "debug_4.MultiplayerNR"), (((Str ((Float TX4XZ0B2Z4B()) / 1024.0)) + " ") + getlocalstring("console", "debug_4.MultiplayerNR_kb")), "%s"), $00, $00)
-            textex(local3, (Int ((80.0 * menuscale) + (Float local4))), format(getlocalstring("console", "debug_4.MultiplayerObj"), (Str CZB6XB84()), "%s"), $00, $00)
+            textex(local3, (Int ((40.0 * menuscale) + (Float local4))), format(getlocalstring("console", "debug_4.MultiplayerID"), (Str GUESSEDupdatedropitem()), "%s"), $00, $00)
+            textex(local3, (Int ((60.0 * menuscale) + (Float local4))), format(getlocalstring("console", "debug_4.MultiplayerNR"), (((Str ((Float GUESSEDrenderrenderdebughud_2()) / 1024.0)) + " ") + getlocalstring("console", "debug_4.MultiplayerNR_kb")), "%s"), $00, $00)
+            textex(local3, (Int ((80.0 * menuscale) + (Float local4))), format(getlocalstring("console", "debug_4.MultiplayerObj"), (Str GUESSEDrenderrenderdebughud()), "%s"), $00, $00)
             local12 = $00
             For local13 = Each items
                 local12 = (local12 + $01)

@@ -10,7 +10,7 @@ Function removeitem%(arg0.items, arg1%)
     EndIf
     local0 = C20FB8DZF
     C20FB8DZF = Null
-    If (XDX22FZBZX(arg0, local0, arg1) <> 0) Then
+    If (GUESSEDdeleteremoveitem_2(arg0, local0, arg1) <> 0) Then
         Return $00
     EndIf
     If (arg0\Field12 <> $00) Then

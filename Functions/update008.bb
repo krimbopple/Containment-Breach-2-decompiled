@@ -7,7 +7,7 @@ Function update008%()
     Local local5%
     Local local6#
     Local local7%
-    local5 = (playerinreachableroom($00, $00, $01) * (X4BX024DX0() = $00))
+    local5 = (playerinreachableroom($00, $00, $01) * (GUESSEDupdatexdb() = $00))
     If (0.0 < i_008\Field0) Then
         If (entityhidden(X2Z260BF0Z\Field1[$03]) <> 0) Then
             showentity(X2Z260BF0Z\Field1[$03])
@@ -59,7 +59,7 @@ Function update008%()
                 makemeunplayable($01)
                 If (((92.7 <= i_008\Field0) And (92.7 > local3)) <> 0) Then
                     If (local5 <> 0) Then
-                        If (X4BX024DX0() <> $00) Then
+                        If (GUESSEDupdatexdb() <> $00) Then
                             XZ0260X8X2\Field38 = $02
                             kill($00, $01, $00, $01)
                             i_008\Field0 = 0.0

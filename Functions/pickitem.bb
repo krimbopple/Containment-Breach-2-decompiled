@@ -63,11 +63,11 @@ Function pickitem%(arg0.items, arg1%)
                     ElseIf (local4 = $02) Then
                         createmsg(getlocalstring("msg", "vestsuit"), 6.0)
                         Return $00
-                    ElseIf (X4BX024DX0() = $00) Then
+                    ElseIf (GUESSEDupdatexdb() = $00) Then
                         selecteditem = arg0
                     EndIf
                 Case $3C,$3D,$3E,$3F
-                    If (X4BX024DX0() <> 0) Then
+                    If (GUESSEDupdatexdb() <> 0) Then
                         If (T8660BZ460\Field6 > $00) Then
                             local4 = $02
                         ElseIf (T8660BZ460\Field10 > $00) Then
@@ -138,12 +138,12 @@ Function pickitem%(arg0.items, arg1%)
             EndIf
             TX60DB8XBBZ(local1) = arg0
             hideentity(arg0\Field9)
-            E066220XZ(arg0)
+            GUESSEDsetpickitem(arg0)
             If (arg1 <> 0) Then
                 XZ0260X8X2\Field68 = max(2.0, XZ0260X8X2\Field68)
             EndIf
             local3 = $00
-            XZ8F86B8D6(arg0)
+            GUESSEDactivateentity(arg0)
             Exit
         EndIf
     Next

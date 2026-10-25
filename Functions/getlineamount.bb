@@ -10,7 +10,7 @@ Function getlineamount%(arg0$, arg1%, arg2%, arg3#)
     If (arg2 < $01) Then
         arg2 = (Int smallest_power_two)
     EndIf
-    arg0 = XX8XZZFFF(arg0)
+    arg0 = GUESSEDgettask(arg0)
     local0 = $00
     If (0.0 <= arg3) Then
         local1 = ((Float fontheight()) + arg3)

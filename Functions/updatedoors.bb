@@ -40,8 +40,8 @@ Function updatedoors%()
         For local0 = Each doors
             local0\Field55 = (local8 >= entitydistancesquared(local0\Field51, XZ0260X8X2\Field74))
             local0\Field2 = local0\Field55
-            If (((local0\Field2 = $00) And (TXB2BFFFFFX() Lor (X4BX024DX0() = $00))) <> 0) Then
-                local0\Field2 = TX44ZDFDZBB(local0\Field51, local8)
+            If (((local0\Field2 = $00) And (GUESSEDupdateanimatenpc() Lor (GUESSEDupdatexdb() = $00))) <> 0) Then
+                local0\Field2 = GUESSEDisentity_4(local0\Field51, local8)
             EndIf
         Next
         BXZDBZ0BB\Field6 = 35.0
@@ -218,20 +218,20 @@ Function updatedoors%()
                 Else
                     local20 = -89.9
                 EndIf
-                tformpoint(((- XBZZ8FDX42(0.2, 0.3, local0\Field36)) / entityscalex(local0\Field51, $01, 1.0)), 0.0, ((XBZZ8FDX42(0.2, 0.4, local0\Field36) * local19) / entityscalez(local0\Field51, $01, 1.0)), local0\Field51, $00)
+                tformpoint(((- GUESSEDupdaternd(0.2, 0.3, local0\Field36)) / entityscalex(local0\Field51, $01, 1.0)), 0.0, ((GUESSEDupdaternd(0.2, 0.4, local0\Field36) * local19) / entityscalez(local0\Field51, $01, 1.0)), local0\Field51, $00)
                 local21 = tformedx()
                 local22 = tformedy()
                 local23 = tformedz()
-                TXX4FXBDX4(local0\Field0, local21, (local22 + 0.045), local23, local20, (entityyaw(local0\Field51, $01, 1.0) + XBZZ8FDX42(-15.0, 15.0, local0\Field36)), 0.0, XBZZ8FDX42(0.01, 0.02, (local0\Field36 + $20)), $01)
+                GUESSEDpositionentity_7(local0\Field0, local21, (local22 + 0.045), local23, local20, (entityyaw(local0\Field51, $01, 1.0) + GUESSEDupdaternd(-15.0, 15.0, local0\Field36)), 0.0, GUESSEDupdaternd(0.01, 0.02, (local0\Field36 + $20)), $01)
                 If (local0\Field7 <> $00) Then
-                    tformpoint((XBZZ8FDX42(0.2, 0.3, (local0\Field36 + $10)) / entityscalex(local0\Field51, $01, 1.0)), 0.0, ((XBZZ8FDX42(0.2, 0.4, (local0\Field36 + $10)) * local19) / entityscalez(local0\Field51, $01, 1.0)), local0\Field51, $00)
+                    tformpoint((GUESSEDupdaternd(0.2, 0.3, (local0\Field36 + $10)) / entityscalex(local0\Field51, $01, 1.0)), 0.0, ((GUESSEDupdaternd(0.2, 0.4, (local0\Field36 + $10)) * local19) / entityscalez(local0\Field51, $01, 1.0)), local0\Field51, $00)
                     local24 = tformedx()
                     local25 = tformedy()
                     local26 = tformedz()
                     If (local0\Field46 = $03) Then
                         local20 = (- local20)
                     EndIf
-                    TXX4FXBDX4(local0\Field7, local24, (local25 + 0.045), local26, (- local20), ((entityyaw(local0\Field51, $01, 1.0) + ((Float (local0\Field46 <> $03)) * 180.0)) + XBZZ8FDX42(-15.0, 15.0, (local0\Field36 + $40))), 0.0, XBZZ8FDX42(0.01, 0.02, (local0\Field36 + $40)), $01)
+                    GUESSEDpositionentity_7(local0\Field7, local24, (local25 + 0.045), local26, (- local20), ((entityyaw(local0\Field51, $01, 1.0) + ((Float (local0\Field46 <> $03)) * 180.0)) + GUESSEDupdaternd(-15.0, 15.0, (local0\Field36 + $40))), 0.0, GUESSEDupdaternd(0.01, 0.02, (local0\Field36 + $40)), $01)
                 EndIf
             ElseIf (getentitytype(local0\Field0) <> $03) Then
                 entitytype(local0\Field0, $03, $00)
@@ -312,7 +312,7 @@ Function updatedoors%()
                         If ((local0\Field10 And (local0\Field21 > $00)) <> 0) Then
                             local0\Field10 = $00
                         EndIf
-                        T42Z6D220X(local0, $FFFFFFFF)
+                        GUESSEDcountentity(local0, $FFFFFFFF)
                         local0\Field34 = 35.0
                     Else
                         local0\Field34 = (local0\Field34 - fps\Field3[$00])
@@ -320,12 +320,12 @@ Function updatedoors%()
                 EndIf
             EndIf
         EndIf
-        YX20ZDFZX2(local0)
+        GUESSEDsetanim_4(local0)
     Next
     If (((local9 <> Null) And (d_i\Field6 = Null)) <> 0) Then
         local9\Field34 = 0.0
     EndIf
-    If ((TXB2BFFFFFX() Lor (X4BX024DX0() = $00)) <> 0) Then
+    If ((GUESSEDupdateanimatenpc() Lor (GUESSEDupdatexdb() = $00)) <> 0) Then
         If (d_i\Field6 <> Null) Then
             If ((d_i\Field6\Field10 And remotedooron) <> 0) Then
                 If ((d_i\Field6\Field39 And (180.0 = d_i\Field6\Field13)) <> 0) Then

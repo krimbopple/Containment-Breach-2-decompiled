@@ -8,7 +8,7 @@ Function updatelightvolume%()
         Else
             local1 = (hidedistance * hidedistance)
             For local0 = Each lights
-                If ((((local0\Field16 <> Null) And TX6BB60B482(local0\Field16, playerroom)) Lor (local0\Field16 = Null)) <> 0) Then
+                If ((((local0\Field16 <> Null) And GUESSEDupdatedecals(local0\Field16, playerroom)) Lor (local0\Field16 = Null)) <> 0) Then
                     local2 = entitydistancesquared(camera, local0\Field7)
                     If (local2 < ((local0\Field4 * local0\Field4) + local1)) Then
                         templightvolume = max(((((local0\Field15 * local0\Field15) * ((hidedistance - sqr(local2)) / hidedistance)) + templightvolume) / 4.5), 1.0)
@@ -25,6 +25,6 @@ Function updatelightvolume%()
         lightvolume = curvevalue(0.6, lightvolume, 40.0)
         BXZDBZ0BB\Field1 = 0.0
     EndIf
-    TD8DBBBZ2B(curvevalue(min(secondarylighton, 1.0), ZB40B06B0(), 5.0), $00)
+    GUESSEDupdateeffect(curvevalue(min(secondarylighton, 1.0), GUESSEDupdatelightvolume(), 5.0), $00)
     Return $00
 End Function

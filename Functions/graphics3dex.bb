@@ -13,13 +13,13 @@ Function graphics3dex%(arg0%, arg1%, arg2%, arg3%)
     EndIf
     graphics3d(arg0, arg1, arg2, arg3)
     If (local0 <> 0) Then
-        TXF684Z24B($FFFFFFF0, $80000000)
+        SetWindowLongA($FFFFFFF0, $80000000)
         desktopheight()
-        T20FZ22BX0F(opt\Field37, $00, $00, $00, desktopwidth(), opt\Field37, $40)
+        SetWindowPos(opt\Field37, $00, $00, $00, desktopwidth(), opt\Field37, $40)
     EndIf
     hardwareskinning($01)
     texturepersistentcaching($01)
-    T2FDDFFDZ4()
+    GUESSEDcreategraphics()
     smallest_power_two = 512.0
     While ((((Float arg0) > smallest_power_two) Lor ((Float arg1) > smallest_power_two)) <> 0)
         smallest_power_two = (smallest_power_two * 2.0)

@@ -150,11 +150,11 @@ Function savegame%(arg0$)
     writebyte(local0, remotedooron)
     writebyte(local0, soundtransmission)
     writebyte(local0, key2_spawnrate)
-    local9 = TD4644B68Z(TX0Z2Z4F86D(achievementsarray, "achievements"))
-    local10 = TD0DFDZ4XX(local9)
+    local9 = _JsonGetArray(_JsonGetValue(achievementsarray, "achievements"))
+    local10 = _JsonGetArraySize(local9)
     For local7 = $00 To (local10 - $01) Step $01
-        local11 = TX240XXB6Z6(TX0Z2Z4F86D(D8XX4X0D0(local9, local7), "id"))
-        If (TX6ZD06226X(unlockedachievements, local11) <> 0) Then
+        local11 = _JsonGetString(_JsonGetValue(_JsonGetArrayValue(local9, local7), "id"))
+        If (_S2IMapContains(unlockedachievements, local11) <> 0) Then
             writestring(local0, local11)
         EndIf
     Next

@@ -39,7 +39,7 @@ Function updateexplosion%()
             If (500.0 < XZ0260X8X2\Field33) Then
                 XZ0260X8X2\Field33 = 0.0
             EndIf
-            If (X4BX024DX0() = $00) Then
+            If (GUESSEDupdatexdb() = $00) Then
                 positionentity(XZ0260X8X2\Field74, entityx(XZ0260X8X2\Field74, $00, 1.0), 200.0, entityz(XZ0260X8X2\Field74, $00, 1.0), $00)
             EndIf
         EndIf

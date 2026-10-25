@@ -1,6 +1,6 @@
 Function runtimeerrorex%(arg0$)
     If (errormessageinitialized <> 0) Then
-        XXZ6880X02(arg0)
+        GUESSEDseterrormsg(arg0)
         memoryaccessviolation("")
     Else
         runtimeerror(arg0)

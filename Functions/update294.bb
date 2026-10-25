@@ -101,44 +101,44 @@ Function update294%()
             EndIf
             i_294\Field1 = (i_294\Field1 + local5)
             If ((local6 And (i_294\Field1 <> "")) <> 0) Then
-                Y028Z6DD68(i_294\Field1)
+                GUESSEDupdatetxxf_6(i_294\Field1)
                 i_294\Field1 = trim(i_294\Field1)
                 If (left(i_294\Field1, (Int min(7.0, (Float len(i_294\Field1))))) = "cup of ") Then
                     i_294\Field1 = right(i_294\Field1, (len(i_294\Field1) - $07))
                 ElseIf (left(i_294\Field1, (Int min(9.0, (Float len(i_294\Field1))))) = "a cup of ") Then
                     i_294\Field1 = right(i_294\Field1, (len(i_294\Field1) - $09))
                 EndIf
-                If (TX6ZD06226X(i_294\Field3, i_294\Field1) <> 0) Then
-                    local13 = D8XX4X0D0(i_294\Field0, XF2FX4F0X2(i_294\Field3, i_294\Field1))
-                    If (TF46ZF6DB6(TX0Z2Z4F86D(local13, "dispense_sound")) = $00) Then
-                        local14 = TX240XXB6Z6(TX0Z2Z4F86D(local13, "dispense_sound"))
+                If (_S2IMapContains(i_294\Field3, i_294\Field1) <> 0) Then
+                    local13 = _JsonGetArrayValue(i_294\Field0, _S2IMapGet(i_294\Field3, i_294\Field1))
+                    If (_JsonIsNull(_JsonGetValue(local13, "dispense_sound")) = $00) Then
+                        local14 = _JsonGetString(_JsonGetValue(local13, "dispense_sound"))
                         playerroom\Field8 = playsound_strict(loadtempsound(local14), $00, $00)
-                        X42666Z0B0(Null, local14, playerroom\Field27[$00], 10.0, 1.0)
+                        GUESSEDisentity_10(Null, local14, playerroom\Field27[$00], 10.0, 1.0)
                     EndIf
                     If (XZ0260X8X2\Field63 > $00) Then
                         playsound_strict(loadtempsound("SFX\SCP\294\PullMasterCard.ogg"), $00, $00)
-                        X42666Z0B0(Null, "SFX\SCP\294\PullMasterCard.ogg", playerroom\Field27[$00], 2.0, 1.0)
+                        GUESSEDisentity_10(Null, "SFX\SCP\294\PullMasterCard.ogg", playerroom\Field27[$00], 2.0, 1.0)
                     EndIf
-                    local7 = TX0Z2Z4F86D(local13, "explosion")
-                    If (TF46ZF6DB6(local7) = $00) Then
-                        If (TX8B6FFF244(local7) <> 0) Then
+                    local7 = _JsonGetValue(local13, "explosion")
+                    If (_JsonIsNull(local7) = $00) Then
+                        If (_JsonGetBool(local7) <> 0) Then
                             XZ0260X8X2\Field33 = 135.0
-                            local7 = TX0Z2Z4F86D(local13, "death_message")
-                            If (TF46ZF6DB6(local7) = $00) Then
-                                msg\Field8 = TX240XXB6Z6(local7)
+                            local7 = _JsonGetValue(local13, "death_message")
+                            If (_JsonIsNull(local7) = $00) Then
+                                msg\Field8 = _JsonGetString(local7)
                             EndIf
                         EndIf
                     EndIf
-                    local15 = TD4644B68Z(TX0Z2Z4F86D(local13, "color"))
-                    local8 = T4BFX842B(TX0Z2Z4F86D(local13, "alpha"))
-                    local7 = TX0Z2Z4F86D(local13, "glow")
-                    If (TF46ZF6DB6(local7) = $00) Then
-                        If (TX8B6FFF244(local7) <> 0) Then
+                    local15 = _JsonGetArray(_JsonGetValue(local13, "color"))
+                    local8 = _JsonGetFloat(_JsonGetValue(local13, "alpha"))
+                    local7 = _JsonGetValue(local13, "glow")
+                    If (_JsonIsNull(local7) = $00) Then
+                        If (_JsonGetBool(local7) <> 0) Then
                             local8 = (- local8)
                         EndIf
                     EndIf
-                    If (((X4BX024DX0() = $00) Lor TXB2BFFFFFX()) <> 0) Then
-                        local0 = createitem("Cup", $2B, entityx(playerroom\Field27[$02], $01, 1.0), entityy(playerroom\Field27[$02], $01, 1.0), entityz(playerroom\Field27[$02], $01, 1.0), XB2460ZF4(D8XX4X0D0(local15, $00)), XB2460ZF4(D8XX4X0D0(local15, $01)), XB2460ZF4(D8XX4X0D0(local15, $02)), local8, $00)
+                    If (((GUESSEDupdatexdb() = $00) Lor GUESSEDupdateanimatenpc()) <> 0) Then
+                        local0 = createitem("Cup", $2B, entityx(playerroom\Field27[$02], $01, 1.0), entityy(playerroom\Field27[$02], $01, 1.0), entityz(playerroom\Field27[$02], $01, 1.0), _JsonGetInt(_JsonGetArrayValue(local15, $00)), _JsonGetInt(_JsonGetArrayValue(local15, $01)), _JsonGetInt(_JsonGetArrayValue(local15, $02)), local8, $00)
                         local0\Field19 = i_294\Field1
                         local0\Field24 = format(getlocalstring("items", "cupof"), i_294\Field1, "%s")
                         entitytype(local0\Field9, $03, $00)
@@ -146,7 +146,7 @@ Function update294%()
                 Else
                     i_294\Field1 = getlocalstring("misc", "ofr")
                     playerroom\Field8 = playsound_strict(loadtempsound("SFX\SCP\294\OutOfRange.ogg"), $00, $00)
-                    X42666Z0B0(Null, "SFX\SCP\294\OutOfRange.ogg", playerroom\Field27[$00], 10.0, 1.0)
+                    GUESSEDisentity_10(Null, "SFX\SCP\294\OutOfRange.ogg", playerroom\Field27[$00], 10.0, 1.0)
                 EndIf
             EndIf
         EndIf

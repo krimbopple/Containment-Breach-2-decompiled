@@ -2,7 +2,7 @@ Function blitz_X480XDB4860%(arg0.doors, arg1%, arg2%)
     Local local0#
     Local local1.emitter
     Local local2%
-    If (((arg0\Field38 Lor (arg0\Field46 = $01)) Lor ((arg2 = $00) And ((X4BX024DX0() <> $00) And (TXB2BFFFFFX() = $00)))) <> 0) Then
+    If (((arg0\Field38 Lor (arg0\Field46 = $01)) Lor ((arg2 = $00) And ((GUESSEDupdatexdb() <> $00) And (GUESSEDupdateanimatenpc() = $00)))) <> 0) Then
         Return $00
     EndIf
     local0 = entitydistance(arg0\Field51, camera)

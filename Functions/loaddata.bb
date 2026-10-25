@@ -2,16 +2,16 @@ Function loaddata%()
     Local local0$
     
     subfile = eax_0007
-    localsubfile = X22X8B6X80((lang\Field0 + "Data\subtitles.jsonc"))
-    subcolors = TX0Z2Z4F86D(subfile, "colors")
-    localsubcolors = TX0Z2Z4F86D(localsubfile, "colors")
+    localsubfile = _JsonParseFromFile((lang\Field0 + "Data\subtitles.jsonc"))
+    subcolors = _JsonGetValue(subfile, "colors")
+    localsubcolors = _JsonGetValue(localsubfile, "colors")
     subtitlesinit = $01
     If (scp1499chunksdoc <> $00) Then
-        Y00DFZDDF6(scp1499chunksdoc)
+        _JsonFreeDocument(scp1499chunksdoc)
     EndIf
     
     scp1499chunksdoc = eax_0026
-    scp1499chunks = TD4644B68Z(scp1499chunksdoc)
+    scp1499chunks = _JsonGetArray(scp1499chunksdoc)
     subjectname = getlocalstring("misc", "subject")
     playerfallingpickdistance = 10.0
     camerazoomvalue = tan(((atan((tan((opt\Field15 / 2.0)) * (graphicwidthfloat / graphicheightfloat))) * 2.0) / 2.0))

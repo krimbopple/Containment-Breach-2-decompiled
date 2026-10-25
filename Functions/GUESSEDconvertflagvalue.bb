@@ -1,0 +1,11 @@
+Function GUESSEDconvertflagvalue%(arg0%)
+    Select arg0
+        Case $01
+            Return $01
+        Case $02
+            Return $02
+        Case $03
+            Return $04
+    End Select
+    Return $00
+End Function

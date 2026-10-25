@@ -17,9 +17,9 @@ Function rendermenu%()
     Local local19%
     Local local20%
     catcherrors("RenderMenu()")
-    If (((TFZF84XD6D() <> opt\Field37) And (TX6X48DXXDX = $00)) <> 0) Then
+    If (((GetForegroundWindow() <> opt\Field37) And (TX6X48DXXDX = $00)) <> 0) Then
         menuopen = $01
-        If (X4BX024DX0() = $00) Then
+        If (GUESSEDupdatexdb() = $00) Then
             pausesounds()
         EndIf
         delay($0A)
@@ -60,7 +60,7 @@ Function rendermenu%()
                 Case $02
                     local4 = getlocalstring("mpmenu", "stuck.terminate?")
             End Select
-        ElseIf ((((((Int XZ0260X8X2\Field48) Lor XZ0260X8X2\Field23) = $00) Lor (XZ0260X8X2\Field40 <> $FFFFFFFF)) Lor ((X4BX024DX0() <> $00) And ((Int XZ0260X8X2\Field48) And FD020X0BZ\Field5))) <> 0) Then
+        ElseIf ((((((Int XZ0260X8X2\Field48) Lor XZ0260X8X2\Field23) = $00) Lor (XZ0260X8X2\Field40 <> $FFFFFFFF)) Lor ((GUESSEDupdatexdb() <> $00) And ((Int XZ0260X8X2\Field48) And FD020X0BZ\Field5))) <> 0) Then
             local4 = getlocalstring("menu", "paused")
         Else
             local4 = getlocalstring("menu", "died")
@@ -407,14 +407,14 @@ Function rendermenu%()
         ElseIf ((((igm\Field2 > $00) And (igm\Field0 <= $00)) And (igm\Field1 <= $00)) <> 0) Then
             rendermenubuttons()
             If (igm\Field2 > $00) Then
-                local16 = TD4644B68Z(TX0Z2Z4F86D(achievementsarray, "achievements"))
+                local16 = _JsonGetArray(_JsonGetValue(achievementsarray, "achievements"))
                 local17 = (Int ((22.0 * menuscale) + (Float local2)))
                 local18 = (Int (101.0 * menuscale))
                 local19 = ((igm\Field2 - $01) * $0C)
-                local20 = Y0DBXD6BBZ(achievementsindex)
+                local20 = _S2IMapSize(achievementsindex)
                 For local5 = $00 To $0B Step $01
                     If ((local5 + local19) < local20) Then
-                        renderachvimg(local17, (Int (((Float ((local5 Sar $02) * $78)) * menuscale) + (Float local3))), local5, TX240XXB6Z6(TX0Z2Z4F86D(D8XX4X0D0(local16, (local5 + local19)), "id")))
+                        renderachvimg(local17, (Int (((Float ((local5 Sar $02) * $78)) * menuscale) + (Float local3))), local5, _JsonGetString(_JsonGetValue(_JsonGetArrayValue(local16, (local5 + local19)), "id")))
                     Else
                         Exit
                     EndIf
@@ -422,7 +422,7 @@ Function rendermenu%()
                 For local5 = $00 To $0B Step $01
                     If ((local5 + local19) < local20) Then
                         If (mouseon((((local5 Mod $04) * local18) + local17), (Int (((Float ((local5 Sar $02) * $78)) * menuscale) + (Float local3))), (Int (85.0 * menuscale)), (Int (85.0 * menuscale))) <> 0) Then
-                            achievementtooltip(TX240XXB6Z6(TX0Z2Z4F86D(D8XX4X0D0(local16, (local5 + local19)), "id")))
+                            achievementtooltip(_JsonGetString(_JsonGetValue(_JsonGetArrayValue(local16, (local5 + local19)), "id")))
                             Exit
                         EndIf
                     Else
@@ -448,7 +448,7 @@ Function rendermenu%()
                 local4 = format(getlocalstring("menu", "new.map"), converttoutf8(selectedcustommap\Field0), "%s")
             EndIf
             textex(local2, (Int ((40.0 * menuscale) + (Float local3))), local4, $00, $00)
-            If ((((((Int XZ0260X8X2\Field48) Lor XZ0260X8X2\Field23) = $00) Lor (XZ0260X8X2\Field40 <> $FFFFFFFF)) Lor ((X4BX024DX0() <> $00) And ((Int XZ0260X8X2\Field48) And FD020X0BZ\Field5))) = $00) Then
+            If ((((((Int XZ0260X8X2\Field48) Lor XZ0260X8X2\Field23) = $00) Lor (XZ0260X8X2\Field40 <> $FFFFFFFF)) Lor ((GUESSEDupdatexdb() <> $00) And ((Int XZ0260X8X2\Field48) And FD020X0BZ\Field5))) = $00) Then
                 local3 = (Int ((175.0 * menuscale) + (Float local3)))
                 If (selecteddifficulty\Field1 < $02) Then
                     local3 = (Int ((75.0 * menuscale) + (Float local3)))

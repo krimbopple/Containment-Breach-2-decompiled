@@ -45,8 +45,8 @@ Function fillroom%(arg0.rooms)
     Local local59.tempprops
     Local local60.tempsoundemitters
     Local local61.TFFD0Z88DZ
-    If (T424Z202F6() <> 0) Then
-        Return T20FZ46BZX(arg0)
+    If (GUESSEDisnewgameorupdate() <> 0) Then
+        Return MP_FillRoom(arg0)
     EndIf
     catcherrors("FillRoom()")
     Select arg0\Field22\Field21
@@ -122,9 +122,9 @@ Function fillroom%(arg0.rooms)
                 local0\Field40[local25] = $00
             Next
             arg0\Field25[$00] = local0
-            Y68XDF02B(arg0, arg0\Field40, (arg0\Field3 + 2.378906), (arg0\Field37 + 2.460938), (1.0 / 0.256), $FF, $32, $32, 0.0, 90.0, 0.0, 5.0, 50.0, 0.8, $01)
+            GUESSEDcreateentity_14(arg0, arg0\Field40, (arg0\Field3 + 2.378906), (arg0\Field37 + 2.460938), (1.0 / 0.256), $FF, $32, $32, 0.0, 90.0, 0.0, 5.0, 50.0, 0.8, $01)
         Case $29
-            Y68XDF02B(arg0, arg0\Field40, (arg0\Field3 + 2.378906), (arg0\Field37 + (1.0 / 2.031746)), 2.34375, $FF, $32, $32, 0.0, 90.0, 0.0, 5.0, 50.0, 0.6, $01)
+            GUESSEDcreateentity_14(arg0, arg0\Field40, (arg0\Field3 + 2.378906), (arg0\Field37 + (1.0 / 2.031746)), 2.34375, $FF, $32, $32, 0.0, 90.0, 0.0, 5.0, 50.0, 0.6, $01)
         Case $4F
             local0 = createdoor(arg0, arg0\Field40, arg0\Field3, (arg0\Field37 + 4.695312), arg0\Field3, $00, $03, $00, $00, $00)
             local0\Field47 = $00
@@ -142,7 +142,7 @@ Function fillroom%(arg0.rooms)
                 local0\Field40[local25] = $00
             Next
             arg0\Field25[$00] = local0
-            Y68XDF02B(arg0, arg0\Field40, (arg0\Field3 + 2.378906), (arg0\Field37 + 4.113281), (1.0 / 0.256), $FF, $32, $32, 0.0, 90.0, 0.0, 5.0, 50.0, 0.8, $01)
+            GUESSEDcreateentity_14(arg0, arg0\Field40, (arg0\Field3 + 2.378906), (arg0\Field37 + 4.113281), (1.0 / 0.256), $FF, $32, $32, 0.0, 90.0, 0.0, 5.0, 50.0, 0.8, $01)
         Case $02
             local0 = createdoor(arg0, arg0\Field40, arg0\Field3, (arg0\Field37 - 2.5), 0.0, (i_005\Field0 = $02), $00, $06, $00, $00)
             arg0\Field25[$00] = local0
@@ -251,10 +251,10 @@ Function fillroom%(arg0.rooms)
                 local3 = createdecal(local27, (arg0\Field40 + (local12 * (1.0 / 256.0))), (arg0\Field3 + 1.507812), (arg0\Field37 + (local14 * (1.0 / 256.0))), 90.0, 45.0, 0.0, ((((Float (local25 = $00)) * 0.44) + ((Float (local25 = $01)) * 1.2)) + ((Float (local25 > $01)) * 0.54)), rnd(0.8, 1.0), $00, $01, $00, $00, $00)
                 entityparent(local3\Field0, arg0\Field15, $01)
             Next
-            If (TX6ZD06226X(unlockedachievements, "keter") <> 0) Then
+            If (_S2IMapContains(unlockedachievements, "keter") <> 0) Then
                 createscreen(arg0, (arg0\Field40 + 1.652344), (arg0\Field3 + 1.007812), (arg0\Field37 - 1.113281), 0.0, 0.0, 0.0, (1.0 / 286.899), (1.0 / 370.2097), (1.0 / 256.0), "screen_keter.png")
             EndIf
-            If (TX6ZD06226X(unlockedachievements, "apollyon") <> 0) Then
+            If (_S2IMapContains(unlockedachievements, "apollyon") <> 0) Then
                 createscreen(arg0, (arg0\Field40 + 2.410156), (arg0\Field3 + 1.007812), (arg0\Field37 - 1.113281), 0.0, 0.0, 0.0, (1.0 / 286.899), (1.0 / 370.2097), (1.0 / 256.0), "screen_apollyon.png")
             EndIf
             local7 = createitem("Document SCP-173", $00, (arg0\Field40 + 3.277539), (arg0\Field3 + (1.0 / 1.479769)), (arg0\Field37 + 9.683946), $00, $00, $00, 1.0, $00)
@@ -411,7 +411,7 @@ Function fillroom%(arg0.rooms)
             freeentity(local0\Field7)
             local0\Field7 = $00
             entityinstance(local0\Field0, $00)
-            X8F80Z2886(local0\Field0, $FFFFFFFF, $00)
+            GUESSEDfreeentity_7(local0\Field0, $FFFFFFFF, $00)
             For local25 = $00 To $01 Step $01
                 freeentity(local0\Field40[local25])
                 local0\Field40[local25] = $00
@@ -801,7 +801,7 @@ Function fillroom%(arg0.rooms)
                     local38 = ((arg0\Field40 = T20BDD24F02\Field2) And (arg0\Field37 = T20BDD24F02\Field1))
                 EndIf
                 If (((T20BDD24F02\Field0 = $00) Lor local38) <> 0) Then
-                    arg0\Field27[$01] = A464F2006(local0\Field0, $00)
+                    arg0\Field27[$01] = GUESSEDcopyentity_2(local0\Field0, $00)
                     scaleentity(arg0\Field27[$01], (1.0 / 13.97457), (1.0 / 19.86454), (1.0 / 18.04954), $00)
                     entitytype(arg0\Field27[$01], $01, $00)
                     positionentity(arg0\Field27[$01], (arg0\Field40 + 1.324219), arg0\Field3, (arg0\Field37 + 1.800781), $00)
@@ -936,7 +936,7 @@ Function fillroom%(arg0.rooms)
                             local14 = 571.583
                             local29 = 75.0
                     End Select
-                    YX2D2860X(local23, $00, $420)
+                    GUESSEDcreatesurface(local23, $00, $420)
                     entitytexture(local23, arg0\Field26[$01], local27, $00)
                     entityparent(local23, arg0\Field27[local25], $01)
                 Else
@@ -976,7 +976,7 @@ Function fillroom%(arg0.rooms)
                     entityfx(arg0\Field27[local26], $10)
                     spriteviewmode(arg0\Field27[local26], $02)
                     scalesprite(arg0\Field27[local26], local39, local40)
-                    YX2D2860X(arg0\Field27[local26], $00, $420)
+                    GUESSEDcreatesurface(arg0\Field27[local26], $00, $420)
                     entitytexture(arg0\Field27[local26], arg0\Field26[$02], $00, $00)
                     entityparent(arg0\Field27[local26], arg0\Field27[local25], $01)
                 EndIf
@@ -1115,7 +1115,7 @@ Function fillroom%(arg0.rooms)
             positionentity(arg0\Field27[$00], arg0\Field40, (arg0\Field3 + 1.0), arg0\Field37, $00)
             entityparent(arg0\Field27[$00], arg0\Field15, $01)
             hideentity(arg0\Field27[$00])
-            YX2D2860X(arg0\Field27[$00], $00, $420)
+            GUESSEDcreatesurface(arg0\Field27[$00], $00, $420)
             For local4 = Each rooms
                 If (local4 <> arg0) Then
                     If (((((local4\Field22\Field21 = $15) Lor (local4\Field22\Field21 = $39)) Lor (local4\Field22\Field21 = $74)) Lor (local4\Field22\Field21 = $62)) <> 0) Then
@@ -1166,7 +1166,7 @@ Function fillroom%(arg0.rooms)
             entityalpha(arg0\Field27[$02], 0.5)
             entityparent(arg0\Field27[$02], arg0\Field15, $01)
             hideentity(arg0\Field27[$02])
-            YX2D2860X(arg0\Field27[$02], $00, $40)
+            GUESSEDcreatesurface(arg0\Field27[$02], $00, $40)
             local7 = createitem("S-NAV Navigator", $49, (arg0\Field40 - 1.796875), (arg0\Field3 + (1.0 / 1.219048)), (arg0\Field37 - (1.0 / 2.37037)), $00, $00, $00, 1.0, $00)
             local7\Field15 = rnd(100.0, 0.0)
             entityparent(local7\Field9, arg0\Field15, $01)
@@ -1919,7 +1919,7 @@ Function fillroom%(arg0.rooms)
             scalesprite(arg0\Field27[$01], 0.09, 0.0725)
             turnentity(arg0\Field27[$01], 0.0, 13.0, 0.0, $00)
             moveentity(arg0\Field27[$01], 0.0, 0.0, -0.022, $00)
-            YX2D2860X(arg0\Field27[$01], $00, $FFFFFFFF)
+            GUESSEDcreatesurface(arg0\Field27[$01], $00, $FFFFFFFF)
             hideentity(arg0\Field27[$01])
             arg0\Field27[$02] = createpivot($00)
             positionentity(arg0\Field27[$02], (arg0\Field40 + 3.1875), (arg0\Field3 + 0.9375), (arg0\Field37 - 1.0), $00)
@@ -2190,9 +2190,9 @@ Function fillroom%(arg0.rooms)
             positionentity(arg0\Field27[$09], (arg0\Field40 + 14.28125), (arg0\Field3 - 44.84375), (arg0\Field37 + 8.335938), $00)
             rotateentity(arg0\Field27[$09], 0.0, 0.0, 270.0, $00)
             entityparent(arg0\Field27[$09], arg0\Field15, $01)
-            Y68XDF02B(arg0, (arg0\Field40 + 28.1875), (arg0\Field3 - 48.55469), (arg0\Field37 + 6.699219), 80.0, $FF, $32, $32, 0.0, 90.0, 0.0, 3.0, 50.0, 0.5, $00)
-            Y68XDF02B(arg0, (arg0\Field40 + 36.16406), (arg0\Field3 - 48.47656), (arg0\Field37 + 5.097656), 60.0, $FF, $32, $32, 0.0, 90.0, 0.0, 3.0, 50.0, 0.5, $00)
-            Y68XDF02B(arg0, (arg0\Field40 + 36.16406), (arg0\Field3 - 48.47656), (arg0\Field37 + 4.652344), 60.0, $FF, $32, $32, 0.0, 90.0, 0.0, 3.0, 50.0, 0.5, $00)
+            GUESSEDcreateentity_14(arg0, (arg0\Field40 + 28.1875), (arg0\Field3 - 48.55469), (arg0\Field37 + 6.699219), 80.0, $FF, $32, $32, 0.0, 90.0, 0.0, 3.0, 50.0, 0.5, $00)
+            GUESSEDcreateentity_14(arg0, (arg0\Field40 + 36.16406), (arg0\Field3 - 48.47656), (arg0\Field37 + 5.097656), 60.0, $FF, $32, $32, 0.0, 90.0, 0.0, 3.0, 50.0, 0.5, $00)
+            GUESSEDcreateentity_14(arg0, (arg0\Field40 + 36.16406), (arg0\Field3 - 48.47656), (arg0\Field37 + 4.652344), 60.0, $FF, $32, $32, 0.0, 90.0, 0.0, 3.0, 50.0, 0.5, $00)
             arg0\Field9[$00] = createlever(arg0, (arg0\Field40 + 31.8125), (arg0\Field3 - 49.02344), (arg0\Field37 - (1.0 / 12.19048)), 180.0, $00)
             local6 = setemitter(arg0, (arg0\Field40 + 26.33203), (arg0\Field3 - 49.51562), (arg0\Field37 - 1.726562), $26)
             local6\Field7 = $04
@@ -2440,7 +2440,7 @@ Function fillroom%(arg0.rooms)
                 turnentity(arg0\Field27[local25], 0.0, (90.0 + (Float ((local25 = $03) * $B4))), 0.0, $00)
                 entityalpha(arg0\Field27[local25], 0.5)
                 entityparent(arg0\Field27[local25], arg0\Field15, $01)
-                YX2D2860X(arg0\Field27[local25], $00, $40)
+                GUESSEDcreatesurface(arg0\Field27[local25], $00, $40)
                 hideentity(arg0\Field27[local25])
             Next
             arg0\Field27[$04] = createpivot($00)
@@ -2616,8 +2616,8 @@ Function fillroom%(arg0.rooms)
             arg0\Field30[$07] = $01
             LightRange(arg0\Field27[$07], (1.0 / 8.533334))
             LightColor(arg0\Field27[$07], $FF, $32, $32)
-            TX2026B22F(arg0\Field27[$07], $00)
-            T2X4Z28Z6F6(arg0\Field27[$07], 1.65)
+            GUESSEDcreatenpc_3(arg0\Field27[$07], $00)
+            GUESSEDsetfillroom(arg0\Field27[$07], 1.65)
             positionentity(arg0\Field27[$07], (arg0\Field40 - 7.65625), (arg0\Field3 - 7.246094), (arg0\Field37 + 9.242188), $00)
             entityparent(arg0\Field27[$07], arg0\Field15, $01)
             hideentity(arg0\Field27[$07])
@@ -2625,8 +2625,8 @@ Function fillroom%(arg0.rooms)
             arg0\Field30[$08] = $01
             LightRange(arg0\Field27[$08], (1.0 / 8.533334))
             LightColor(arg0\Field27[$08], $FF, $32, $32)
-            TX2026B22F(arg0\Field27[$08], $00)
-            T2X4Z28Z6F6(arg0\Field27[$08], 1.65)
+            GUESSEDcreatenpc_3(arg0\Field27[$08], $00)
+            GUESSEDsetfillroom(arg0\Field27[$08], 1.65)
             positionentity(arg0\Field27[$08], (arg0\Field40 - 6.09375), (arg0\Field3 - 7.246094), (arg0\Field37 + 9.242188), $00)
             entityparent(arg0\Field27[$08], arg0\Field15, $01)
             hideentity(arg0\Field27[$08])
@@ -2727,7 +2727,7 @@ Function fillroom%(arg0.rooms)
             rotateentity(local7\Field9, 0.0, -45.0, 0.0, $00)
             entityparent(local7\Field9, arg0\Field15, $01)
             createcustomcenter(arg0, arg0\Field40, (arg0\Field37 - 3.25))
-            Y68XDF02B(arg0, arg0\Field40, (arg0\Field3 + 2.605469), (arg0\Field37 - (1.0 / 1.590062)), 3.125, $FF, $32, $32, 0.0, 90.0, 90.0, 5.0, 90.0, 1.0, $01)
+            GUESSEDcreateentity_14(arg0, arg0\Field40, (arg0\Field3 + 2.605469), (arg0\Field37 - (1.0 / 1.590062)), 3.125, $FF, $32, $32, 0.0, 90.0, 90.0, 5.0, 90.0, 1.0, $01)
         Case $46
             local0 = createdoor(arg0, (arg0\Field40 - (1.0 / 0.64)), arg0\Field3, arg0\Field37, 90.0, $00, $00, $05, $00, $00)
             arg0\Field25[$00] = local0
@@ -2867,7 +2867,7 @@ Function fillroom%(arg0.rooms)
             arg0\Field27[$00] = createpivot($00)
             positionentity(arg0\Field27[$00], arg0\Field40, arg0\Field3, (arg0\Field37 + 8.691406), $00)
             entityparent(arg0\Field27[$00], arg0\Field15, $01)
-            Y68XDF02B(arg0, arg0\Field40, (arg0\Field3 + 3.863281), arg0\Field37, 5.46875, $FF, $32, $32, 0.0, 90.0, 90.0, 4.5, 90.0, 1.0, $01)
+            GUESSEDcreateentity_14(arg0, arg0\Field40, (arg0\Field3 + 3.863281), arg0\Field37, 5.46875, $FF, $32, $32, 0.0, 90.0, 90.0, 4.5, 90.0, 1.0, $01)
             createcustomcenter(arg0, arg0\Field40, (arg0\Field37 - 3.203125))
         Case $4C
             local0 = createdoor(arg0, (arg0\Field40 + 5.96875), arg0\Field3, (arg0\Field37 - 0.25), 90.0, $00, $00, $00, $00, $00)
@@ -2978,7 +2978,7 @@ Function fillroom%(arg0.rooms)
             arg0\Field27[$00] = createpivot($00)
             positionentity(arg0\Field27[$00], arg0\Field40, arg0\Field3, (arg0\Field37 + 8.691406), $00)
             entityparent(arg0\Field27[$00], arg0\Field15, $01)
-            Y68XDF02B(arg0, arg0\Field40, (arg0\Field3 + 4.042969), arg0\Field37, 5.46875, $FF, $32, $32, 0.0, 90.0, 90.0, 4.5, 90.0, 1.0, $01)
+            GUESSEDcreateentity_14(arg0, arg0\Field40, (arg0\Field3 + 4.042969), arg0\Field37, 5.46875, $FF, $32, $32, 0.0, 90.0, 90.0, 4.5, 90.0, 1.0, $01)
             createcustomcenter(arg0, arg0\Field40, (arg0\Field37 - 3.203125))
         Case $4E
             For local4 = Each rooms
@@ -3801,7 +3801,7 @@ Function fillroom%(arg0.rooms)
             entityfx(arg0\Field27[$13], $09)
             spriteviewmode(arg0\Field27[$13], $02)
             positionentity(arg0\Field27[$13], (entityx(arg0\Field27[$08], $01, 1.0) - 1000.0), (arg0\Field3 + 16.0), arg0\Field37, $01)
-            YX2D2860X(arg0\Field27[$13], $00, $460)
+            GUESSEDcreatesurface(arg0\Field27[$13], $00, $460)
             arg0\Field27[$14] = loadmesh_strict("GFX\Map\dimension_106_terrain.b3d", $00, $01)
             arg0\Field30[$14] = $01
             local22 = loadtexture_strict("GFX\Map\Textures\rockmoss.jpg", $01, $00, 1.0)
@@ -3904,7 +3904,7 @@ Function fillroom%(arg0.rooms)
             createdoor(arg0, (arg0\Field40 + local61\Field0), (arg0\Field3 + local61\Field7), (arg0\Field37 + local61\Field9), local61\Field1, local61\Field10, local61\Field6, local61\Field8, local61\Field2, $00)
         EndIf
     Next
-    T6FD4BDD4Z(arg0, TXZ0Z8F62ZZ())
+    GUESSEDcreategift(arg0, GUESSEDisdateevent())
     catcherrors((("Uncaught: FillRoom(Room ID: " + (Str arg0\Field22\Field21)) + ")"))
     Return $00
 End Function

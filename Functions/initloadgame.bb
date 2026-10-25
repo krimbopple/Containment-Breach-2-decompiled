@@ -17,8 +17,8 @@ Function initloadgame%()
     Local local15.TFFD0Z88DZ
     Local local16.chunk
     catcherrors("InitLoadGame()")
-    XFZ4XXX8D("steam_display", "#loading")
-    TBXX4B0X6("", "Loading", "")
+    Steam_SetRichPresence("steam_display", "#loading")
+    _Discord_SetPresence("", "Loading", "")
     initotherstuff()
     loadwaypoints($37, $55)
     For local0 = Each doors
@@ -108,8 +108,8 @@ Function initloadgame%()
     fps\Field6 = millisecs()
     resetinput(10.0)
     T8X2046020\Field4 = $01
-    XFZ4XXX8D("steam_display", "#playing")
-    TBXX4B0X6("", "Playing", "")
+    Steam_SetRichPresence("steam_display", "#playing")
+    _Discord_SetPresence("", "Playing", "")
     catcherrors("Uncaught: InitLoadGame()")
     Return $00
 End Function

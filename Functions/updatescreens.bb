@@ -20,7 +20,7 @@ Function updatescreens%()
                                 If (420.0 > local0\Field1) Then
                                     If (local0\Field5 <> $03) Then
                                         entitytexture(local0\Field10, mon_i\Field2[$11], $00, $00)
-                                        X8F80Z2886(local0\Field10, $FFFFFFFF, $00)
+                                        GUESSEDfreeentity_7(local0\Field10, $FFFFFFFF, $00)
                                         local0\Field5 = $03
                                     EndIf
                                     If ((entityinview(local0\Field10, camera) And entityvisible(local0\Field10, camera, 0.0)) <> 0) Then
@@ -29,9 +29,9 @@ Function updatescreens%()
                                                 hideentity(T8660BZ460\Field9)
                                             EndIf
                                             If ((((((-16.0 > XZ0260X8X2\Field53) Lor (-6.0 < XZ0260X8X2\Field53)) And (0.0 = i_1025\Field1[$05])) And (T8660BZ460\Field5 = $00)) And (chs\Field8 = $00)) <> 0) Then
-                                                If ((((X4BX024DX0() = $00) And (n_i\Field10 <> Null)) And (2.0 > n_i\Field10\Field66)) <> 0) Then
+                                                If ((((GUESSEDupdatexdb() = $00) And (n_i\Field10 <> Null)) And (2.0 > n_i\Field10\Field66)) <> 0) Then
                                                     playsound_strict(loadtempsound("SFX\SCP\096\Triggered.ogg"), $01, $00)
-                                                    EB022F8Z(unlockedachievements, "096")
+                                                    _S2IMapErase(unlockedachievements, "096")
                                                     XZ0260X8X2\Field51 = 10.0
                                                     If (422.0 <= n_i\Field10\Field103) Then
                                                         setnpcframe(n_i\Field10, 677.0, $01)
@@ -71,13 +71,13 @@ Function updatescreens%()
                                 ElseIf (rand($14, $01) < $03) Then
                                     If (local0\Field5 <> $01) Then
                                         entitytexture(local0\Field10, local0\Field8, $00, $00)
-                                        X8F80Z2886(local0\Field10, $FFFFFFFF, $00)
+                                        GUESSEDfreeentity_7(local0\Field10, $FFFFFFFF, $00)
                                         local0\Field5 = $01
                                     EndIf
                                 ElseIf (local0\Field5 <> $02) Then
                                     local0\Field2 = ((local0\Field2 + $01) Mod $06)
                                     entitytexture(local0\Field10, mon_i\Field2[$05], local0\Field2, $00)
-                                    X8F80Z2886(local0\Field10, $FFFFFFFF, $00)
+                                    GUESSEDfreeentity_7(local0\Field10, $FFFFFFFF, $00)
                                     local0\Field5 = $02
                                 EndIf
                                 Goto section__1907
@@ -91,7 +91,7 @@ Function updatescreens%()
                                 EndIf
                                 If (local0\Field5 <> $01) Then
                                     entitytexture(local0\Field10, local0\Field8, $00, $00)
-                                    X8F80Z2886(local0\Field10, $FFFFFFFF, $00)
+                                    GUESSEDfreeentity_7(local0\Field10, $FFFFFFFF, $00)
                                     local0\Field5 = $01
                                 EndIf
                                 local0\Field0 = max((local0\Field0 - fps\Field3[$00]), 0.0)
@@ -118,12 +118,12 @@ Function updatescreens%()
                             If ((millisec Mod $5DC) < $320) Then
                                 If (local0\Field5 <> $01) Then
                                     entitytexture(local0\Field10, local0\Field8, $00, $00)
-                                    X8F80Z2886(local0\Field10, $FFFFFFFF, $00)
+                                    GUESSEDfreeentity_7(local0\Field10, $FFFFFFFF, $00)
                                     local0\Field5 = $01
                                 EndIf
                             ElseIf (local0\Field5 <> $02) Then
                                 entitytexture(local0\Field10, local0\Field8, $01, $00)
-                                X8F80Z2886(local0\Field10, $FFFFFFFF, $01)
+                                GUESSEDfreeentity_7(local0\Field10, $FFFFFFFF, $01)
                                 playsoundex(loadtempsound("SFX\Alarm\AlarmShort.ogg"), camera, local0\Field10, 1.5, 0.1, $00, $00)
                                 local0\Field5 = $02
                             EndIf
@@ -133,37 +133,37 @@ Function updatescreens%()
                                     If (0.0 = local1\Field4) Then
                                         If (local0\Field5 <> $01) Then
                                             entitytexture(local0\Field10, local0\Field8, $00, $00)
-                                            X8F80Z2886(local0\Field10, $FFFFFFFF, $00)
+                                            GUESSEDfreeentity_7(local0\Field10, $FFFFFFFF, $00)
                                             local0\Field5 = $01
                                         EndIf
                                     ElseIf (4200.0 < local1\Field4) Then
                                         If (local0\Field5 <> $02) Then
                                             entitytexture(local0\Field10, local0\Field8, $01, $00)
-                                            X8F80Z2886(local0\Field10, $FFFFFFFF, $01)
+                                            GUESSEDfreeentity_7(local0\Field10, $FFFFFFFF, $01)
                                             local0\Field5 = $02
                                         EndIf
                                     ElseIf (2100.0 < local1\Field4) Then
                                         If (local0\Field5 <> $03) Then
                                             entitytexture(local0\Field10, local0\Field8, $02, $00)
-                                            X8F80Z2886(local0\Field10, $FFFFFFFF, $02)
+                                            GUESSEDfreeentity_7(local0\Field10, $FFFFFFFF, $02)
                                             local0\Field5 = $03
                                         EndIf
                                     ElseIf (700.0 < local1\Field4) Then
                                         If (local0\Field5 <> $04) Then
                                             entitytexture(local0\Field10, local0\Field8, $03, $00)
-                                            X8F80Z2886(local0\Field10, $FFFFFFFF, $03)
+                                            GUESSEDfreeentity_7(local0\Field10, $FFFFFFFF, $03)
                                             local0\Field5 = $04
                                         EndIf
                                     ElseIf (70.0 < local1\Field4) Then
                                         If (local0\Field5 <> $05) Then
                                             entitytexture(local0\Field10, local0\Field8, $04, $00)
-                                            X8F80Z2886(local0\Field10, $FFFFFFFF, $04)
+                                            GUESSEDfreeentity_7(local0\Field10, $FFFFFFFF, $04)
                                             local0\Field5 = $05
                                         EndIf
                                     ElseIf (66.0 = local1\Field4) Then
                                         If (local0\Field5 <> $06) Then
                                             entitytexture(local0\Field10, local0\Field8, $05, $00)
-                                            X8F80Z2886(local0\Field10, $FFFFFFFF, $05)
+                                            GUESSEDfreeentity_7(local0\Field10, $FFFFFFFF, $05)
                                             local0\Field5 = $06
                                         EndIf
                                     EndIf
@@ -181,21 +181,21 @@ Function updatescreens%()
                                     local3 = ((local0\Field2 + $01) Sar $01)
                                 EndIf
                                 entitytexture(local0\Field10, local0\Field8, local3, $00)
-                                X8F80Z2886(local0\Field10, $FFFFFFFF, local3)
+                                GUESSEDfreeentity_7(local0\Field10, $FFFFFFFF, local3)
                                 local0\Field1 = 0.0
                             EndIf
                         Case $05
                             If (local0\Field5 <> $01) Then
                                 entitytexture(local0\Field10, local0\Field8, $00, $00)
-                                X8F80Z2886(local0\Field10, $FFFFFFFF, $00)
+                                GUESSEDfreeentity_7(local0\Field10, $FFFFFFFF, $00)
                                 local0\Field5 = $01
                             EndIf
                     End Select
                 EndIf
             ElseIf (local0\Field5 <> $00) Then
-                X8D424Z8X6()
+                GUESSEDfreeupdatescreens()
                 entitytexture(local0\Field10, mon_i\Field2[$02], $00, $00)
-                X8F80Z2886(local0\Field10, $FFFFFFFF, $00)
+                GUESSEDfreeentity_7(local0\Field10, $FFFFFFFF, $00)
                 local0\Field5 = $00
 .section__1907
             EndIf

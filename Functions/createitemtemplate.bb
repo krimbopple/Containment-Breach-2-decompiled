@@ -8,7 +8,7 @@ Function createitemtemplate.itemtemplates(arg0$, arg1$, arg2%, arg3$, arg4$, arg
         If (((local1\Field16 = arg3) And (local1\Field21 <> $00)) <> 0) Then
             local0\Field21 = copyentity(local1\Field21, $00)
             If (animlength(local0\Field21) < $00) Then
-                local0\Field0 = TXZDB8BD842(local0\Field21)
+                local0\Field0 = GUESSEDcreateentity_8(local0\Field21)
             EndIf
             Exit
         EndIf
@@ -17,7 +17,7 @@ Function createitemtemplate.itemtemplates(arg0$, arg1$, arg2%, arg3$, arg4$, arg
         If (arg10 <> 0) Then
             local0\Field21 = loadanimmesh_strict(arg3, $00, (instr(arg3, "addons", $01) < $01))
         Else
-            local0\Field21 = TF828B4FB6(arg3, "")
+            local0\Field21 = GUESSEDloadentity_2(arg3, "")
         EndIf
     EndIf
     local0\Field20 = arg10
@@ -40,7 +40,7 @@ Function createitemtemplate.itemtemplates(arg0$, arg1$, arg2%, arg3$, arg4$, arg
             local0\Field13 = arg8
             entitytexture(local0\Field21, local2, $00, $00)
             local0\Field22 = local2
-            X8F80Z2886(local0\Field21, $FFFFFFFF, $00)
+            GUESSEDfreeentity_7(local0\Field21, $FFFFFFFF, $00)
         EndIf
     EndIf
     local0\Field8 = arg6
@@ -59,13 +59,13 @@ Function createitemtemplate.itemtemplates(arg0$, arg1$, arg2%, arg3$, arg4$, arg
         EndIf
     Next
     If (local0\Field14 = $00) Then
-        local0\Field14 = X0BBB0D868(loadimage_strict(arg4), (64.0 * menuscale), (64.0 * menuscale), $01)
+        local0\Field14 = GUESSEDscaleresize_2(loadimage_strict(arg4), (64.0 * menuscale), (64.0 * menuscale), $01)
         local0\Field1 = arg4
     EndIf
     If (arg9 <> "") Then
         If (local0\Field10 = $00) Then
             arg9 = ("GFX\Items\Inventory Icons\" + arg9)
-            local0\Field10 = X0BBB0D868(loadimage_strict(arg9), (64.0 * menuscale), (64.0 * menuscale), $01)
+            local0\Field10 = GUESSEDscaleresize_2(loadimage_strict(arg9), (64.0 * menuscale), (64.0 * menuscale), $01)
         EndIf
     EndIf
     If (arg5 <> "") Then
@@ -76,9 +76,9 @@ Function createitemtemplate.itemtemplates(arg0$, arg1$, arg2%, arg3$, arg4$, arg
     local0\Field19 = arg1
     local0\Field24 = arg0
     local0\Field5 = arg7
-    local0\Field23 = (((((((((((((generateseednumber(arg1) + generateseednumber((Str arg2))) + generateseednumber((Str arg7))) + generateseednumber(arg3)) + generateseednumber(arg4)) + generateseednumber(arg5)) + generateseednumber((Str arg6))) + XD224F0442(arg1)) + XD224F0442((Str arg2))) + XD224F0442(arg3)) + XD224F0442(arg4)) + XD224F0442(arg5)) + XD224F0442((Str arg6))) + XD224F0442((Str arg7)))
+    local0\Field23 = (((((((((((((generateseednumber(arg1) + generateseednumber((Str arg2))) + generateseednumber((Str arg7))) + generateseednumber(arg3)) + generateseednumber(arg4)) + generateseednumber(arg5)) + generateseednumber((Str arg6))) + GenerateIndex(arg1)) + GenerateIndex((Str arg2))) + GenerateIndex(arg3)) + GenerateIndex(arg4)) + GenerateIndex(arg5)) + GenerateIndex((Str arg6))) + GenerateIndex((Str arg7)))
     hideentity(local0\Field21)
-    local0\Field7 = Y0846Z64F8(strippath(local0\Field16))
+    local0\Field7 = GUESSEDcreateitemtemplate_2(strippath(local0\Field16))
     local0\Field12 = ""
     Return local0
     Return Null

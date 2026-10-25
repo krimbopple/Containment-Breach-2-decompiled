@@ -3,7 +3,7 @@ Function removenpc%(arg0.npcs)
         Return $00
     EndIf
     catcherrors("RemoveNPC()")
-    TX2DF64Z66F(arg0)
+    GUESSEDdeleteremovenpc(arg0)
     arg0\Field59 = Null
     If (arg0\Field94 <> 0) Then
         If (arg0\Field63 <> $00) Then

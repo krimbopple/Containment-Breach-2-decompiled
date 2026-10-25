@@ -1,8 +1,0 @@
-Function T8X0604024%()
-    If (T8X2046020\Field9 < T2FFB8B2F0()) Then
-        T8X2046020\Field20[$00] = TX6BZ804604(ZZ8068B0F(), XFFF4XB224(), $00)
-        T8X2046020\Field20[$01] = TX6BZ804604(ZZ8068B0F(), XFFF4XB224(), $01)
-        T8X2046020\Field9 = (T2FFB8B2F0() + $32)
-    EndIf
-    Return $00
-End Function

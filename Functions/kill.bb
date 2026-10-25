@@ -5,11 +5,11 @@ Function kill%(arg0%, arg1%, arg2%, arg3%)
     Local local3%
     local0 = (chs\Field0 And (arg2 = $00))
     If (CB64D8DZF <> Null) Then
-        If (((CB64D8DZF\Field13 = TXXDZB2ZBXX()) And local0) <> 0) Then
+        If (((CB64D8DZF\Field13 = GUESSEDupdatedropitem()) And local0) <> 0) Then
             Return $00
         EndIf
-        Y0FFZFZ0Z(CB64D8DZF, arg0, $00)
-        If (CB64D8DZF\Field13 <> TXXDZB2ZBXX()) Then
+        GUESSEDcreateentity_13(CB64D8DZF, arg0, $00)
+        If (CB64D8DZF\Field13 <> GUESSEDupdatedropitem()) Then
             Return $00
         EndIf
     Else
@@ -17,7 +17,7 @@ Function kill%(arg0%, arg1%, arg2%, arg3%)
             Return $00
         EndIf
         If (0.0 = XZ0260X8X2\Field48) Then
-            Y0FFZFZ0Z(TXXF6F02DB2[TXXDZB2ZBXX()], arg0, arg2)
+            GUESSEDcreateentity_13(TXXF6F02DB2[GUESSEDupdatedropitem()], arg0, arg2)
         EndIf
     EndIf
     If (local0 <> 0) Then
@@ -36,7 +36,7 @@ Function kill%(arg0%, arg1%, arg2%, arg3%)
             moveentity(X2Z260BF0Z\Field1[$0C], 0.0, 0.0, 1.0, $00)
             deletesingletextureentryfromcache(local2, $00)
             local2 = $00
-            If (X4BX024DX0() = $00) Then
+            If (GUESSEDupdatexdb() = $00) Then
                 local3 = createpivot($00)
                 positionentity(local3, (entityx(XZ0260X8X2\Field74, $00, 1.0) + rnd(-0.8, 0.8)), (entityy(XZ0260X8X2\Field74, $00, 1.0) - 0.05), (entityz(XZ0260X8X2\Field74, $00, 1.0) + rnd(-0.8, 0.8)), $00)
                 turnentity(local3, 90.0, 0.0, 0.0, $00)
@@ -63,7 +63,7 @@ Function kill%(arg0%, arg1%, arg2%, arg3%)
         resetentity(XZ0260X8X2\Field28)
         rotateentity(XZ0260X8X2\Field28, 0.0, entityyaw(camera, $00, 1.0), 0.0, $00)
         XZ0260X8X2\Field48 = 1.0
-        TZF4ZFZ0ZF(arg1)
+        GUESSEDfreeentity_4(arg1)
     EndIf
     Return $00
 End Function

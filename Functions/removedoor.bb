@@ -18,7 +18,7 @@ Function removedoor%(arg0.doors)
     Next
     freeentity(arg0\Field51)
     arg0\Field51 = $00
-    X4X682D44B(arg0)
+    GUESSEDdeleteremovedoor(arg0)
     Delete arg0
     Return $00
 End Function

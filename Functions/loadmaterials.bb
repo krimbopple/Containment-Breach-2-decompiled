@@ -11,7 +11,7 @@ Function loadmaterials%(arg0$)
         local0 = trim(readline(local3))
         If (left(local0, $01) = "[") Then
             local0 = mid(local0, $02, (len(local0) - $02))
-            YX268F0226(arg0, local0)
+            GUESSEDgetmap_3(arg0, local0)
         EndIf
     Wend
     closefile(local3)

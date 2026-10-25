@@ -45,8 +45,8 @@ Function loadanimmesh_strict%(arg0$, arg1%, arg2%)
             EndIf
         Next
     EndIf
-    YX2D2860X(local0, $00, $FFFFFFFF)
-    XB04X8D680()
+    GUESSEDcreatesurface(local0, $00, $FFFFFFFF)
+    GUESSEDloadstrict_2()
     Return local0
     Return $00
 End Function
